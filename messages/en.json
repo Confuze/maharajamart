@@ -1,0 +1,13 @@
+{
+  "Layout": {
+    "nav": "test"
+  },
+  "Home": {
+    "test": "english",
+    "uwu": "owo"
+  },
+  "About": {
+    "title": "About",
+    "test": "spanish"
+  }
+}

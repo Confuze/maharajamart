@@ -1,0 +1,13 @@
+{
+  "Layout": {
+    "nav": "test"
+  },
+  "Home": {
+    "test": "polski",
+    "uwu": "uwu"
+  },
+  "About": {
+    "title": "o nas",
+    "test": "polshki"
+  }
+}
