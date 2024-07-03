@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, unstable_setRequestLocale } from "next-intl/server";
 import { locales } from "@/src/config";
-
-const inter = Inter({ subsets: ["latin"] });
+import { merriweatherS } from "../fonts";
+import Navbar from "../components/Navbar";
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -30,8 +29,9 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale}>
-      <body>
+      <body className={merriweatherS.className}>
         <NextIntlClientProvider messages={messages}>
+          <Navbar locale={locale} />
           {children}
         </NextIntlClientProvider>
       </body>

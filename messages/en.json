@@ -1,6 +1,13 @@
 {
   "Layout": {
-    "nav": "test"
+    "nav": {
+      "home": "Home",
+      "about": "About us",
+      "contact": "Contact",
+      "products": "Products",
+      "allProducts": "All products",
+      "cart": "Cart"
+    }
   },
   "Home": {
     "test": "english",
