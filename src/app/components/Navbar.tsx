@@ -1,9 +1,9 @@
 import { useTranslations } from "next-intl";
 import * as NavigationMenu from "@radix-ui/react-navigation-menu";
 import { Link } from "@/src/navigation";
-import * as Select from "@radix-ui/react-select";
 import LanguagePicker from "./LanguagePicker";
 import * as HoverCard from "@radix-ui/react-hover-card";
+import { products } from "../data/products";
 
 export default function Navbar({ locale }: { locale: string }) {
   const t = useTranslations("Layout.nav");
@@ -41,6 +41,19 @@ export default function Navbar({ locale }: { locale: string }) {
                   <Link href="/products">{t("allProducts")}</Link>
                 </div>
               </NavigationMenu.Link>
+              {Object.keys(products).map((key) => {
+                const category = products[key];
+
+                return (
+                  <NavigationMenu.Link asChild key={key}>
+                    <div>
+                      <Link href={`/products/${key}`}>
+                        {category.displayName[locale as "en" | "pl"]}
+                      </Link>
+                    </div>
+                  </NavigationMenu.Link>
+                );
+              })}
             </NavigationMenu.Content>
           </NavigationMenu.Item>
 
