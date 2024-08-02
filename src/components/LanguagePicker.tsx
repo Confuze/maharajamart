@@ -6,13 +6,21 @@
 "use client";
 
 import { usePathname, useRouter } from "@/src/navigation";
-import * as Select from "@radix-ui/react-select";
 import { useEffect, useState } from "react";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/src/components/ui/select";
+import { SelectIcon } from "@radix-ui/react-select";
+import { Globe } from "lucide-react";
 
 export default function LanguagePicker({ locale }: { locale: any }) {
   // INFO: I don't care it's any, I'm not gonna spend an hour setting the right type for this with the state and everything for a variable that I'm gonna use 3 times
   const [selectedLocale, setSelectedLocale] = useState(locale);
-  const languages: any = { en: "English", pl: "Polish" }; // INFO: Same as same as line 13
+  const languages: any = { en: "English", pl: "Polski" }; // INFO: Same as same as line 13
   const pathname = usePathname();
   const router = useRouter();
 
@@ -22,21 +30,20 @@ export default function LanguagePicker({ locale }: { locale: any }) {
   }, [selectedLocale]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
-    <Select.Root value={selectedLocale} onValueChange={setSelectedLocale}>
-      <Select.Trigger>
-        <Select.Value aria-label={selectedLocale}>
+    <Select value={selectedLocale} onValueChange={setSelectedLocale}>
+      <SelectTrigger>
+        <SelectIcon>
+          <Globe className="h-5 mr-1" />
+        </SelectIcon>
+        <SelectValue className="hover:underline" aria-label={selectedLocale}>
           {languages[selectedLocale]}
-        </Select.Value>
-      </Select.Trigger>
+        </SelectValue>
+      </SelectTrigger>
 
-      <Select.Portal>
-        <Select.Content>
-          <Select.Viewport>
-            <Select.Item value="en">EN</Select.Item>
-            <Select.Item value="pl">PL</Select.Item>
-          </Select.Viewport>
-        </Select.Content>
-      </Select.Portal>
-    </Select.Root>
+      <SelectContent position="item-aligned">
+        <SelectItem value="en">{languages.en}</SelectItem>
+        <SelectItem value="pl">{languages.pl}</SelectItem>
+      </SelectContent>
+    </Select>
   );
 }

@@ -1,4 +1,4 @@
-import { products } from "@/src/app/data/products";
+import { products } from "@/src/data/products";
 import { Link } from "@/src/navigation";
 import { unstable_setRequestLocale } from "next-intl/server";
 

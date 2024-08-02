@@ -1,4 +1,4 @@
-import { products } from "@/src/app/data/products";
+import { products } from "@/src/data/products";
 import { unstable_setRequestLocale } from "next-intl/server";
 
 export const dynamic = "error";
@@ -23,6 +23,7 @@ export default function Product({
   params: { locale: "en" | "pl"; category: string; slug: string };
 }) {
   unstable_setRequestLocale(locale);
+  console.log(products, category);
   const product = products[category].products[slug];
   return (
     <>

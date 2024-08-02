@@ -1,5 +1,8 @@
 {
   "Layout": {
+    "infobar": {
+      "open": "Open from:"
+    },
     "nav": {
       "home": "Home",
       "about": "About us",
@@ -10,8 +13,11 @@
     }
   },
   "Home": {
-    "test": "english",
-    "uwu": "owo"
+    "hero": {
+      "title": "The freshest produce,<br />For the best prices",
+      "description": "Quality beef, the tastiest spices, cheapest rice, fully natural cosmetic products",
+      "cta": "Shop now"
+    }
   },
   "About": {
     "title": "About",

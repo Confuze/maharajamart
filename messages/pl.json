@@ -1,5 +1,8 @@
 {
   "Layout": {
+    "infobar": {
+      "open": "Otwarte od: "
+    },
     "nav": {
       "home": "Start",
       "about": "O nas",
@@ -10,8 +13,11 @@
     }
   },
   "Home": {
-    "test": "polski",
-    "uwu": "uwu"
+    "hero": {
+      "title": "Najlepsze produkty<br />Za najlepszą cenę",
+      "description": "Wysokiej jakości mięso, smaczne przyprawy, tani ryż, 100% naturalne produkty kosmetyczne",
+      "cta": "Przeglądaj produkty"
+    }
   },
   "About": {
     "title": "o nas",
