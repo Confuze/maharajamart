@@ -10,6 +10,10 @@
       "products": "Produkty",
       "allProducts": "Wszystkie produkty",
       "cart": "Koszyk"
+    },
+    "products": {
+      "promotion": "Promocja",
+      "addToCart": "Dodaj do koszyka"
     }
   },
   "Home": {

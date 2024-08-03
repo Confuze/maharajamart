@@ -30,7 +30,6 @@ export default async function LocaleLayout({
 }) {
   unstable_setRequestLocale(locale);
   const messages = await getMessages();
-  console.log(typeof backgroundImage.src);
 
   return (
     <html lang={locale}>

@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "genProd": "NODE_OPTIONS=\"--loader ts-node/esm\" ts-node ./src/data/generateProducts.ts"
   },
   "dependencies": {
     "@radix-ui/react-hover-card": "^1.1.1",
@@ -15,22 +16,28 @@
     "@radix-ui/react-slot": "^1.1.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
+    "embla-carousel-autoplay": "^8.1.8",
+    "embla-carousel-react": "^8.1.8",
     "lucide-react": "^0.404.0",
     "next": "^14.2.4",
     "next-intl": "^3.15.3",
     "react": "^18",
     "react-dom": "^18",
+    "sharp": "^0.33.4",
     "tailwind-merge": "^2.4.0",
     "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
+    "@types/lodash": "^4.17.7",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "eslint": "^8",
     "eslint-config-next": "14.2.4",
+    "lodash": "^4.17.21",
     "postcss": "^8",
     "tailwindcss": "^3.4.1",
+    "ts-node": "^10.9.2",
     "typescript": "^5"
   }
 }

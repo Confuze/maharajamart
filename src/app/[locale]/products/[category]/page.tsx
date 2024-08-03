@@ -23,7 +23,7 @@ export default function Category({
       {products[category].displayName[locale]}
       {Object.keys(catProducts).map((product) => (
         <Link href={`/products/${category}/${product}`} key={product}>
-          {catProducts[product].displayName[locale]}
+          {catProducts[product].displayName}
         </Link>
       ))}
     </>
