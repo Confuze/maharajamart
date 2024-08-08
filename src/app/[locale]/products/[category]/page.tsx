@@ -1,4 +1,6 @@
+import ProductCard from "@/src/components/ProductCard";
 import { products } from "@/src/data/products";
+import { cn } from "@/src/lib/utils";
 import { Link } from "@/src/navigation";
 import { unstable_setRequestLocale } from "next-intl/server";
 
@@ -20,12 +22,25 @@ export default function Category({
 
   return (
     <>
-      {products[category].displayName[locale]}
-      {Object.keys(catProducts).map((product) => (
-        <Link href={`/products/${category}/${product}`} key={product}>
-          {catProducts[product].displayName}
-        </Link>
-      ))}
+      <h1 className="font-serif pl-20 text-5xl text-secondary my-8">
+        {products[category].displayName[locale]}
+      </h1>
+      <div className="w-full gap-8 overflow-hidden px-20 -w-full grid auto-rows-min grid-cols-2 lg:grid-cols-5">
+        {Object.keys(catProducts).map((key, index) => {
+          const product = catProducts[key];
+
+          return (
+            <div key={index}>
+              <Link href={`/products/${category}/${key}`} key={key}>
+                <ProductCard
+                  locale={locale}
+                  product={{ ...product, category: category }}
+                />{" "}
+              </Link>
+            </div>
+          );
+        })}
+      </div>
     </>
   );
 }

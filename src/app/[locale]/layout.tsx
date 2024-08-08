@@ -8,6 +8,7 @@ import Navbar from "@/src/components/Navbar";
 import { cn } from "@/src/lib/utils";
 import InfoBar from "@/src/components/InfoBar";
 import backgroundImage from "@/public/background.png";
+import Footer from "@/src/components/Footer";
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -32,10 +33,10 @@ export default async function LocaleLayout({
   const messages = await getMessages();
 
   return (
-    <html lang={locale}>
+    <html className="min-h-full relative scroll-smooth" lang={locale}>
       <body
         className={cn(
-          "min-h-screen bg-backround font-sans antialiased",
+          "min-h-screen h-full bg-repeat bg-backround font-sans antialiased",
           fontSans.variable,
           fontSerif.variable,
         )}
@@ -45,11 +46,12 @@ export default async function LocaleLayout({
             style={{
               backgroundImage: `url(${backgroundImage.src})`,
             }}
-            className="bg-repeat z-[-1] absolute top-0 left-0 min-w-full min-h-full max-h-full opacity-5"
+            className="bg-repeat z-[-1] absolute bottom-0 left-0 right-0 top-0 overflow-hidden opacity-5"
           />
           <InfoBar />
           <Navbar locale={locale} />
-          {children}
+          <main className="min-h-[90vh]">{children}</main>
+          <Footer />
         </NextIntlClientProvider>
       </body>
     </html>

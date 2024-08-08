@@ -6,7 +6,7 @@ function InfoBar() {
   const t = useTranslations("Layout.infobar");
 
   return (
-    <div className="w-full py-2 px-20 flex items-center justify-between text-background bg-secondary">
+    <div className="w-full py-2 px-24 flex items-center justify-between text-background bg-secondary">
       <h4 className="font-serif text-xl font-bold">MAHARAJA MART</h4>
       <div className="flex *:flex *:items-center gap-14 content-end text-sm">
         <p className="">

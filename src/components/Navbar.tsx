@@ -16,7 +16,7 @@ export default function Navbar({ locale }: { locale: string }) {
   const t = useTranslations("Layout.nav");
 
   return (
-    <nav className="w-full flex justify-between items-center px-20 py-4 font-bold text-xl">
+    <nav className="w-full flex justify-between items-center px-24 py-4 font-bold text-xl">
       <NavigationMenu>
         <NavigationMenuList>
           <NavigationMenuItem>
@@ -32,7 +32,7 @@ export default function Navbar({ locale }: { locale: string }) {
           </NavigationMenuItem>
           <NavigationMenuItem>
             <NavigationMenuTrigger>{t("products")}</NavigationMenuTrigger>
-            <NavigationMenuContent className="min-w-[30vw] grid grid-cols-3">
+            <NavigationMenuContent className="min-w-[30vw] grid gap-x-4 grid-cols-3">
               <NavigationMenuLink
                 className="text-sm font-medium decoration-background text-background"
                 href="/products"

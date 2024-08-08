@@ -23,7 +23,7 @@ const slides: { image?: StaticImageData; alt: string }[] = [
 
 function CTACarousel() {
   const [api, setApi] = useState<CarouselApi>();
-  const { selectedIndex, scrollSnaps, onDotButtonClick } = useDotButton(api);
+  const { selectedIndex, onDotButtonClick } = useDotButton(api);
   return (
     <>
       <Carousel

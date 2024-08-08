@@ -11,11 +11,12 @@ const buttonVariants = cva(
       variant: {
         default:
           "font-serif rounded-full bg-secondary text-background hover:bg-secondary/80",
-        link: "inline h-auto p-auto hover:underline decoration-2 decoration-secondary",
+        link: "h-auto p-auto hover:underline decoration-2 decoration-secondary",
         arrow: "bg-[#E1C4C8] hover:bg-background2 rounded-full text-secondary",
       },
       size: {
         default: "h-10 px-4 py-2",
+        link: "inline",
         cta: "font-bold text-2xl px-20 py-[10px]",
         sm: "h-9 rounded-md px-3",
         lg: "h-11 rounded-md px-8",

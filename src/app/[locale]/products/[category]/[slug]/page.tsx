@@ -1,6 +1,18 @@
 import { products } from "@/src/data/products";
 import { unstable_setRequestLocale } from "next-intl/server";
 import Image from "next/image";
+import placeholder from "@/public/picturePlaceholder.png";
+import { Input } from "@/src/components/ui/input";
+import { Button } from "@/src/components/ui/button";
+import { useTranslations } from "next-intl";
+import {
+  Form,
+  FormControl,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/src/components/ui/form";
+import ProductForm from "@/src/components/ProductForm";
 
 export const dynamic = "error";
 
@@ -25,20 +37,26 @@ export default function Product({
 }) {
   unstable_setRequestLocale(locale);
   const product = products[category].products[slug];
+  const t = useTranslations("Product");
+  const t2 = useTranslations("Layout.products");
+
   return (
-    <section className="p-8">
-      {product.picture && (
-        <div className="relative w-2/5 h-[70vh] border-4 overflow-hidden border-secondary rounded-3xl">
-          <Image
-            fill
-            className="object-cover"
-            src={product.picture}
-            alt={product.displayName}
-          />
-        </div>
-      )}
-      <h1>{product.displayName}</h1>
-      {product.price} zł
+    <section className="pt-8 flex justify-center">
+      <div className="w-3/5 gap-20 flex">
+        {product.picture && (
+          <div className="relative basis-2/5 h-[70vh] border-4 overflow-hidden border-secondary rounded-3xl">
+            <Image
+              className="object-contain text-[0] bg-white bg-cover"
+              placeholder={`data:image/${placeholder}`}
+              quality={75}
+              fill
+              src={product.picture}
+              alt={product.displayName}
+            />
+          </div>
+        )}
+        <ProductForm product={product}></ProductForm>
+      </div>
     </section>
   );
 }

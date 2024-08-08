@@ -15,6 +15,12 @@ const config: Config = {
         sans: ["var(--font-sans)", ...fontFamily.sans],
         serif: ["var(--font-serif)", ...fontFamily.serif],
       },
+      gridAutoColumns: {
+        featuredDesktop: "20%",
+        featuredMobile: "50%",
+        categoriesDesktop: "calc(100% / 7)",
+        categoriesMobile: "calc(100% / 3)",
+      },
     },
   },
   plugins: [require("tailwindcss-animate")],

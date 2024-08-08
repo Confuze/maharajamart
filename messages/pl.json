@@ -13,7 +13,8 @@
     },
     "products": {
       "promotion": "Promocja",
-      "addToCart": "Dodaj do koszyka"
+      "addToCart": "Dodaj do koszyka",
+      "details": "Dowiedz się więcej"
     }
   },
   "Home": {
@@ -21,10 +22,37 @@
       "title": "Najlepsze produkty<br />Za najlepszą cenę",
       "description": "Wysokiej jakości mięso, smaczne przyprawy, tani ryż, 100% naturalne produkty kosmetyczne",
       "cta": "Przeglądaj produkty"
+    },
+    "featured": "Wyróżnione produkty",
+    "delivery": {
+      "title": "Szybka dostawa na terenie Polski",
+      "description": "Natychmiastowo wysyłamy zamówienia przez DPD, DHL, UPS, Inpost oraz Orlen Paczka tego samego dnia co zamówienie. Oferujemy darmową przesyłkę dla zamówień powyżej 200zł.",
+      "cta": "Order now"
+    },
+    "categories": "Nasze kategorie produktów",
+    "reviews": {
+      "1": {
+        "title": "Wybitna obsługa",
+        "review": "Libero sit sit qui reprehenderit accusamus. Voluptas aut unde expedita  eum. Qui quia ut eos neque qui iusto. Sunt vitae error eius quia saepe  doloremque. Minima quia",
+        "score": "5"
+      },
+      "2": {
+        "title": "Wspaniałe produkty",
+        "review": "Libero sit sit qui reprehenderit accusamus. Voluptas aut unde expedita  eum. Qui quia ut eos neque qui iusto. Sunt vitae error eius quia saepe  doloremque. Minima quia",
+        "score": "5"
+      },
+      "3": {
+        "title": "Niesamowite zapachy",
+        "review": "Libero sit sit qui reprehenderit accusamus. Voluptas aut unde expedita  eum. Qui quia ut eos neque qui iusto. Sunt vitae error eius quia saepe  doloremque. Minima quia",
+        "score": "5"
+      }
     }
   },
   "About": {
     "title": "o nas",
     "test": "polshki"
+  },
+  "Product": {
+    "quantity": "Ilość"
   }
 }

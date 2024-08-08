@@ -52,7 +52,7 @@ const NavigationMenuItem = React.forwardRef<
 NavigationMenuItem.displayName = NavigationMenuPrimitive.Item.displayName;
 
 const navigationMenuTriggerStyle = cva(
-  "group inline-flex h-10 w-max items-center justify-center rounded-md bg-white px-4 py-2 text-sm font-medium transition-colors hover:bg-neutral-100 hover:text-neutral-900 focus:bg-neutral-100 focus:text-neutral-900 focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-neutral-100/50 data-[state=open]:bg-neutral-100/50 dark:bg-neutral-950 dark:hover:bg-neutral-800 dark:hover:text-neutral-50 dark:focus:bg-neutral-800 dark:focus:text-neutral-50 dark:data-[active]:bg-neutral-800/50 dark:data-[state=open]:bg-neutral-800/50",
+  "group inline-flex h-10 w-max items-center justify-center rounded-md bg-white py-2 text-sm font-medium transition-colors hover:bg-neutral-100 hover:text-neutral-900 focus:bg-neutral-100 focus:text-neutral-900 focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-neutral-100/50 data-[state=open]:bg-neutral-100/50 dark:bg-neutral-950 dark:hover:bg-neutral-800 dark:hover:text-neutral-50 dark:focus:bg-neutral-800 dark:focus:text-neutral-50 dark:data-[active]:bg-neutral-800/50 dark:data-[state=open]:bg-neutral-800/50",
 );
 
 const NavigationMenuTrigger = React.forwardRef<
@@ -103,7 +103,12 @@ const NavigationMenuLink = React.forwardRef<
   <NavigationMenuPrimitive.Link ref={ref} asChild active {...props}>
     <div>
       {/* INFO: the child of radix's navmenu link must be a regular html element and not a functional component when using asChild. Why? Absolutely no clue */}
-      <Button variant="link" asChild className={cn("font-bold", className)}>
+      <Button
+        size="link"
+        variant="link"
+        asChild
+        className={cn("font-bold", className)}
+      >
         <Link
           href={
             href! /* the ! probably shouldn't be here but I don't know how to make href string-only */
@@ -129,7 +134,7 @@ const NavigationMenuViewport = React.forwardRef<
   >
     <NavigationMenuPrimitive.Viewport
       className={cn(
-        "origin-top-center relative mt-1.5 h-[var(--radix-navigation-menu-viewport-height)] w-full overflow-hidden rounded-md  shadow-lg data-[state=open]:animate-in data-[state=closed]:animate-out md:w-[var(--radix-navigation-menu-viewport-width)] data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-90",
+        "origin-top-center list-none relative mt-1.5 h-[var(--radix-navigation-menu-viewport-height)] w-full overflow-hidden rounded-md  shadow-lg data-[state=open]:animate-in data-[state=closed]:animate-out md:w-[var(--radix-navigation-menu-viewport-width)] data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-90",
         className,
       )}
       ref={ref}

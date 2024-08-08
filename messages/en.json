@@ -13,7 +13,8 @@
     },
     "products": {
       "promotion": "Promotion",
-      "addToCart": "Add to cart"
+      "addToCart": "Add to cart",
+      "details": "View detail"
     }
   },
   "Home": {
@@ -21,10 +22,37 @@
       "title": "The freshest produce,<br />For the best prices",
       "description": "Quality beef, the tastiest spices, cheapest rice, fully natural cosmetic products",
       "cta": "Shop now"
+    },
+    "featured": "Featured products",
+    "delivery": {
+      "title": "Fast shipping all around Poland",
+      "description": "We immediately ship orders via DPD, DHL, UPS, Inpost and Orlen Paczka the same day as the order. We offer free delivery for orders within 5km from the shop or over 200 zł.",
+      "cta": "Order now"
+    },
+    "categories": "Our product categories",
+    "reviews": {
+      "1": {
+        "title": "Outstanding service",
+        "review": "Libero sit sit qui reprehenderit accusamus. Voluptas aut unde expedita  eum. Qui quia ut eos neque qui iusto. Sunt vitae error eius quia saepe  doloremque. Minima quia",
+        "score": "5"
+      },
+      "2": {
+        "title": "Fenomenal products",
+        "review": "Libero sit sit qui reprehenderit accusamus. Voluptas aut unde expedita  eum. Qui quia ut eos neque qui iusto. Sunt vitae error eius quia saepe  doloremque. Minima quia",
+        "score": "5"
+      },
+      "3": {
+        "title": "Marvelous smells",
+        "review": "Libero sit sit qui reprehenderit accusamus. Voluptas aut unde expedita  eum. Qui quia ut eos neque qui iusto. Sunt vitae error eius quia saepe  doloremque. Minima quia",
+        "score": "5"
+      }
     }
   },
   "About": {
     "title": "About",
     "test": "spanish"
+  },
+  "Product": {
+    "quantity": "Quantity"
   }
 }
