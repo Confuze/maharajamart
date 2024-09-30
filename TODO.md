@@ -1,0 +1,44 @@
+- [ ] Card hover state (with tailwind class) (go up with shadow)
+- [x] Shadcn component setup
+- [x] Products json file generated from excel sheet
+  - [ ] Add all products
+- [x] Layout
+  - [x] Infobar & Navbar
+  - [x] Language picker & cart button
+  - [x] Footer
+- [x] Homepage
+  - [x] All content
+  - [x] Hero carousel
+  - [x] Review carousel on mobile
+  - [x] Featured products carousel
+  - [x] Categories carousel
+- [ ] About & Contact page
+- [ ] All products page
+- [x] Category page
+  - [x] add to cart from product card
+- [x] Product page
+  - [x] Add to cart form
+  - [ ] Recommended products
+  - [ ] Fully responsive
+- [x] Cart system
+  - [x] Cart page
+  - [x] Persistent storage
+  - [x] Cart manipulation methods
+  - [x] Toast system
+- [x] Internationalization
+- [ ] Checkout page
+- [ ] Payment processing
+- [ ] Admin panel
+- [ ] Favicon
+- [ ] Search feature
+- [ ] Deploy
+
+---
+
+- [ ] optional: Show cart items on hover of cart button in navbar
+- [ ] optional: Animations
+- [ ] optional: Loading states
+- [ ] optional: 100 100 100 100 lighthouse report (maybe a little overly ambitious)
+- [ ] optional: Custom 404 page
+- [ ] optional: Responsive design for tablets
+- [ ] optional: emails??

@@ -2,6 +2,7 @@ import ProductCard from "@/src/components/ProductCard";
 import { products } from "@/src/data/products";
 import { cn } from "@/src/lib/utils";
 import { Link } from "@/src/navigation";
+import { useTranslations } from "next-intl";
 import { unstable_setRequestLocale } from "next-intl/server";
 
 export const dynamic = "error";
@@ -19,27 +20,30 @@ export default function Category({
 }) {
   unstable_setRequestLocale(locale);
   const catProducts = products[category].products;
+  const t = useTranslations("Category");
 
   return (
     <>
-      <h1 className="font-serif pl-20 text-5xl text-secondary my-8">
+      <h1 className="font-serif text-center lg:text-left lg:pl-20 text-4xl lg:text-5xl text-secondary my-8">
         {products[category].displayName[locale]}
       </h1>
-      <div className="w-full gap-8 overflow-hidden px-20 -w-full grid auto-rows-min grid-cols-2 lg:grid-cols-5">
+      <div className="w-full gap-8 overflow-hidden px-8 lg:px-20 -w-full grid auto-rows-min grid-cols-2 lg:grid-cols-5">
         {Object.keys(catProducts).map((key, index) => {
           const product = catProducts[key];
 
           return (
             <div key={index}>
-              <Link href={`/products/${category}/${key}`} key={key}>
-                <ProductCard
-                  locale={locale}
-                  product={{ ...product, category: category }}
-                />{" "}
-              </Link>
+              <ProductCard
+                locale={locale}
+                product={{
+                  ...product,
+                  category: category,
+                  slug: key,
+                }}
+              />
             </div>
           );
-        })}
+        }) || t("noProudcts")}
       </div>
     </>
   );

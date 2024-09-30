@@ -29,12 +29,12 @@ function CTACarousel() {
       <Carousel
         plugins={[Autoplay({ delay: 2000 })]}
         setApi={setApi}
-        className="h-full"
+        className="h-full top-0 bottom-0 left-0 right-0"
       >
         <CarouselContent className="h-full *:flex *:justify-center *:items-center">
           {slides.map((slide, index) => {
             return (
-              <CarouselItem key={index}>
+              <CarouselItem className="" key={index}>
                 {slide.image ? (
                   <Image src={slide.image} alt={slide.alt} />
                 ) : (

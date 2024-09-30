@@ -38,7 +38,7 @@
       },
       "2": {
         "title": "Wspaniałe produkty",
-        "review": "Libero sit sit qui reprehenderit accusamus. Voluptas aut unde expedita  eum. Qui quia ut eos neque qui iusto. Sunt vitae error eius quia saepe  doloremque. Minima quia",
+        "review": "Libero sit sit qui reprehenderit accusamus. Voluptas aut unde expedita  eum. Qui quia ut eos neque qui iusto. Sunt vitae error eius  quia saepe  doloremque. Minima quia",
         "score": "5"
       },
       "3": {
@@ -52,7 +52,23 @@
     "title": "o nas",
     "test": "polshki"
   },
+  "Category": {
+    "noProudcts": "Brak dostępnych produktów w tej kategorii."
+  },
   "Product": {
+    "added": "Produkt został dodany do koszyka",
+    "addedDescription": "{quantity, plural, one {# sztukę} few {# sztuki} many {# sztuk} other {}} produktu \"{name}\" {quantity, plural, one {został dodany} few {zostały dodane} many {zostało dodane} other {zostało dodane}} do koszyka",
+    "maxQuantity": "Nie można dodać więcej niż 100 sztuk tego produktu do koszyka",
     "quantity": "Ilość"
+  },
+  "Cart": {
+    "items": "artykułów",
+    "cart": "Koszyk",
+    "totalPrice": "Cena w sumie: ",
+    "productPrice": "Cena produktów: ",
+    "deliveryFee": "Opłata za dostawę: ",
+    "transactionFee": "Opłata za płatność: ",
+    "addedAtCheckout": "Naliczone w kasie",
+    "proceed": "Przejdź do kasy"
   }
 }

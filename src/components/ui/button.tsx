@@ -11,15 +11,17 @@ const buttonVariants = cva(
       variant: {
         default:
           "font-serif rounded-full bg-secondary text-background hover:bg-secondary/80",
+        cta: "font-bold font-serif rounded-full bg-secondary text-background hover:bg-secondary/80",
         link: "h-auto p-auto hover:underline decoration-2 decoration-secondary",
         arrow: "bg-[#E1C4C8] hover:bg-background2 rounded-full text-secondary",
       },
       size: {
         default: "h-10 px-4 py-2",
         link: "inline",
-        cta: "font-bold text-2xl px-20 py-[10px]",
+        cta: "text-2xl px-20 py-[10px]",
+        ctaMobile: "px-16 py-2",
         sm: "h-9 rounded-md px-3",
-        lg: "h-11 rounded-md px-8",
+        lg: "text-2xl h-11 rounded-md px-8",
         icon: "h-10 w-10",
       },
     },

@@ -11,17 +11,15 @@ import {
   NavigationMenuTrigger,
 } from "./ui/navigation-menu";
 import { ShoppingBasket } from "lucide-react";
+import CartButton from "./CartButton";
 
 export default function Navbar({ locale }: { locale: string }) {
   const t = useTranslations("Layout.nav");
 
   return (
-    <nav className="w-full flex justify-between items-center px-24 py-4 font-bold text-xl">
+    <nav className="hidden lg:flex w-full justify-between items-center px-24 py-4 font-bold text-xl">
       <NavigationMenu>
         <NavigationMenuList>
-          <NavigationMenuItem>
-            <NavigationMenuLink href="/">{t("home")}</NavigationMenuLink>
-          </NavigationMenuItem>
           <NavigationMenuItem>
             <NavigationMenuLink href="/about">{t("about")}</NavigationMenuLink>
           </NavigationMenuItem>
@@ -58,9 +56,7 @@ export default function Navbar({ locale }: { locale: string }) {
       </NavigationMenu>
       <div className="flex gap-20">
         <LanguagePicker locale={locale} />
-        <Link href="/cart" className="flex items-center">
-          <ShoppingBasket className="h-8 mr-1" /> Cart
-        </Link>
+        <CartButton />
       </div>
     </nav>
   );

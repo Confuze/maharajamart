@@ -158,12 +158,15 @@ Carousel.displayName = "Carousel";
 
 const CarouselContent = React.forwardRef<
   HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement>
->(({ className, ...props }, ref) => {
+  React.HTMLAttributes<HTMLDivElement> & { active?: boolean } // This godforsaken whoremongering motherfucker of a type took me a good 30 minutes to write. Just one type for one extra prop. Treat this as a warning to any new typescript users.
+>(({ className, active = true, ...props }, ref) => {
   const { carouselRef, orientation } = useCarousel();
 
   return (
-    <div ref={carouselRef} className="h-full overflow-hidden">
+    <div
+      ref={carouselRef}
+      className={cn("h-full overflow-hidden", !active && "lg:overflow-visible")}
+    >
       <div
         ref={ref}
         className={cn("flex h-full w-full", className)}
@@ -206,12 +209,12 @@ const CarouselPrevious = React.forwardRef<
       ref={ref}
       variant={variant}
       size={size}
-      className={cn("h-8 w-8 rounded-full", className)}
+      className={cn("h-6 w-6 lg:h-8 lg:w-8 rounded-full", className)}
       disabled={!canScrollPrev}
       onClick={scrollPrev}
       {...props}
     >
-      <ArrowLeft className="h-4 w-4" />
+      <ArrowLeft className="h-3 w-3 lg:h-4 lg:w-4" />
       <span className="sr-only">Previous slide</span>
     </Button>
   );
@@ -229,12 +232,12 @@ const CarouselNext = React.forwardRef<
       ref={ref}
       variant={variant}
       size={size}
-      className={cn("h-8 w-8 rounded-full", className)}
+      className={cn("h-6 w-6 lg:h-8 lg:w-8 rounded-full", className)}
       disabled={!canScrollNext}
       onClick={scrollNext}
       {...props}
     >
-      <ArrowRight className="h-4 w-4" />
+      <ArrowRight className="h-3 w-3 lg:h-4 lg:w-4" />
       <span className="sr-only">Next slide</span>
     </Button>
   );

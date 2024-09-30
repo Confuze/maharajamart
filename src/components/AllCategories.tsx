@@ -16,7 +16,7 @@ function AllCategories({ locale }: { locale: "en" | "pl" }) {
 
   return (
     <Carousel
-      className="mx-20"
+      className="mx-4 lg:mx-20"
       id="allCategories"
       opts={{
         containScroll: "keepSnaps",
@@ -25,7 +25,7 @@ function AllCategories({ locale }: { locale: "en" | "pl" }) {
       }}
     >
       <div className="flex justify-between mb-4 items-center">
-        <h1 className="font-serif text-5xl text-secondary">
+        <h1 className="font-serif text-2xl lg:text-5xl text-secondary">
           {t("categories")}
         </h1>
         <div className="-mb-4 flex items-center gap-x-2">
@@ -41,9 +41,9 @@ function AllCategories({ locale }: { locale: "en" | "pl" }) {
                 <Image
                   src={rice}
                   alt="rice icon"
-                  className="p-12 pb-2 w-full aspect-square"
+                  className="p-4 lg:p-12 pb-2 w-full aspect-square"
                 />
-                <p className="text-center font-serif text-2xl">
+                <p className="text-center font-serif text-sm lg:text-2xl">
                   {products[key].displayName[locale]}
                 </p>
               </div>

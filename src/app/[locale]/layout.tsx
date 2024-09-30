@@ -7,8 +7,9 @@ import { fontSans, fontSerif } from "../fonts";
 import Navbar from "@/src/components/Navbar";
 import { cn } from "@/src/lib/utils";
 import InfoBar from "@/src/components/InfoBar";
-import backgroundImage from "@/public/background.png";
+import backgroundImage from "@/public/background.webp";
 import Footer from "@/src/components/Footer";
+import { Toaster } from "@/src/components/ui/sonner";
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -24,7 +25,7 @@ export const metadata: Metadata = {
 
 export default async function LocaleLayout({
   children,
-  params: { locale },
+  params: { locale = "pl" },
 }: {
   children: React.ReactNode;
   params: { locale: string };
@@ -48,10 +49,11 @@ export default async function LocaleLayout({
             }}
             className="bg-repeat z-[-1] absolute bottom-0 left-0 right-0 top-0 overflow-hidden opacity-5"
           />
-          <InfoBar />
+          <InfoBar locale={locale} />
           <Navbar locale={locale} />
           <main className="min-h-[90vh]">{children}</main>
           <Footer />
+          <Toaster richColors />
         </NextIntlClientProvider>
       </body>
     </html>

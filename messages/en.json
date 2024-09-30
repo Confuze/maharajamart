@@ -52,7 +52,23 @@
     "title": "About",
     "test": "spanish"
   },
+  "Category": {
+    "noProudcts": "No products in this category availible yet."
+  },
   "Product": {
+    "added": "Product added to cart",
+    "addedDescription": "{quantity, plural, one {# test} other {# t}} of \"{name}\" {quantity, plural, one {was} other {}} added to the cart",
+    "maxQuantity": "You can't add more than 100 of this product",
     "quantity": "Quantity"
+  },
+  "Cart": {
+    "items": "items",
+    "cart": "Cart",
+    "totalPrice": "Total price: ",
+    "productPrice": "Product price: ",
+    "deliveryFee": "Delivery fee: ",
+    "transactionFee": "TransactionFee: ",
+    "addedAtCheckout": "Added at checkout",
+    "proceed": "Proceed to checkout"
   }
 }

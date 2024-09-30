@@ -42,7 +42,7 @@ export default function Product({
 
   return (
     <section className="pt-8 flex justify-center">
-      <div className="w-3/5 gap-20 flex">
+      <div className="w-3/5 gap-20 flex justify-center">
         {product.picture && (
           <div className="relative basis-2/5 h-[70vh] border-4 overflow-hidden border-secondary rounded-3xl">
             <Image
@@ -55,7 +55,9 @@ export default function Product({
             />
           </div>
         )}
-        <ProductForm product={product}></ProductForm>
+        <ProductForm
+          product={{ ...product, productSlug: slug, categorySlug: category }}
+        ></ProductForm>
       </div>
     </section>
   );

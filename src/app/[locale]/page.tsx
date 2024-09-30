@@ -32,6 +32,7 @@ export default function Home({
         description={t("hero.description")}
         ctaUrl="#featured"
         ctaText={t("hero.cta")}
+        hero
       >
         <CTACarousel />
       </CTASecetion>
