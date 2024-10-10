@@ -1,0 +1,63 @@
+services:
+  app:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      - DATABASE_URL=mongodb://mongo:27017,mongo:27018,mongo:27019,r/maharajamart
+    depends_on:
+      - mongo1
+      - mongo2
+      - mongo3
+    restart: always
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    build: ./nginx/
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - /etc/letsencrypt/live/maharajamart.pl/:/etc/nginx/ssl:ro # certbot generates the key and cerificate in /etc/letsencrypt/live/[domain_name] so theorethicaly this volume should work perfectly. Obviously, run `certbot certonly` to generate the files first.
+    restart: always
+  mongo1:
+    image: mongo
+    ports:
+      - "27018:27018"
+    volumes:
+      - "mongo1_data:/data/db"
+      - "mongo1_config:/data/configdb"
+    environment:
+      - MONGO_INITDB_DATABASE=maharajamart
+      - MONGO_REPLICA_SET_NAME=rs0
+    command: "--replSet rs0 --bind_ip_all"
+  mongo2:
+    image: mongo
+    ports:
+      - "27019:27019"
+    volumes:
+      - "mongo1_data:/data/db"
+      - "mongo1_config:/data/configdb"
+    environment:
+      - MONGO_INITDB_DATABASE=maharajamart
+      - MONGO_REPLICA_SET_NAME=rs0
+    command: "--replSet rs0 --bind_ip_all"
+  mongo3:
+    image: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - "mongo1_data:/data/db"
+      - "mongo1_config:/data/configdb"
+    environment:
+      - MONGO_INITDB_DATABASE=maharajamart
+      - MONGO_REPLICA_SET_NAME=rs0
+    command: "--replSet rs0 --bind_ip_all"
+
+volumes:
+  mongo1_data:
+  mongo2_data:
+  mongo3_data:
+  mongo1_config:
+  mongo2_config:
+  mongo3_config:

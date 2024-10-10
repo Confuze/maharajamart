@@ -3,15 +3,18 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "NODE_OPTIONS='--inspect' next dev",
+    "build": "npm run genPrisma && next build",
     "start": "next start",
     "lint": "next lint",
-    "genProd": "NODE_OPTIONS=\"--loader ts-node/esm\" ts-node ./src/data/generateProducts.ts"
+    "ngrok": "ngrok http --url=firmly-quick-whale.ngrok-free.app 127.0.0.1:3000",
+    "genProd": "NODE_OPTIONS='--loader ts-node/esm' ts-node ./src/data/generateProducts.ts",
+    "genPrisma": "prisma db push"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",
     "@plaiceholder/next": "^3.0.0",
+    "@prisma/client": "^5.20.0",
     "@radix-ui/react-accordion": "^1.2.0",
     "@radix-ui/react-dialog": "^1.1.1",
     "@radix-ui/react-hover-card": "^1.1.1",
@@ -19,6 +22,7 @@
     "@radix-ui/react-navigation-menu": "^1.2.0",
     "@radix-ui/react-select": "^2.1.1",
     "@radix-ui/react-slot": "^1.1.0",
+    "axios": "^1.7.7",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "embla-carousel-autoplay": "^8.1.8",
@@ -47,7 +51,9 @@
     "eslint": "^8",
     "eslint-config-next": "14.2.4",
     "lodash": "^4.17.21",
+    "ngrok": "^5.0.0-beta.2",
     "postcss": "^8",
+    "prisma": "^5.20.0",
     "tailwindcss": "^3.4.1",
     "ts-node": "^10.9.2",
     "typescript": "^5"

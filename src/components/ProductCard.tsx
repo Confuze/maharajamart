@@ -32,9 +32,9 @@ function ProductCard({
   return (
     <Link
       href={product.link || `/products/${product.category}/${product.slug}`}
-      className="w-full h-full"
+      className="w-full h-full "
     >
-      <div className="flex flex-col bg-background2 w-full h-full p-2 lg:p-6 rounded-xl ">
+      <div className="flex flex-col bg-background2 w-full h-full p-2 lg:p-6 rounded-xl duration-150 hover:shadow-[0_0_.75rem_0rem_rgba(0,0,0,0.2)] hover:scale-[97.5%]">
         <div className="bg-white lg:border-4 lg:border-secondary overflow-hidden rounded-lg lg:rounded-3xl relative w-full aspect-square">
           <Image
             className="text-[0] bg-cover"

@@ -1,0 +1,69 @@
+# WARN: This is supposed to be used for development only for using the db without a server. On linux, make sure your user can use docker without root permissions.
+
+services:
+  mongo1:
+    container_name: mongo1
+    image: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - "mongo1_data:/data/db"
+      - "mongo1_config:/data/configdb"
+    environment:
+      - MONGO_INITDB_DATABASE=maharajamart
+      - MONGO_REPLICA_SET_NAME=rs0
+    command: ["--replSet", "rs0", "--bind_ip_all", "--port", "27017"]
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    restart: always
+  mongo2:
+    container_name: mongo2
+    image: mongo
+    ports:
+      - "27018:27018"
+    volumes:
+      - "mongo2_data:/data/db"
+      - "mongo2_config:/data/configdb"
+    environment:
+      - MONGO_INITDB_DATABASE=maharajamart
+      - MONGO_REPLICA_SET_NAME=rs0
+    command: ["--replSet", "rs0", "--bind_ip_all", "--port", "27018"]
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    restart: always
+  mongo3:
+    container_name: mongo3
+    image: mongo
+    ports:
+      - "27019:27019"
+    volumes:
+      - "mongo3_data:/data/db"
+      - "mongo3_config:/data/configdb"
+    environment:
+      - MONGO_INITDB_DATABASE=maharajamart
+      - MONGO_REPLICA_SET_NAME=rs0
+    command: ["--replSet", "rs0", "--bind_ip_all", "--port", "27019"]
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    restart: always
+  mongodb-init:
+    image: mongo
+    container_name: mongodb-init
+    depends_on:
+      - mongo1
+      - mongo2
+      - mongo3
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    command: bash -c "chmod +x init-replica-set.sh && ./init-replica-set.sh"
+    volumes:
+      - "./init-replica-set.sh:/init-replica-set.sh"
+    restart: no
+
+volumes:
+  mongo1_data:
+  mongo2_data:
+  mongo3_data:
+  mongo1_config:
+  mongo2_config:
+  mongo3_config:

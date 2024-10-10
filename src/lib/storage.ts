@@ -1,5 +1,7 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
+import { formSchema } from "../lib/zodSchemas";
+import { z } from "zod";
 
 export interface ICartItem {
   quantity: number;
@@ -13,6 +15,8 @@ export interface ICart {
 
 export interface IStore {
   cart: ICart;
+  checkoutFormValues: z.infer<typeof formSchema>;
+  updateCheckoutFormValues: (newValues: z.infer<typeof formSchema>) => void;
   updateCart: (newCart: ICart) => void;
   updateCartItem: (cartItem: ICartItem) => void;
   addCartItem: (cartItem: ICartItem) => void;
@@ -20,12 +24,24 @@ export interface IStore {
 }
 
 // the store itself does not need any change
-export const useCartStore = create<IStore>()(
+export const useAppStore = create<IStore>()(
   persist(
     (set, get) => ({
       cart: {},
+      checkoutFormValues: {
+        name: "",
+        email: "",
+        phone: "",
+        address: "",
+        postalCode: "",
+        town: "",
+        extraInfo: "",
+      },
+      updateCheckoutFormValues: (newValues: z.infer<typeof formSchema>) => {
+        set({ ...get(), checkoutFormValues: newValues });
+      },
       updateCart: (newCart: ICart) => {
-        set({ cart: { ...get().cart, ...newCart } });
+        set({ cart: newCart });
       },
       updateCartItem: (cartItem: ICartItem) => {
         // INFO: The difference between this and the addCartItem method is this doesn't increment quantity when the item already exists, just overrides it.

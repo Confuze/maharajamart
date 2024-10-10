@@ -61,9 +61,12 @@ function InfoBar({ locale }: { locale: string }) {
                 <Accordion type="single" collapsible>
                   <AccordionItem value="item-1">
                     <AccordionTrigger className="font-bold p-0 pb-2">
-                      Products
+                      {t("nav.products")}
                     </AccordionTrigger>
                     <AccordionContent className="grid grid-cols-2 gap-2">
+                      <Link className="text-sm font-medium" href="/products">
+                        {t("nav.allProducts")}
+                      </Link>
                       {Object.keys(products).map((key) => {
                         const category = products[key];
 

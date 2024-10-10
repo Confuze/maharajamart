@@ -2,17 +2,19 @@
 
 import { useTranslations } from "next-intl";
 import { CardInfo } from "./ProductCard";
-import { generateKey, useCartStore } from "../lib/storage";
+import { generateKey, useAppStore } from "../lib/storage";
 import { toast } from "sonner";
 import { ShoppingCart } from "lucide-react";
 import { Button } from "./ui/button";
 import { cn } from "../lib/utils";
-import useCartState from "../lib/useStore";
+import { useCartState } from "../lib/useStore";
+import { Link } from "../navigation";
 
 function AddToCartButton({ product }: { product: CardInfo }) {
   const t = useTranslations("Layout.products");
   const t2 = useTranslations("Product");
-  const { addCartItem } = useCartStore();
+  const t3 = useTranslations("Cart");
+  const { addCartItem } = useAppStore();
   const state = useCartState();
 
   function onClick(e: React.MouseEvent<HTMLButtonElement>) {
@@ -35,6 +37,15 @@ function AddToCartButton({ product }: { product: CardInfo }) {
         quantity: 1,
         name: product.displayName,
       }),
+      action: (
+        <Link className="w-full basis-1/3" href="/cart">
+          {" "}
+          {/* Using basis is a hacky solution but it works and for whatever reason css won't let w-max or anything else work for this */}
+          <Button variant="link" className="p-0 w-full">
+            {t3("cart")}
+          </Button>
+        </Link>
+      ),
     });
   }
   return (

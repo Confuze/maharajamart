@@ -1,5 +1,4 @@
 import { useTranslations } from "next-intl";
-import { Link } from "@/src/navigation";
 import LanguagePicker from "./LanguagePicker";
 import { products } from "@/src/data/products";
 import {
@@ -10,7 +9,6 @@ import {
   NavigationMenuContent,
   NavigationMenuTrigger,
 } from "./ui/navigation-menu";
-import { ShoppingBasket } from "lucide-react";
 import CartButton from "./CartButton";
 
 export default function Navbar({ locale }: { locale: string }) {

@@ -1,6 +1,6 @@
 "use client";
 
-import useCartState from "../lib/useStore";
+import { useCartState } from "../lib/useStore";
 import { products } from "../data/products";
 import placeholder from "@/public/picturePlaceholder.png";
 import Image from "next/image";
@@ -11,7 +11,7 @@ import { useMemo, useRef } from "react";
 import { Link } from "../navigation";
 import { Input } from "./ui/input";
 import { Label } from "./ui/label";
-import { useCartStore } from "../lib/storage";
+import { useAppStore } from "../lib/storage";
 import { parseInt } from "lodash";
 import { X } from "lucide-react";
 
@@ -19,7 +19,7 @@ function CartPage() {
   const state = useCartState();
   const t = useTranslations("Cart");
   const t2 = useTranslations("Product");
-  const { updateCartItem, removeCartItem } = useCartStore();
+  const { updateCartItem, removeCartItem } = useAppStore();
   const productsPrice = useMemo(() => {
     let price = 0;
     if (!state) return price;
@@ -34,8 +34,6 @@ function CartPage() {
     return price;
   }, [state]);
 
-  const deliveryFee = productsPrice >= 200 ? 0 : 20;
-
   const itemCount = useMemo(() => {
     if (!state) return;
     let count = 0;
@@ -44,6 +42,8 @@ function CartPage() {
     });
     return count;
   }, [state]);
+
+  const deliveryFee = productsPrice >= 200 || itemCount == 0 ? 0 : 20;
 
   return (
     <div className="mt-8 px-8 lg:px-[15vw]">
@@ -91,7 +91,11 @@ function CartPage() {
                       {product.displayName}
                     </h3>
                   </Link>
-                  <div className="flex justify-between">
+                  <div className="text-xs lg:text-base">
+                    <p>
+                      {t("singlePrice")}
+                      {product.price!} zł
+                    </p>
                     <p>
                       {t("totalPrice")}
                       {product.price! * cartItem.quantity} zł
@@ -163,7 +167,16 @@ function CartPage() {
             <span className="font-bold text-right">{t("addedAtCheckout")}</span>
           </div>
         </div>
-        <Button size="lg">{t("proceed")}</Button>
+        <Link
+          className={cn(
+            (itemCount === 0 || state == null) && "pointer-events-none",
+          )}
+          href={itemCount === 0 || state == null ? "" : "/checkout"}
+        >
+          <Button disabled={itemCount === 0 || state == null} size="lg">
+            {t("proceed")}
+          </Button>
+        </Link>
       </div>
     </div>
   );

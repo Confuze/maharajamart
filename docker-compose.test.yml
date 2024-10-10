@@ -1,0 +1,68 @@
+# INFO: This file is only for testing the nginx reverse proxy, not for actual development
+
+services:
+  app:
+    container_name: nextjs
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      - MONGODB_URI=mongodb://mongo:27017/maharajamart
+    depends_on:
+      - mongo1
+      - mongo2
+      - mongo3
+    restart: always
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    build:
+      context: ./nginx/
+      dockerfile: Dockerfile.test
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - /etc/ssl/:/etc/nginx/ssl:ro # self signed certificate and key from openssl FOR DEVELOPMENT ONLY
+    restart: always
+  mongo1:
+    image: mongo
+    ports:
+      - "27018:27017"
+    volumes:
+      - "mongo1_data:/data/db"
+      - "mongo1_config:/data/configdb"
+    environment:
+      - MONGO_INITDB_DATABASE=maharajamart
+      - MONGO_REPLICA_SET_NAME=rs0
+    command: "--replSet rs0 --bind_ip_all"
+  mongo2:
+    image: mongo
+    ports:
+      - "27019:27017"
+    volumes:
+      - "mongo1_data:/data/db"
+      - "mongo1_config:/data/configdb"
+    environment:
+      - MONGO_INITDB_DATABASE=maharajamart
+      - MONGO_REPLICA_SET_NAME=rs0
+    command: "--replSet rs0 --bind_ip_all"
+  mongo3:
+    image: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - "mongo1_data:/data/db"
+      - "mongo1_config:/data/configdb"
+    environment:
+      - MONGO_INITDB_DATABASE=maharajamart
+      - MONGO_REPLICA_SET_NAME=rs0
+    command: "--replSet rs0 --bind_ip_all"
+
+volumes:
+  mongo1_data:
+  mongo2_data:
+  mongo3_data:
+  mongo1_config:
+  mongo2_config:
+  mongo3_config:

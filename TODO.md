@@ -1,7 +1,7 @@
-- [ ] Card hover state (with tailwind class) (go up with shadow)
+- [x] Card hover state
 - [x] Shadcn component setup
 - [x] Products json file generated from excel sheet
-  - [ ] Add all products
+  - [x] Add all products
 - [x] Layout
   - [x] Infobar & Navbar
   - [x] Language picker & cart button
@@ -12,26 +12,31 @@
   - [x] Review carousel on mobile
   - [x] Featured products carousel
   - [x] Categories carousel
-- [ ] About & Contact page
-- [ ] All products page
+    - [x] Add icons for each category
+    - [x] Add links
+- [x] About & Contact page
+- [x] All products page
+  - [ ] optional: Check performance
 - [x] Category page
   - [x] add to cart from product card
 - [x] Product page
   - [x] Add to cart form
-  - [ ] Recommended products
-  - [ ] Fully responsive
+  - [x] Fully responsive
+  - [ ] optional: Recommended products
 - [x] Cart system
   - [x] Cart page
   - [x] Persistent storage
   - [x] Cart manipulation methods
   - [x] Toast system
 - [x] Internationalization
-- [ ] Checkout page
-- [ ] Payment processing
-- [ ] Admin panel
-- [ ] Favicon
-- [ ] Search feature
+- [x] Checkout page
+- [x] Payment processing
+- [x] Admin panel
+- [x] Favicon
+- [ ] optional: (but important) Search feature
 - [ ] Deploy
+  - [x] Dockerize for vps deploy
+  - [x] Nginx reverse proxy for ssl
 
 ---
 
@@ -42,3 +47,5 @@
 - [ ] optional: Custom 404 page
 - [ ] optional: Responsive design for tablets
 - [ ] optional: emails??
+- [ ] optional: OG images
+- [ ] optional: Scalability - DB, search, cdn

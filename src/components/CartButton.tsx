@@ -2,12 +2,14 @@
 
 import { ShoppingBasket } from "lucide-react";
 import { Link } from "../navigation";
-import useCartState from "../lib/useStore";
+import { useCartState } from "../lib/useStore";
 import { cn } from "../lib/utils";
 import { useMemo } from "react";
+import { useTranslations } from "next-intl";
 
 function CartButton() {
   const state = useCartState();
+  const t = useTranslations("Layout.nav");
   const itemCount = useMemo(() => {
     if (!state) return;
     let count = 0;
@@ -19,7 +21,7 @@ function CartButton() {
 
   return (
     <Link href="/cart" className="flex items-center relative">
-      <ShoppingBasket className="h-8 mr-1" /> Cart
+      <ShoppingBasket className="h-8 mr-1" /> {t("cart")}
       <div
         className={cn(
           (!state || Object.keys(state).length == 0) && "hidden",

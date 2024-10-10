@@ -49,15 +49,20 @@
     }
   },
   "About": {
-    "title": "About",
-    "test": "spanish"
+    "title": "About us",
+    "content": "Welcome to Maharaja Mart, your one-stop shop for authentic Indian groceries and a delightful exploration of international flavors! We are passionate about bringing the vibrant taste of India to Wrocław and Poznań, while also celebrating the rich culinary traditions of Africa, Indonesia, Vietnam, and Pakistan.<br><br><h3>Our Story</h3> Maharaja Mart was founded on the belief that food is a universal language, connecting people from all walks of life. We strive to create a welcoming space where everyone can discover new ingredients, awaken their taste buds, and embark on a delicious journey of cultural exploration.<br><br><h3>Our Commitment</h3><b>Wide Variety:</b><br>We offer an extensive selection of Indian groceries, from fragrant basmati rice and aromatic spices to flavorful dals and ready-to-eat curries. We also stock a diverse range of African, Indonesian, Vietnamese, and Pakistani products, ensuring you can find all the ingredients you need to create authentic dishes from across the globe.<br><b>Halal Guarantee</b>: We understand the importance of religious dietary restrictions. A significant portion of our Indian selection is certified Halal, ensuring peace of mind for our Muslim customers.<br><b>Inclusivity</b>: Maharaja Mart embraces all religions and cultures. We celebrate diversity and promote understanding through the shared love of food.<br><b>Community Spirit</b>: We are actively involved in cultural events across Wrocław and Poznań. Look for our stall at local festivals, where you can sample delicious food, learn about different culinary traditions, and experience the joy of community.<br><br><h3>Join the Maharaja Mart Family</h3>Whether you're a seasoned cook or just starting to explore the world of spices, we're here to guide you. Our friendly staff is knowledgeable about our products and happy to answer your questions. Come visit us in Wrocław or Poznań, browse our aisles, and embark on a flavorful adventure! We look forward to welcoming you to the Maharaja Mart family."
+  },
+  "Contact": {
+    "title": "Contact",
+    "content": "We welcome you to contact us via the phone number: "
   },
   "Category": {
-    "noProudcts": "No products in this category availible yet."
+    "noProudcts": "No products in this category availible yet.",
+    "loading": "Loading more products..."
   },
   "Product": {
     "added": "Product added to cart",
-    "addedDescription": "{quantity, plural, one {# test} other {# t}} of \"{name}\" {quantity, plural, one {was} other {}} added to the cart",
+    "addedDescription": "{quantity} of \"{name}\" {quantity, plural, one {was} other {were}} added to the cart",
     "maxQuantity": "You can't add more than 100 of this product",
     "quantity": "Quantity"
   },
@@ -65,10 +70,28 @@
     "items": "items",
     "cart": "Cart",
     "totalPrice": "Total price: ",
+    "singlePrice": "Singular price: ",
     "productPrice": "Product price: ",
     "deliveryFee": "Delivery fee: ",
-    "transactionFee": "TransactionFee: ",
+    "transactionFee": "Transaction fee: ",
     "addedAtCheckout": "Added at checkout",
     "proceed": "Proceed to checkout"
+  },
+  "Checkout": {
+    "title": "Checkout",
+    "fullName": "Full name",
+    "address": "Adress (street, house/flat number)",
+    "extraInfo": "Extra info",
+    "extraInfoDesc": "Additional instructions for shipping",
+    "postalCode": "Postal code",
+    "town": "Town",
+    "email": "Email adress",
+    "phone": "Phone number",
+    "pay": "Pay",
+    "paymentInfo": "We support payment via card, Apple Pay, Google Pay, transfer and BLIK with przelewy24. The payment fee is an additional fee required by przelewy24 to process the transaction.",
+    "paymentError": "Eror occured. Could not register transaction.",
+    "redirecting": "Redirecting to przelewy24 payment website",
+    "success": "Successfully registered order",
+    "successDesc": "Congratulations! Your order has been registered. You should receive a payment confirmation email right away. When we'll ship your order, we'll email you with the shipping information."
   }
 }

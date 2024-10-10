@@ -1,9 +1,8 @@
 // A script that turns JSON exported from a google docs spreadsheet into usable objects for the products.ts file
 interface ISheetProduct {
   products: string;
-  oldPricePln?: number | string;
-  buyPrice?: number | string;
-  newPrice?: number | string;
+  pricePln?: number | string;
+  description?: string;
   picture?: string;
 }
 
@@ -19,7 +18,7 @@ let currentCategory = "cosmetics";
 for (const sheetProduct of sheetProducts) {
   const name = _.camelCase(_.deburr(sheetProduct.products));
 
-  if (typeof sheetProduct.buyPrice === "string") {
+  if (typeof sheetProduct.pricePln === "string") {
     // If buyPrice is a string, it means it's a category row
     newProducts[name] = {
       displayName: {
@@ -29,10 +28,11 @@ for (const sheetProduct of sheetProducts) {
       products: {},
     };
     currentCategory = name;
-  } else if (typeof sheetProduct.oldPricePln === "number") {
+  } else if (typeof sheetProduct.pricePln === "number") {
     let newProduct: Product = {
       displayName: sheetProduct.products,
-      price: sheetProduct.oldPricePln,
+      price: sheetProduct.pricePln,
+      description: sheetProduct.description,
       picture: sheetProduct.picture,
     };
     newProducts[currentCategory].products[name] = newProduct;

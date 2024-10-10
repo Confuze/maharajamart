@@ -1,73 +1,86 @@
 {
   "cosmetics": {
     "displayName": {
-      "en": "Comestics",
-      "pl": "Comestics"
+      "en": "Cosmetics",
+      "pl": "Cosmetics"
     },
     "products": {
       "daburHerbalNeemToothpaste100G": {
         "displayName": "Dabur Herbal Neem Toothpaste 100g",
         "price": 18,
+        "description": "Experience the ancient wisdom of Ayurveda with Dabur Herbal Neem Toothpaste. Infused with the powerful antibacterial properties of neem, this toothpaste effectively combats germs, prevents cavities, and freshens breath. Enjoy the benefits of a healthier smile with every brush.",
         "picture": "https://image.ceneostatic.pl/data/products/26613845/f-dabur-pasta-do-zebow-bez-fluoru-z-neem-100-g.jpg"
       },
       "daburRedToothpaste100G": {
-        "displayName": " Dabur red toothpaste 100g",
+        "displayName": "Dabur red toothpaste 100g",
         "price": 15,
+        "description": "Rediscover the power of Ayurveda with Dabur Red Toothpaste. Infused with potent herbal extracts, this time-tested formula provides comprehensive oral care. Experience the invigorating blend of black pepper, long pepper, and ginger that not only effectively cleanses but also helps strengthen gums and prevent cavities. Enjoy long-lasting fresh breath and a radiant smile with the generous 200g size. Embrace the holistic approach to oral hygiene and unlock the secrets of a healthy mouth with Dabur Red.",
         "picture": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.myshoptet.com%2Fusr%2Fwww.swagat.cz%2Fuser%2Fshop%2Fbig%2F1661_dabur-red-toothpaste-100g.jpg%3F64171c41&f=1&nofb=1&ipt=869dcd1a03f90c9965bc8d1f97703879a33294cde3db457de913034f58128b7f&ipo=images"
       },
       "daburRedToothpaste200G": {
-        "displayName": " Dabur red toothpaste 200g",
+        "displayName": "Dabur red toothpaste 200g",
         "price": 25,
+        "description": "Rediscover the power of Ayurveda with Dabur Red Toothpaste. Infused with potent herbal extracts, this time-tested formula provides comprehensive oral care.Experience the invigorating blend of black pepper, long pepper, and ginger that not only effectively cleanses but also helps strengthen gums and prevent cavities. Enjoy long-lasting fresh breath and a radiant smile with the generous 200g size. Embrace the holistic approach to oral hygiene and unlock the secrets of a healthy mouth with Dabur Red.",
         "picture": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fdavai24.com%2Fwp-content%2Fuploads%2F2021%2F06%2Fdabur-red.jpg&f=1&nofb=1&ipt=e8ed339ad2c934967f4f7905a0b13cec23cedfd9ccfb92467b40cf4974f94cb2&ipo=images"
       },
       "viccoVajradanti100G": {
-        "displayName": "Vicco Vajradanti 100g ",
+        "displayName": "Vicco Vajradanti 100g",
         "price": 15,
+        "description": "Experience the timeless wisdom of Ayurveda with Vicco Vajradanti, a legendary toothpaste that has been trusted for generations. This 100g pack is packed with the goodness of 20 powerful herbs, meticulously blended to deliver exceptional oral care. Witness the transformation as Vicco Vajradanti strengthens your teeth, revitalizes your gums, and leaves your breath irresistibly fresh. Embrace the authentic Ayurvedic experience and unlock the secret to a dazzling smile.",
         "picture": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.myshoptet.com%2Fusr%2Fwww.swagat.cz%2Fuser%2Fshop%2Fbig%2F4730_vicco-vajradanti-ayurvedic-toothpaste-100g.jpg%3F64171c41&f=1&nofb=1&ipt=84bb271a79cd4be87edf1a66259c73ffbc4b3be28edada46a8487851d5afe4c2&ipo=images"
       },
       "viccoVajradanti200G": {
-        "displayName": "Vicco Vajradanti 200g ",
+        "displayName": "Vicco Vajradanti 200g",
         "price": 20,
+        "description": "Experience the timeless wisdom of Ayurveda with Vicco Vajradanti, a legendary toothpaste that has been trusted for generations. This 100g pack is packed with the goodness of 20 powerful herbs, meticulously blended to deliver exceptional oral care. Witness the transformation as Vicco Vajradanti strengthens your teeth, revitalizes your gums, and leaves your breath irresistibly fresh. Embrace the authentic Ayurvedic experience and unlock the secret to a dazzling smile.",
         "picture": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fdown-ph.img.susercontent.com%2Ffile%2Fc0807ac233c9bbcf070274a3c01c6dfd&f=1&nofb=1&ipt=715f1c346b5221e208c1c95ee48b87a5b1aea7fb30a5c42bcbbaa4b67f642276&ipo=images"
       },
       "pantanjailDantKanti100G": {
         "displayName": "Pantanjail Dant Kanti 100g",
         "price": 15,
+        "description": "Experience the holistic power of Ayurveda with Patanjali Dant Kanti toothpaste. This 100g tube is packed with nature's goodness to deliver a comprehensive oral care solution. Infused with a unique blend of herbs, Dant Kanti gently yet effectively cleanses your teeth, strengthens gums, and leaves your breath undeniably fresh. Say goodbye to dental woes and hello to a radiant smile. Embrace the natural way to oral health with Patanjali Dant Kanti.",
         "picture": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.GPxQ1jBSCA-s9iKcOTJkGgHaHa%26pid%3DApi&f=1&ipt=cf62e97e29ea5f45d0b65825e2fabb2c9827d502cf6c82ee21c587c10dcadecb&ipo=images"
       },
       "pantanjailDantKanti200G": {
         "displayName": "Pantanjail Dant Kanti 200g",
         "price": 18,
+        "description": "Experience the holistic power of Ayurveda with Patanjali Dant Kanti toothpaste. This 100g tube is packed with nature's goodness to deliver a comprehensive oral care solution. Infused with a unique blend of herbs, Dant Kanti gently yet effectively cleanses your teeth, strengthens gums, and leaves your breath undeniably fresh. Say goodbye to dental woes and hello to a radiant smile. Embrace the natural way to oral health with Patanjali Dant Kanti.",
         "picture": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FI%2F71iJhijc3lL._SL1500_.jpg&f=1&nofb=1&ipt=635accb8517f8fc539895d907294469694ce62389247b03b93e2b1ba3a053b70&ipo=images"
       },
       "viccoVajrandanti18HerbsAndBarksSaunfFlavour160G": {
-        "displayName": "Vicco Vajrandanti 18 herbs and Barks saunf Flavour 160g ",
+        "displayName": "Vicco Vajrandanti 18 herbs and Barks saunf Flavour 160g",
         "price": 20,
+        "description": "Indulge in the time-honored tradition of Ayurvedic oral care with Vicco Vajradanti's 18 Herbs and Barks Saunf Flavour toothpaste. This unique formulation harnesses the power of 18 carefully selected herbs and barks to deliver exceptional oral health benefits. Experience the refreshing taste of fennel as it invigorates your senses while the potent blend of Ayurvedic ingredients works to strengthen your teeth, prevent cavities, and combat bad breath. With its generous 160g size, this toothpaste offers long-lasting freshness and protection. Discover the secret to a naturally radiant smile with Vicco Vajradanti.",
         "picture": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.DfBdhnGhoWEGTsEg5bLudgAAAA%26pid%3DApi&f=1&ipt=17a5d12ec49bc7dd23d32fd4d729f29b854b957593dbe7e505b7bbc3f425a5bf&ipo=images"
       },
       "himalayaCompleteCareToothpaste150G": {
         "displayName": "Himalaya Complete Care toothpaste 150g",
         "price": 18,
+        "description": "Experience the holistic power of nature with Himalaya Complete Care toothpaste. This 150g tube combines the wisdom of Ayurveda with modern science to provide comprehensive oral care. Infused with a unique blend of herbs, this toothpaste effectively strengthens gums, prevents cavities, and freshens breath. Say goodbye to dental worries and hello to a confident smile. Discover the difference of Himalaya Complete Care and embrace a healthier you.",
         "picture": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.1zJPd0YikZpgC65wWlZ_pgHaDB%26pid%3DApi&f=1&ipt=ddd6cef68ce9e5b874ea177b871242296f211970ccdade9586be36d6790b086c&ipo=images"
       },
       "himalayaSparklingWhite80G": {
         "displayName": "Himalaya Sparkling White 80g",
         "price": 15,
+        "description": "Reveal your dazzling smile with Himalaya Sparkling White toothpaste. This 80g tube harnesses the power of nature to gently yet effectively remove stains, leaving your teeth noticeably whiter. Enriched with the goodness of papaya and pineapple enzymes, this unique formula helps restore your teeth's natural luster without harsh chemicals. Experience the joy of a brighter smile and fresh breath with every brush. Discover the secret to a confident you with Himalaya Sparkling White.",
         "picture": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.-Hmke_R24vxFjLm9P1R8SQHaHa%26pid%3DApi&f=1&ipt=4783d459043859852a807cdf1812f5e8a2e247e10908b6321a2b4468b05e6a35&ipo=images"
       },
       "daburHerbalActivatedCharcoal100G": {
         "displayName": "Dabur Herbal Activated Charcoal 100g",
         "price": 15,
+        "description": "Wake up your senses with Dabur Herbal Active Fresh toothpaste. This compact 80g tube packs a powerful punch of freshness. Infused with invigorating herbal extracts, it leaves your mouth feeling revitalized and your breath irresistibly clean. Experience the long-lasting freshness that only nature can provide. Perfect for on-the-go, this toothpaste is your daily dose of confidence.",
         "picture": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.idealo.com%2Ffolder%2FProduct%2F202714%2F5%2F202714557%2Fs1_produktbild_max%2Fdabur-herbal-activated-charcoal-toothpaste-3-x-100ml.jpg&f=1&nofb=1&ipt=d9c1e597eedec103ebd9900afc8021ecd7300dafa11ef5864c86a02e735582b6&ipo=images"
       },
       "daburHerbalActiveFresh80G": {
         "displayName": "Dabur Herbal Active Fresh 80g",
         "price": 18,
+        "description": "Wake up your senses with Dabur Herbal Active Fresh toothpaste. This compact 80g tube packs a powerful punch of freshness. Infused with invigorating herbal extracts, it leaves your mouth feeling revitalized and your breath irresistibly clean. Experience the long-lasting freshness that only nature can provide. Perfect for on-the-go, this toothpaste is your daily dose of confidence.",
         "picture": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.CNwXcJp7q0OlEdlNBPG4JgAAAA%26pid%3DApi&f=1&ipt=5c7b8d7e7111676501854928a54b8a53187850c2449965f8075eb5a6f2d19e56&ipo=images"
       },
       "satisabgol100G": {
         "displayName": "Satisabgol 100g",
         "price": 13,
+        "description": "Experience natural relief from constipation with Satisabgol.This 100g pack of pure psyllium husk is a time-tested Ayurvedic remedy that gently promotes regular bowel movements. The high fiber content helps to improve digestion, reduce bloating, and support overall gut health. Satisabgol is a gentle and effective solution for a healthy digestive system.",
         "picture": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.spicestore.hk%2F2135-large_default%2Ftelephone-sat-isabgol-psyllium-husk-100g.jpg&f=1&nofb=1&ipt=e65f9ff1af321b4e4792a9f5fb87e9a0c37a723766da6e1c5ccca2cc37bac127&ipo=images"
       },
       "enoLime100G": {
@@ -126,12 +139,12 @@
         "picture": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.ZOZtmh-kh7yXzd8f1399HwHaHa%26pid%3DApi&f=1&ipt=0b737ca85b0803c1e0b3ff4bd7584a4881cefbff4f0f04af975d399b19a09f83&ipo=images"
       },
       "parachuteCoconutOil200Ml": {
-        "displayName": " Parachute Coconut oil 200ml",
+        "displayName": "Parachute Coconut oil 200ml",
         "price": 18,
         "picture": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FI%2F61dUCXFgN3L._SL1500_.jpg&f=1&nofb=1&ipt=aa12bc72004f271b3cf559c2af2ada98fcfc65d1d03724d9917b14f2ed33810d&ipo=images"
       },
       "nupurHenna100PureHenna150G": {
-        "displayName": "Nupur  henna 100% pure henna 150g",
+        "displayName": "Nupur henna 100% pure henna 150g",
         "price": 15,
         "picture": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.ZjvlHHdanm4wuNVw9yZMswHaHa%26pid%3DApi&f=1&ipt=1f35d82a194a00f237c94c3f80518802a34becb9acb6506bbf9b44ef411e13fc&ipo=images"
       },
@@ -181,7 +194,7 @@
         "picture": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.VbB-syBLN4F0VHf5l3rJbQHaHa%26pid%3DApi&f=1&ipt=0ef8886d5d8998745da2313863f997e901e97fbef1e986cd9a48f84e8520c483&ipo=images"
       },
       "himalayaClarina60Ml": {
-        "displayName": "himalaya  clarina 60ml ",
+        "displayName": "himalaya clarina 60ml",
         "price": 15,
         "picture": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fnewassets.apollo247.com%2Fpub%2Fmedia%2Fcatalog%2Fproduct%2Fc%2Fl%2Fcla0257_1.jpg&f=1&nofb=1&ipt=12722b0c7697d37fda8b42205644625997cd86a6f1065140ea695a8eccfb0b12&ipo=images"
       },
@@ -206,7 +219,7 @@
         "picture": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.DSdhBz8fqqQBVlQtHrXTgAHaHa%26pid%3DApi&f=1&ipt=218cd4d1f0a5d11ac534d145067a527a0623bdd89c6e36a0a089f46f6fc218ed&ipo=images"
       },
       "borline20G": {
-        "displayName": "Borline 20g ",
+        "displayName": "Borline 20g",
         "price": 10,
         "picture": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.E9wMUgchv0UoiRzsE5YKdwHaHa%26pid%3DApi&f=1&ipt=4650ec4cdbc4dc623ba60d5cdb7e19b34b5b349ce9affcd61b21ad861b721043&ipo=images"
       },
@@ -216,7 +229,7 @@
         "picture": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.p3IekML3WkutGcZVDIzXzwHaJb%26pid%3DApi&f=1&ipt=9dd588786fdffcaed03fcfb5680aebb7dfaeb51cbcb0f90eb8db7012b1d63561&ipo=images"
       },
       "iodex40G": {
-        "displayName": "Iodex 40g ",
+        "displayName": "Iodex 40g",
         "price": 12,
         "picture": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.s_MG0aNsb2oZy0upA-cExAHaHa%26pid%3DApi&f=1&ipt=d91618c210383d675978869813fa0aeada69a9cd5267a7e6a149fdaf98e3eede&ipo=images"
       },
@@ -226,7 +239,7 @@
         "picture": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.kpv0j_ON-4IrnOH4alyxTQHaHa%26pid%3DApi&f=1&ipt=7fad8ba3905cf36dedd2f00bc8f3e592338de3fd6688f06187bb34c955279122&ipo=images"
       },
       "tigerBalm21Ml": {
-        "displayName": "Tiger balm 21ml ",
+        "displayName": "Tiger balm 21ml",
         "price": 10,
         "picture": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.BLr2QCpmCK9xZ9pt6lSe3wHaHa%26pid%3DApi&f=1&ipt=0c6894bb78b0045d23b143580f2399313fca4d0df9dd65331be53050d2367000&ipo=images"
       },
@@ -236,7 +249,7 @@
         "picture": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.HCh57hkKBut-ymUmMsoXYgHaI4%26pid%3DApi&f=1&ipt=e65e611439cb3b2551a3c75ff46f092acf78a8038538ceb0c486cf09f4e129f7&ipo=images"
       },
       "naturalFullersEarthPowder100G": {
-        "displayName": "Natural fuller's earth powder 100g ",
+        "displayName": "Natural fuller's earth powder 100g",
         "price": 12.99
       },
       "hemaniBlackSeedSoap75G": {
@@ -266,7 +279,7 @@
         "price": 10
       },
       "himalayaGentleBabySoap125G": {
-        "displayName": "Himalaya gentle baby soap 125g ",
+        "displayName": "Himalaya gentle baby soap 125g",
         "price": 10
       },
       "mysoreSandalSoap75G": {
@@ -294,7 +307,7 @@
         "price": 7
       },
       "himalayaSaponeProtettivoAlNeemECurcuma75G": {
-        "displayName": " Himalaya sapone protettivo al neem e curcuma75g",
+        "displayName": "Himalaya sapone protettivo al neem e curcuma75g",
         "price": 4
       },
       "patanjaliMograBodyCleaner75G": {
@@ -302,7 +315,7 @@
         "price": 8.5
       },
       "janatAlghar200G": {
-        "displayName": "Janat  alghar200g",
+        "displayName": "Janat alghar200g",
         "price": 15
       },
       "rin15G": {
@@ -329,9 +342,17 @@
       "pl": "Spices"
     },
     "products": {
+      "pranCrushedChill100G": {
+        "displayName": "PRAN Crushed Chill 100g",
+        "price": 9
+      },
       "mdhTeaPlusMasala100G": {
         "displayName": "MDH Tea plus masala 100g",
         "price": 12
+      },
+      "pranDryWholeChilli100G": {
+        "displayName": "Pran Dry whole chilli 100g",
+        "price": 13
       },
       "mdhPavBhajiMasala100G": {
         "displayName": "MDH Pav bhaji masala 100g",
@@ -358,11 +379,11 @@
         "price": 9
       },
       "mdhBombayBiryaniMasala100G": {
-        "displayName": " MDH Bombay biryani masala 100g",
+        "displayName": "MDH Bombay biryani masala 100g",
         "price": 9.72
       },
       "mdhJalJeeraMasala100G": {
-        "displayName": " MDH Jal-jeera masala 100g",
+        "displayName": "MDH Jal-jeera masala 100g",
         "price": 9
       },
       "mdhRajmahMasala100G": {
@@ -378,7 +399,7 @@
         "price": 13
       },
       "mdhTandooriMasala100G": {
-        "displayName": "MDH  Tandoori masala 100g",
+        "displayName": "MDH Tandoori masala 100g",
         "price": 8
       },
       "mdhKashmiriMasala100G": {
@@ -392,6 +413,10 @@
       "mdhSabjiMasala100G": {
         "displayName": "MDH Sabji masala 100g",
         "price": 9
+      },
+      "pranDryBayLeaf50G": {
+        "displayName": "Pran Dry Bay Leaf 50g",
+        "price": 10
       },
       "mdhTavaFryMasala100G": {
         "displayName": "MDH Tava fry masala 100g",
@@ -422,7 +447,7 @@
         "price": 8
       },
       "nationalTandooriMasala41G": {
-        "displayName": " NATIONAL Tandoori masala 41G",
+        "displayName": "NATIONAL Tandoori masala 41G",
         "price": 10
       },
       "nationalSeekhKebab46G": {
@@ -430,7 +455,7 @@
         "price": 10
       },
       "nationalQeema39G": {
-        "displayName": "NATIONAL  Qeema 39g",
+        "displayName": "NATIONAL Qeema 39g",
         "price": 10
       },
       "nationalBihariKebab42G": {
@@ -442,7 +467,7 @@
         "price": 10
       },
       "nationalBombayBiryani55G": {
-        "displayName": " NATIONAL Bombay biryani 55g",
+        "displayName": "NATIONAL Bombay biryani 55g",
         "price": 10
       },
       "nationalChickenMasala39G": {
@@ -514,67 +539,67 @@
         "price": 8
       },
       "shanDalMasala100G": {
-        "displayName": " SHAN dal masala 100g",
+        "displayName": "SHAN dal masala 100g",
         "price": 8
       },
       "shanChickenMasala50G": {
-        "displayName": " SHAN chicken masala 50g",
+        "displayName": "SHAN chicken masala 50g",
         "price": 8
       },
       "shanKeemaMasala50G": {
-        "displayName": " SHAN keema masala 50g",
+        "displayName": "SHAN keema masala 50g",
         "price": 7
       },
       "shanKoftaMasala50G": {
-        "displayName": " SHAN kofta masala 50g",
+        "displayName": "SHAN kofta masala 50g",
         "price": 7
       },
       "shanKormaMasala50G": {
-        "displayName": " SHAN  korma masala 50g",
+        "displayName": "SHAN korma masala 50g",
         "price": 7
       },
       "shanMeatMasala50G": {
-        "displayName": " SHAN meat masala 50g",
+        "displayName": "SHAN meat masala 50g",
         "price": 8
       },
       "shanChapliKebeb100G": {
-        "displayName": " SHAN chapli kebeb 100g",
+        "displayName": "SHAN chapli kebeb 100g",
         "price": 8
       },
       "shanMeatTenderizer40G": {
-        "displayName": " SHAN meat tenderizer 40g",
+        "displayName": "SHAN meat tenderizer 40g",
         "price": 8
       },
       "shanBihariKebab50G": {
-        "displayName": " SHAN bihari kebab 50g",
+        "displayName": "SHAN bihari kebab 50g",
         "price": 8
       },
       "shanSindiBiriyani50G": {
-        "displayName": " SHAN Sindi biriyani 50g",
+        "displayName": "SHAN Sindi biriyani 50g",
         "price": 8
       },
       "shanBombayBiriyani50G": {
-        "displayName": " SHAN Bombay biriyani 50g",
+        "displayName": "SHAN Bombay biriyani 50g",
         "price": 8
       },
       "shanKarachiBeefBiriyani50G": {
-        "displayName": " SHAN karachi beef biriyani 50g",
+        "displayName": "SHAN karachi beef biriyani 50g",
         "price": 8
       },
       "shanFiredFish50G": {
-        "displayName": " SHAN fired fish 50g",
+        "displayName": "SHAN fired fish 50g",
         "price": 8
       },
       "shanButterChicken50G": {
-        "displayName": " SHAN butter chicken 50g",
+        "displayName": "SHAN butter chicken 50g",
         "price": 8
       },
       "shanLahoriCharga50G": {
-        "displayName": "SHAN  lahori charga 50g",
+        "displayName": "SHAN lahori charga 50g",
         "price": 8
       },
       "shanChanaMasala100G": {
-        "displayName": " SHAN chana masala 100g",
+        "displayName": "SHAN chana masala 100g",
         "price": 8
       },
       "shanYakhaniPalua50G": {
@@ -594,7 +619,7 @@
         "price": 9
       },
       "trsCuminPowder100G": {
-        "displayName": " TRS  Cumin powder 100g",
+        "displayName": "TRS Cumin powder 100g",
         "price": 8
       },
       "trsCorianderPowder100G": {
@@ -622,7 +647,7 @@
         "price": 7
       },
       "trsCharMagaz100G": {
-        "displayName": "TRS  Char magaz 100g",
+        "displayName": "TRS Char magaz 100g",
         "price": 12
       },
       "trsPoppySeeds100G": {
@@ -664,6 +689,10 @@
       "trsBlackCardamon50G": {
         "displayName": "TRS Black cardamon 50g",
         "price": 13
+      },
+      "heeraGreenCardamom700G": {
+        "displayName": "Heera Green Cardamom 700g",
+        "price": 200
       },
       "trsGreenCardamon50G": {
         "displayName": "TRS Green cardamon 50g",
@@ -710,7 +739,7 @@
         "price": 8
       },
       "trsMildMadrassPowder100G": {
-        "displayName": " TRS Mild madrass powder 100g",
+        "displayName": "TRS Mild madrass powder 100g",
         "price": 8
       },
       "trsWhitePepperWhole100G": {
@@ -726,11 +755,11 @@
         "price": 8
       },
       "trsGarlicPowder100G": {
-        "displayName": "TRS  garlic powder 100g ",
+        "displayName": "TRS garlic powder 100g",
         "price": 8
       },
       "trsBayleaf30G": {
-        "displayName": "TRS  bayleaf 30g",
+        "displayName": "TRS bayleaf 30g",
         "price": 11
       },
       "trsRedWholeChilli150G": {
@@ -794,7 +823,7 @@
         "price": 12
       },
       "priyaGarlicPickle300G": {
-        "displayName": "PRIYA  Garlic pickle 300g",
+        "displayName": "PRIYA Garlic pickle 300g",
         "price": 12
       },
       "priyaMangoGingerPickle300G": {
@@ -806,7 +835,7 @@
         "price": 12
       },
       "priyaTomatoPickle300G": {
-        "displayName": "PRIYA  Tomato pickle 300g",
+        "displayName": "PRIYA Tomato pickle 300g",
         "price": 12
       },
       "ashokaFreshTumericPowder500G": {
@@ -816,6 +845,10 @@
       "ashokaChhundoPickle575G": {
         "displayName": "ASHOKA Chhundo Pickle 575g",
         "price": 16
+      },
+      "pataksVindalooCurryPaste23Kg": {
+        "displayName": "PATAK'S Vindaloo Curry Paste 2.3kg",
+        "price": 78
       },
       "ashokaChilliPickle480G": {
         "displayName": "ASHOKA Chilli pickle 480g",
@@ -846,7 +879,7 @@
         "price": 12
       },
       "priyaTenderMangoPickle300G": {
-        "displayName": "PRIYA Tender Mango Pickle 300g ",
+        "displayName": "PRIYA Tender Mango Pickle 300g",
         "price": 12
       },
       "priyaMangoThokku300G": {
@@ -878,7 +911,7 @@
         "price": 12
       },
       "jivaaGingerPaste300G": {
-        "displayName": "JIVAA Ginger Paste 300g ",
+        "displayName": "JIVAA Ginger Paste 300g",
         "price": 12
       },
       "ashokaPeeledGingerGarlicPasteWithOil300G": {
@@ -909,6 +942,22 @@
         "displayName": "MTR Mango Tender 300g",
         "price": 15
       },
+      "shanChilliPickle1Kg": {
+        "displayName": "SHAN Chilli Pickle 1kg",
+        "price": 28
+      },
+      "shanHyderabadiPickle1Kg": {
+        "displayName": "SHAN Hyderabadi Pickle 1kg",
+        "price": 32
+      },
+      "shanLemonPickle1Kg": {
+        "displayName": "SHAN Lemon Pickle 1kg",
+        "price": 28
+      },
+      "shanMangoPickle1Kg": {
+        "displayName": "SHAN Mango Pickle 1kg",
+        "price": 28
+      },
       "ahmedFoodsGarlicPickleInOil1Kg": {
         "displayName": "AHMED FOODS Garlic Pickle In Oil 1kg",
         "price": 36
@@ -922,7 +971,7 @@
     },
     "products": {
       "heeraMincedGreenChilliPaste210G": {
-        "displayName": "HEERA Minced Green Chilli paste 210g ",
+        "displayName": "HEERA Minced Green Chilli paste 210g",
         "price": 9
       },
       "pataksTandooriMarinadePaste312G": {
@@ -942,11 +991,11 @@
         "price": 15
       },
       "ashokaMadrasCurryPaste300G": {
-        "displayName": "ASHOKA Madras Curry Paste 300g ",
+        "displayName": "ASHOKA Madras Curry Paste 300g",
         "price": 15
       },
       "ashokaButterChickenPaste300G": {
-        "displayName": "ASHOKA Butter Chicken Paste 300g ",
+        "displayName": "ASHOKA Butter Chicken Paste 300g",
         "price": 15
       },
       "ashokaBiriyaniPaste300G": {
@@ -954,7 +1003,7 @@
         "price": 15
       },
       "cockbrandTomYumInstantHotAndSourPaste227G": {
-        "displayName": " COCKBRAND TOM YUM Instant Hot and Sour Paste 227g",
+        "displayName": "COCKBRAND TOM YUM Instant Hot and Sour Paste 227g",
         "price": 15
       },
       "cockbrandRedCurryPaste400G": {
@@ -1026,7 +1075,7 @@
         "price": 9
       },
       "enconaExxtraHotPepperSauce142Ml": {
-        "displayName": "ENCONA Exxtra Hot Pepper Sauce 142ml ",
+        "displayName": "ENCONA Exxtra Hot Pepper Sauce 142ml",
         "price": 18
       },
       "enconaOriginalHotPepperSauce142Ml": {
@@ -1061,8 +1110,44 @@
         "displayName": "POR KWAN Tamarind Sauce 227g",
         "price": 17
       },
+      "pantaiShrimpPaste100G": {
+        "displayName": "PANTAI Shrimp Paste 100g",
+        "price": 15
+      },
+      "puckSpread240G": {
+        "displayName": "PUCK Spread 240g",
+        "price": 18
+      },
       "shahiaRoastedEggplant450G": {
-        "displayName": "SHAHIA Roasted Eggplant 450g ",
+        "displayName": "SHAHIA Roasted Eggplant 450g",
+        "price": 18
+      },
+      "zenaLimeSyrup750Ml": {
+        "displayName": "ZENA Lime Syrup 750ml",
+        "price": 25
+      },
+      "hamdardDawakhanaSharbatRoohafza750Ml": {
+        "displayName": "HAMDARD DAWAKHANA sharbat roohafza 750ml",
+        "price": 25
+      },
+      "chtouraGardenPomogranteMolasses710Ml": {
+        "displayName": "CHTOURA Garden Pomogrante Molasses 710ml",
+        "price": 22
+      },
+      "burcuNarSirkesi500Ml": {
+        "displayName": "BURCU Nar Sirkesi 500ml",
+        "price": 8
+      },
+      "yaylaNaarEksisi250Ml": {
+        "displayName": "YAYLA Naar Eksisi 250ml",
+        "price": 9
+      },
+      "bizimTarlaNarserab260G": {
+        "displayName": "BIZIM TARLA Narserab 260g",
+        "price": 9
+      },
+      "laraGrilledEggppant610G": {
+        "displayName": "LARA Grilled Eggppant 610g",
         "price": 18
       }
     }
@@ -1072,28 +1157,1220 @@
       "en": "Rice & Flour",
       "pl": "Rice & Flour"
     },
-    "products": {}
+    "products": {
+      "zaukPunjabiBasmatiRice500G": {
+        "displayName": "ZAUK Punjabi Basmati Rice 500g",
+        "price": 9
+      },
+      "garimaaXxlGrainAromaticBasmatiRice1Kg": {
+        "displayName": "GARIMAA XXL Grain Aromatic Basmati Rice 1kg",
+        "price": 16
+      },
+      "lailaBasmatiRice1Kg": {
+        "displayName": "LAILA Basmati Rice 1kg",
+        "price": 18
+      },
+      "bannoTraditionalBasmatiRice1Kg": {
+        "displayName": "BANNO Traditional Basmati Rice 1kg",
+        "price": 18
+      },
+      "pranPuffedRice500G": {
+        "displayName": "PRAN Puffed Rice 500g",
+        "price": 14
+      },
+      "trsMamraPuffedRice200G": {
+        "displayName": "TRS Mamra Puffed Rice 200g",
+        "price": 6
+      },
+      "himalayanQueenBasmatiRiceSuperExtraLong1Kg": {
+        "displayName": "HIMALAYAN QUEEN Basmati Rice Super Extra long 1kg",
+        "price": 17
+      },
+      "himalayanQueenBasmatiRice1121ExtraLong1Kg": {
+        "displayName": "HIMALAYAN QUEEN Basmati Rice 1121 Extra long 1kg",
+        "price": 18
+      },
+      "smartChefThaiJasmineRice1Kg": {
+        "displayName": "SMART CHEF Thai Jasmine Rice 1kg",
+        "price": 23
+      },
+      "himalayaLongGrainWhiteRice1Kg": {
+        "displayName": "HIMALAYA Long Grain White Rice 1kg",
+        "price": 17
+      },
+      "indiaGateSonaMasoooriRice2Kg": {
+        "displayName": "INDIA GATE Sona Masooori Rice 2kg",
+        "price": 29
+      },
+      "pran1121BasmatiExtraLongRiceRisoBasmati1Kg": {
+        "displayName": "PRAN 1121 Basmati Extra Long Rice Riso Basmati1kg",
+        "price": 16
+      },
+      "heeraMediumPowaRiceFlakes1Kg": {
+        "displayName": "HEERA Medium Powa(Rice flakes) 1kg",
+        "price": 17
+      },
+      "heeraThinPowaRiceFlakes1Kg": {
+        "displayName": "HEERA Thin Powa(Rice Flakes) 1kg",
+        "price": 17
+      },
+      "chakraRiceFlakesThin1Kg": {
+        "displayName": "CHAKRA Rice Flakes Thin 1kg",
+        "price": 17
+      },
+      "doubleHorseRedAval500G": {
+        "displayName": "Double Horse Red Aval 500g",
+        "price": 16
+      },
+      "blueBayYamFlour1Kg": {
+        "displayName": "BLUE BAY Yam Flour 1kg",
+        "price": 25
+      },
+      "blueBayCassavaFlour1Kg": {
+        "displayName": "Blue Bay Cassava Flour 1kg",
+        "price": 25
+      },
+      "chakraWhiteRiceFlourFine1Kg": {
+        "displayName": "CHAKRA White Rice flour Fine 1kg",
+        "price": 15
+      },
+      "chakraBajraFlour1Kg": {
+        "displayName": "CHAKRA Bajra flour 1kg",
+        "price": 17
+      },
+      "doubleHorseWhitePuttupadi1Kg": {
+        "displayName": "Double Horse White Puttupadi 1kg",
+        "price": 17
+      },
+      "heeraBuckwheatFlourKuttuKaAtta1Kg": {
+        "displayName": "HEERA Buckwheat flour kuttu ka atta 1kg",
+        "price": 28
+      },
+      "royalKingLongGrainBasmatiRice20Kg": {
+        "displayName": "ROYAL KING Long Grain Basmati Rice 20kg",
+        "price": 230
+      },
+      "garimaaShahiPremiumBasmatiRice10Kg": {
+        "displayName": "GARIMAA Shahi premium basmati rice 10kg",
+        "price": 120
+      },
+      "garimaaGold1121XxlPremiumLongGrainAromaticBasmatiRice20Kg": {
+        "displayName": "GARIMAA gold 1121 XXL Premium Long Grain Aromatic Basmati rice 20kg",
+        "price": 230
+      },
+      "pilsburyChakkiAttaWholeWheatFlour5Kg": {
+        "displayName": "PILSBURY CHAKKI ATTA Whole wheat flour 5kg",
+        "price": 45
+      },
+      "khusbooExtraLongPremiumBasmatiRice20Kg": {
+        "displayName": "KHUSBOO Extra long Premium Basmati rice 20kg",
+        "price": 230
+      },
+      "royalThaiBrokenJasmineRice20Kg": {
+        "displayName": "ROYAL THAI Broken Jasmine Rice 20kg",
+        "price": 156
+      },
+      "indiaGateBasmatiExotic10Kg": {
+        "displayName": "INDIA Gate Basmati Exotic 10kg",
+        "price": 77
+      },
+      "bannoSuperTraditionalBasmatiRice10Kg": {
+        "displayName": "BANNO Super Traditional Basmati rice 10kg",
+        "price": 130
+      },
+      "tildaSuperiorBasmatiBrokens20Kg": {
+        "displayName": "TILDA Superior Basmati Brokens 20kg",
+        "price": 150
+      },
+      "indiaGateJeerakasalaRice5Kg": {
+        "displayName": "INDIA GATE Jeerakasala Rice 5kg",
+        "price": 66
+      },
+      "bannoSellaBasmatiRiceXxl10Kg": {
+        "displayName": "BANNO Sella Basmati Rice XXL 10kg",
+        "price": 100
+      },
+      "jivaa1121XxlBasmatiRice20Kg": {
+        "displayName": "JIVAA 1121 XXL Basmati Rice 20kg",
+        "price": 230
+      },
+      "pillsburyChakkiAtta5Kg": {
+        "displayName": "PILLSBURY Chakki Atta 5kg",
+        "price": 45
+      },
+      "pillsburyChakkiAtta10Kg": {
+        "displayName": "PILLSBURY Chakki Atta 10kg",
+        "price": 85
+      },
+      "aashirvaadWholeWheatFlour10Kg": {
+        "displayName": "AASHIRVAAD Whole Wheat Flour 10kg",
+        "price": 78
+      },
+      "aashirvaadWholeWheatFlour5Kg": {
+        "displayName": "AASHIRVAAD Whole Wheat Flour 5kg",
+        "price": 43
+      },
+      "aashirvaadChakkiAttaWholeWheatFlour10Kg": {
+        "displayName": "AASHIRVAAD CHAKKI ATTA Whole wheat flour 10kg",
+        "price": 78
+      },
+      "jivaa1121XxlBasmatiRice5Kg": {
+        "displayName": "JIVAA 1121 XXL Basmati Rice 5kg",
+        "price": 68
+      },
+      "mahmooodRiceBasmati1121SelllaRicePremium45Kg": {
+        "displayName": "MAHMOOOD RICE Basmati 1121 Sellla Rice Premium 4.5kg",
+        "price": 68
+      },
+      "bannoExtraLongTraditionalBasmatiRice5Kg": {
+        "displayName": "BANNO Extra long traditional basmati rice 5kg",
+        "price": 67
+      },
+      "indiaGateThanjavurPonniBoiledRice5Kg": {
+        "displayName": "INDIA GATE Thanjavur Ponni Boiled Rice 5kg",
+        "price": 53
+      },
+      "indiaGateExtraLongBasmatiExcel5Kg": {
+        "displayName": "INDIA GATE Extra Long Basmati Excel 5kg",
+        "price": 72
+      },
+      "indiaGateBasmatiRiceEveryday5Kg": {
+        "displayName": "INDIA GATE Basmati Rice Everyday 5kg",
+        "price": 70
+      },
+      "garimaaShahiPremiumBasmatiRice5Kg": {
+        "displayName": "GARIMAA Shahi premium basmati rice 5kg",
+        "price": 60
+      },
+      "zaukMehekBasmatiRice5Kg": {
+        "displayName": "ZAUK Mehek Basmati Rice 5kg",
+        "price": 65
+      },
+      "nurJahanLongGrainBasmatiRice5Kg": {
+        "displayName": "NUR Jahan Long Grain Basmati Rice 5kg",
+        "price": 60
+      },
+      "bannoBiriyaniRiceBasmatiRice5Kg": {
+        "displayName": "Banno Biriyani Rice Basmati Rice 5kg",
+        "price": 52
+      },
+      "indiaGateSonaMasoooriRice5Kg": {
+        "displayName": "INDIA GATE Sona Masooori Rice 5kg",
+        "price": 56
+      },
+      "indiaGateExtraLongBasmatiRiceExotic5Kg": {
+        "displayName": "India Gate Extra Long basmati rice Exotic 5kg",
+        "price": 72
+      },
+      "parliamentGoldJumboExtraLongGrainBasmatiRice5Kg": {
+        "displayName": "Parliament Gold Jumbo Extra Long grain basmati rice 5kg",
+        "price": 64
+      },
+      "zaikaBasmati5Kg": {
+        "displayName": "Zaika Basmati 5kg",
+        "price": 68
+      },
+      "pillsburyChakkiAtta1Kg": {
+        "displayName": "PILLSBURY Chakki Atta 1kg",
+        "price": 11
+      },
+      "chakraJowarFlour1Kg": {
+        "displayName": "Chakra Jowar Flour 1kg",
+        "price": 17
+      },
+      "batgaoRiceFlour400G": {
+        "displayName": "BATGAO Rice flour 400g",
+        "price": 14
+      },
+      "botnerGlutinousRiceFlour400G": {
+        "displayName": "BOTNER Glutinous Rice flour 400g",
+        "price": 14
+      },
+      "alibabaKalaChanaFlour1Kg": {
+        "displayName": "Alibaba Kala Chana Flour 1kg",
+        "price": 14
+      },
+      "pranFlattenedRice250G": {
+        "displayName": "Pran Flattened Rice 250g",
+        "price": 6
+      },
+      "heeraGramFlourBesan2Kg": {
+        "displayName": "Heera Gram flour besan 2kg",
+        "price": 26
+      },
+      "heeraCornflour500G": {
+        "displayName": "Heera Cornflour 500g",
+        "price": 17
+      },
+      "heeraDosaMixFlour1Kg": {
+        "displayName": "Heera Dosa Mix flour 1kg",
+        "price": 18
+      },
+      "trsBarleyFlour1Kg": {
+        "displayName": "Trs Barley Flour 1kg",
+        "price": 18
+      },
+      "anilTraditionAboveGenerations500G": {
+        "displayName": "Anil Tradition above generations 500g",
+        "price": 8
+      },
+      "panHarinaDeMaizAmarillo1Kg": {
+        "displayName": "PAN Harina de maiz amarillo 1kg",
+        "price": 16
+      },
+      "khusbooExtraLongPremiumBasmatiRice5Kg": {
+        "displayName": "KHUSBOO Extra long Premium Basmati rice 5kg",
+        "price": 68
+      },
+      "tildaPureOriginalBasmati5Kg": {
+        "displayName": "TILDA Pure original basmati 5kg",
+        "price": 110
+      },
+      "indiaGateIdliRice5Kg": {
+        "displayName": "INDIA GATE Idli Rice 5kg",
+        "price": 58
+      },
+      "royalThaiMilagrosa45Kg": {
+        "displayName": "ROYAL THAI Milagrosa 4.5kg",
+        "price": 68
+      },
+      "heeraIdliMix1Kg": {
+        "displayName": "HEERA Idli mix 1kg",
+        "price": 18
+      },
+      "heeraIdliRava1Kg": {
+        "displayName": "HEERA Idli Rava 1kg",
+        "price": 18
+      },
+      "bannoTraintionalBasmatiRice1Kg": {
+        "displayName": "BANNO Traintional Basmati Rice 1kg",
+        "price": 18
+      },
+      "royalOrientSushiRice1Kg": {
+        "displayName": "ROYAL Orient Sushi Rice 1kg",
+        "price": 16
+      },
+      "heeraRoastedUpmaSooji1Kg": {
+        "displayName": "HEERA Roasted Upma Sooji 1kg",
+        "price": 18
+      },
+      "indiasJaisalBasmatiRice02Gold1Kg": {
+        "displayName": "INDIA'S JAISAL Basmati Rice 02 GOLD 1kg",
+        "price": 22
+      },
+      "healthyGrainRedCargoRice1Kg": {
+        "displayName": "HEALTHY GRAIN Red Cargo Rice 1KG",
+        "price": 23
+      },
+      "annamIdlyRice1Kg": {
+        "displayName": "ANNAM Idly Rice 1kg",
+        "price": 10
+      },
+      "bannoSellaBasmatiRiceXxl1Kg": {
+        "displayName": "BANNO Sella Basmati Rice XXL 1kg",
+        "price": 16
+      },
+      "garimaaGold1121PremiumXxlGrainAromaticBasmatiRice1Kg": {
+        "displayName": "GARIMAA GOLD 1121 premium XXL Grain Aromatic Basmati Rice 1kg",
+        "price": 18
+      },
+      "indiaGateBasmatiRiceExotic1Kg": {
+        "displayName": "INDIA GATE Basmati Rice Exotic 1kg",
+        "price": 20
+      },
+      "jivaaBrownBasmatiRice1Kg": {
+        "displayName": "JIVAA Brown Basmati Rice 1kg",
+        "price": 22
+      },
+      "royalThaiGaoNepDenThom1Kg": {
+        "displayName": "ROYAL THAI Gao Nep Den Thom 1kg",
+        "price": 23
+      },
+      "yaylaTasDegirmenBaldoRice900G": {
+        "displayName": "YAYLA Tas Degirmen Baldo Rice 900g",
+        "price": 23
+      },
+      "royalThaiMIlagrosa1Kg": {
+        "displayName": "ROYAL THAI MIlagrosa 1kg",
+        "price": 23
+      },
+      "royalThaiGoaLuc1Kg": {
+        "displayName": "ROYAL THAI Goa Luc 1kg",
+        "price": 23
+      },
+      "lakshmiIndiaGateIdliRice1Kg": {
+        "displayName": "LAKSHMI INDIA GATE Idli Rice 1kg",
+        "price": 10
+      },
+      "cockBrandFeculeDeTapiocaStarch400G": {
+        "displayName": "COCK BRAND Fecule De Tapioca Starch 400g",
+        "price": 12
+      }
+    }
   },
   "snacksDrinksSweets": {
     "displayName": {
-      "en": "Snacks & Drinks  & Sweets",
-      "pl": "Snacks & Drinks  & Sweets"
+      "en": "Snacks & Drinks & Sweets",
+      "pl": "Snacks & Drinks & Sweets"
     },
-    "products": {}
+    "products": {
+      "dollysMiniGoldenPineappleBiscuits380G": {
+        "displayName": "DOLLY'S Mini Golden Pineapple biscuits 380g",
+        "price": 0
+      },
+      "rasanandKesarMangoes850G": {
+        "displayName": "Rasanand Kesar Mangoes 850g",
+        "price": 17
+      },
+      "haldiramsRasgulla1Kg": {
+        "displayName": "Haldirams Rasgulla 1kg",
+        "price": 35
+      },
+      "malibanGoldMarie330G": {
+        "displayName": "Maliban Gold Marie 330g",
+        "price": 4.5
+      },
+      "malibanChocolatePuffBiscuit200G": {
+        "displayName": "MALIBAN Chocolate Puff Biscuit 200g",
+        "price": 8
+      },
+      "malibanNice400G": {
+        "displayName": "MALIBAN Nice 400g",
+        "price": 11
+      },
+      "hawiianCookies200G": {
+        "displayName": "Hawiian Cookies 200g",
+        "price": 8
+      },
+      "malibanChocolateCreamBiscuit100G": {
+        "displayName": "MALIBAN Chocolate Cream Biscuit 100g",
+        "price": 4.5
+      },
+      "parleMonaco633G": {
+        "displayName": "Parle Monaco 63,3g",
+        "price": 5
+      },
+      "parlePlatinaHideSeekFabOrange112G": {
+        "displayName": "PARLE PLATINA Hide&Seek FAB! Orange 112g",
+        "price": 7
+      },
+      "parlePlatinaHideSeekFabStrawberry112G": {
+        "displayName": "PARLE PLATINA Hide&Seek FAB! Strawberry 112g",
+        "price": 7
+      },
+      "parlePlatinaHideSeekFabChocolate112G": {
+        "displayName": "PARLE PLATINA Hide&Seek FAB! Chocolate 112g",
+        "price": 7
+      },
+      "parlePlatinaHideSeekChocolateChipCookies825G": {
+        "displayName": "PARLE PLATINA Hide&Seek Chocolate Chip Cookies 82,5g",
+        "price": 7
+      },
+      "malibanLemonPuff200G": {
+        "displayName": "MALIBAN Lemon Puff 200g",
+        "price": 12
+      },
+      "britanniaGoodDayOriginal72G": {
+        "displayName": "BRITANNIA Good Day Original 72g",
+        "price": 4
+      },
+      "littleHeartClassic75G": {
+        "displayName": "Little Heart Classic 75g",
+        "price": 3
+      },
+      "britanniaGoodDayPistachioAlmond72G": {
+        "displayName": "BRITANNIA Good Day Pistachio-Almond 72g",
+        "price": 12
+      },
+      "parleKrackJackOriginal60G": {
+        "displayName": "PARLE KrackJack Original 60g",
+        "price": 5
+      },
+      "heeraKashmiriMix350G": {
+        "displayName": "HEERA Kashmiri Mix 350g",
+        "price": 12
+      },
+      "heeraMiodBombayMix350G": {
+        "displayName": "HEERA Miod Bombay Mix 350g",
+        "price": 12
+      },
+      "heeraFineSev350G": {
+        "displayName": "HEERA Fine SEV 350g",
+        "price": 12
+      },
+      "parleParleG795G": {
+        "displayName": "PARLE Parle g 79,5g",
+        "price": 3.5
+      },
+      "malibanSmartCreamCracker190G": {
+        "displayName": "MALIBAN Smart Cream Cracker 190g",
+        "price": 7
+      },
+      "halidiramsPaniPuriIndianSnacks240G": {
+        "displayName": "Halidirams Pani Puri Indian snacks 240g",
+        "price": 25
+      },
+      "goldenChefTamarindCandy227G": {
+        "displayName": "GOLDEN CHEF Tamarind Candy 227g",
+        "price": 12
+      },
+      "gingerbonGingerCandy125G": {
+        "displayName": "GINGERBON Ginger Candy 125g",
+        "price": 12
+      },
+      "esprezzoVanillaCoffeeCandy150G": {
+        "displayName": "ESPREZZO Vanilla Coffee Candy 150g",
+        "price": 12
+      },
+      "haldiramsBengaluruMixture150G": {
+        "displayName": "HALDIRAM'S Bengaluru Mixture 150g",
+        "price": 22
+      },
+      "regalSnacksGujratiMix375G": {
+        "displayName": "REGAL Snacks Gujrati mix 375g",
+        "price": 22
+      },
+      "mehranBadamKheerMix155G": {
+        "displayName": "Mehran Badam Kheer mix 155g",
+        "price": 10
+      },
+      "regalSnacksKarachiKrunch375G": {
+        "displayName": "REGAL Snacks Karachi Krunch 375g",
+        "price": 15
+      },
+      "haldiramsGolKachauri200G": {
+        "displayName": "Haldiram's Gol Kachauri 200g",
+        "price": 8
+      },
+      "haldiramsFaraliChiwda200G": {
+        "displayName": "HALDIRAM'S Farali Chiwda 200g",
+        "price": 8.5
+      },
+      "kurkureChilliChatka75G": {
+        "displayName": "Kurkure Chilli Chatka 75g",
+        "price": 5
+      },
+      "bikanoKurkuriBhujia200G": {
+        "displayName": "Bikano Kurkuri Bhujia 200g",
+        "price": 6
+      },
+      "bikanoMoongDal200G": {
+        "displayName": "Bikano Moong Dal 200g",
+        "price": 7
+      },
+      "kurkureMasalaMunch75G": {
+        "displayName": "Kurkure Masala Munch 75g",
+        "price": 5
+      },
+      "bikanoAllTimeMicture200G": {
+        "displayName": "Bikano All Time Micture 200g",
+        "price": 8.5
+      },
+      "kurkureChaatFillsPapdiChaatTwist40G": {
+        "displayName": "Kurkure Chaat Fills Papdi Chaat Twist 40g",
+        "price": 9
+      },
+      "afroasePlantainChips80G": {
+        "displayName": "Afroase Plantain Chips 80g",
+        "price": 6.99
+      },
+      "uncleChippsSpicyTreat50G": {
+        "displayName": "Uncle Chipps Spicy Treat 50g",
+        "price": 3.5
+      },
+      "haldrimsMiniSamosa200G": {
+        "displayName": "Haldrim's mini samosa 200g",
+        "price": 8
+      },
+      "bikanoDalMoth200G": {
+        "displayName": "Bikano Dal Moth 200g",
+        "price": 7
+      },
+      "haldiramsPlainBhujia1Kg": {
+        "displayName": "HALDIRAM'S Plain Bhujia 1kg",
+        "price": 35
+      },
+      "haldiramsNavratanMix150G": {
+        "displayName": "HALDIRAM'S Navratan Mix 150g",
+        "price": 8.5
+      },
+      "haldiramsJeeraSticks150G": {
+        "displayName": "Haldiram's Jeera Sticks 150g",
+        "price": 7.5
+      },
+      "bikanoKhattaMeetha200G": {
+        "displayName": "BIKANO Khatta Meetha 200g",
+        "price": 8
+      },
+      "halidiramsChanaJorGaram200G": {
+        "displayName": "Halidirams Chana Jor Garam 200g",
+        "price": 7.5
+      },
+      "bikanoChanaMasala200G": {
+        "displayName": "Bikano Chana Masala 200g",
+        "price": 6
+      },
+      "haldiramsBoondi350G": {
+        "displayName": "Haldiram's Boondi 350g",
+        "price": 7.5
+      },
+      "haldiramsBhujiaSev200G": {
+        "displayName": "Haldiram's bhujia Sev 200g",
+        "price": 7.99
+      },
+      "haldiramsBhavnagari150G": {
+        "displayName": "Haldiram's Bhavnagari 150g",
+        "price": 8
+      },
+      "haldiramsRatlamiSev400G": {
+        "displayName": "Haldiram's Ratlami Sev 400g",
+        "price": 6
+      },
+      "haldiramsPunjabiTadka200G": {
+        "displayName": "Haldiram's Punjabi Tadka 200g",
+        "price": 8
+      },
+      "haldiramsKhattaMeetha200G": {
+        "displayName": "Haldirams khatta Meetha 200g",
+        "price": 13.5
+      },
+      "haldiramsGoldenMixture200G": {
+        "displayName": "Haldiram's Golden Mixture 200g",
+        "price": 7
+      },
+      "bikajiChanaDalHulchul200G": {
+        "displayName": "BIKAJI Chana Dal hulchul 200g",
+        "price": 8
+      },
+      "haldiramsBhelpuri200G": {
+        "displayName": "Haldiram's Bhelpuri 200g",
+        "price": 8
+      },
+      "weikfieldCustardPowderVanilla100G": {
+        "displayName": "WEIKFIELD Custard Powder Vanilla 100g",
+        "price": 12
+      },
+      "weikfieldFaloodaMixKesarPista200G": {
+        "displayName": "WEIKFIELD Falooda Mix Kesar Pista 200g",
+        "price": 15
+      },
+      "miraSweetsMatri400G": {
+        "displayName": "Mira Sweets Matri 400g",
+        "price": 14
+      },
+      "miraSweetsMatthi400G": {
+        "displayName": "Mira Sweets Matthi 400g",
+        "price": 14
+      },
+      "weikfieldFaloodaMixMango200G": {
+        "displayName": "WEIKFIELD Falooda Mix mango 200g",
+        "price": 15
+      },
+      "rasnaInstaInstantMango750G": {
+        "displayName": "Rasna Insta Instant Mango 750g",
+        "price": 20
+      },
+      "tangOrange500G": {
+        "displayName": "TANG Orange 500g",
+        "price": 18
+      },
+      "tangLemon500G": {
+        "displayName": "TANG Lemon 500g",
+        "price": 18
+      },
+      "tangMango500G": {
+        "displayName": "TANG Mango 500g",
+        "price": 18
+      },
+      "mtrBadamDrinkMix200G": {
+        "displayName": "MTR Badam Drink Mix 200g",
+        "price": 10
+      },
+      "amarSweetsJalebi": {
+        "displayName": "Amar Sweets Jalebi",
+        "price": 20
+      },
+      "amarSweetsLadoo": {
+        "displayName": "Amar Sweets Ladoo",
+        "price": 23
+      },
+      "amarSweetsJamun": {
+        "displayName": "Amar Sweets Jamun",
+        "price": 18.89
+      },
+      "amarSweetsBalushani": {
+        "displayName": "Amar Sweets Balushani",
+        "price": 22
+      },
+      "matkaKulfi200Ml": {
+        "displayName": "Matka Kulfi 200ml",
+        "price": 18
+      },
+      "kulfiIceOriginal70Ml": {
+        "displayName": "Kulfi ice original 70ml",
+        "price": 8
+      },
+      "bambooTreeMangoPopsicle60G": {
+        "displayName": "BAMBOO TREE Mango Popsicle 60g",
+        "price": 7
+      },
+      "melonaCoconutIceBar70Ml": {
+        "displayName": "Melona Coconut Ice bar 70ml",
+        "price": 6
+      },
+      "kulfiIceMango1L": {
+        "displayName": "Kulfi ice mango 1L",
+        "price": 23
+      },
+      "kulfiIceMango70Ml": {
+        "displayName": "Kulfi Ice mango 70ml",
+        "price": 8
+      },
+      "dimesFruitMix1L": {
+        "displayName": "DIMES Fruit mix 1L",
+        "price": 15
+      },
+      "dimesMango1L": {
+        "displayName": "DIMES Mango 1L",
+        "price": 15
+      },
+      "dimesPineapple1L": {
+        "displayName": "Dimes Pineapple 1L",
+        "price": 15
+      },
+      "rubiconSparklingGuava330Ml": {
+        "displayName": "Rubicon Sparkling Guava 330ml",
+        "price": 21
+      },
+      "vfreshDrinkRoseBasilSeed290Ml": {
+        "displayName": "VFRESH Drink Rose Basil Seed 290ml",
+        "price": 9
+      },
+      "coolbergCranberryBeerNonAlcoholic330Ml": {
+        "displayName": "Coolberg Cranberry beer non alcoholic 330ml",
+        "price": 8
+      },
+      "ricoBubbleMilkTeaDrink350G": {
+        "displayName": "Rico Bubble Milk Tea Drink 350g",
+        "price": 7.5
+      },
+      "thumsUp300Ml": {
+        "displayName": "Thums up 300ml",
+        "price": 6
+      },
+      "focoCoconutJuice520Ml": {
+        "displayName": "FOCO Coconut juice 520ml",
+        "price": 6
+      },
+      "sagikoTamarindDrink320Ml": {
+        "displayName": "Sagiko Tamarind Drink 320ml",
+        "price": 6.5
+      },
+      "regalFinestMango1L": {
+        "displayName": "Regal Finest mango 1L",
+        "price": 18
+      },
+      "rubiconStillDeluxeLychee1L": {
+        "displayName": "Rubicon Still Deluxe Lychee 1L",
+        "price": 12
+      },
+      "rubiconStillDeluxeMango1L": {
+        "displayName": "Rubicon Still Deluxe Mango 1L",
+        "price": 12
+      },
+      "rubiconStillDeluxeGuava1L": {
+        "displayName": "Rubicon Still Deluxe Guava 1L",
+        "price": 12
+      },
+      "haldiramsRasmalaiTikki1Kg": {
+        "displayName": "Haldiram's Rasmalai Tikki 1kg",
+        "price": 35
+      },
+      "bikajiGulabJamun1Kg": {
+        "displayName": "Bikaji Gulab Jamun 1kg",
+        "price": 35
+      },
+      "haldiramsKajuKashmiriMix": {
+        "displayName": "Haldiram's Kaju Kashmiri mix",
+        "price": 8.5
+      },
+      "yaylaAyranMint1L": {
+        "displayName": "Yayla Ayran Mint 1L",
+        "price": 12
+      },
+      "yaylaAyranMango1L": {
+        "displayName": "Yayla Ayran Mango 1L",
+        "price": 12
+      },
+      "coolbergMaltBeerNonAlcoholic330Ml": {
+        "displayName": "Coolberg malt beer non alcoholic 330ml",
+        "price": 8
+      },
+      "coolbergGingerBeerNonAlcoholic330Ml": {
+        "displayName": "Coolberg ginger beer non alcoholic 330ml",
+        "price": 8
+      },
+      "grbGheeBombayHalwa200G": {
+        "displayName": "GRB Ghee Bombay Halwa 200g",
+        "price": 18
+      },
+      "grbGheeDryFruitsHalwa200G": {
+        "displayName": "GRB Ghee Dry Fruits Halwa 200g",
+        "price": 18
+      },
+      "pranFriedPeas30G": {
+        "displayName": "PRAN Fried Peas 30g",
+        "price": 3
+      },
+      "freshJalebi": {
+        "displayName": "Fresh Jalebi",
+        "price": 20
+      },
+      "grbCrispyGheeMysorePak400G": {
+        "displayName": "GRB Crispy Ghee mysore pak 400g",
+        "price": 18
+      },
+      "karachiBaeryAjwainBiscuit400G": {
+        "displayName": "Karachi Baery Ajwain Biscuit 400g",
+        "price": 22
+      },
+      "karachiBarberyCashewBiscuit400G": {
+        "displayName": "Karachi Barbery Cashew Biscuit 400g",
+        "price": 23
+      },
+      "bikajiCafeKhariCrispyPuff250G": {
+        "displayName": "BIKAJI Cafe Khari Crispy Puff 250g",
+        "price": 8.64
+      },
+      "britanniaToaasteaMilkRusk560G": {
+        "displayName": "Britannia Toaastea Milk Rusk 560g",
+        "price": 15
+      },
+      "britanniaToasteaSuiRusk235G": {
+        "displayName": "Britannia Toastea Sui Rusk 235g",
+        "price": 15
+      },
+      "pranHotChanachurBombayMix": {
+        "displayName": "Pran HOT Chanachur bombay mix",
+        "price": 8
+      },
+      "britanniaToasteaMilkRusk207G": {
+        "displayName": "Britannia Toastea milk Rusk 207g",
+        "price": 16
+      },
+      "parleRuskPremiumRusk200G": {
+        "displayName": "Parle Rusk Premium Rusk 200g",
+        "price": 7.5
+      },
+      "marioMilkRusk300G": {
+        "displayName": "Mario Milk Rusk 300g",
+        "price": 15
+      },
+      "regalBaqarKhan350G": {
+        "displayName": "Regal Baqar khan 350g",
+        "price": 16
+      },
+      "regalSpecialCakeRusk630G": {
+        "displayName": "Regal Special Cake rusk 630g",
+        "price": 23
+      },
+      "karachiBakeryKajuBadamBiscuits400G": {
+        "displayName": "Karachi Bakery Kaju Badam Biscuits 400g",
+        "price": 25
+      },
+      "vimto330Ml": {
+        "displayName": "Vimto 330ml",
+        "price": 6
+      },
+      "ricoMixedBerries340Ml": {
+        "displayName": "RICO Mixed Berries 340ml",
+        "price": 7
+      },
+      "vfreshDrinkMint290Ml": {
+        "displayName": "VFRESH Drink Mint 290ml",
+        "price": 7.5
+      },
+      "sagikoYoungCoconutJuiceWithPulp320Ml": {
+        "displayName": "Sagiko Young Coconut Juice with pulp 320ml",
+        "price": 6
+      },
+      "haldiramsRagulla1Kg": {
+        "displayName": "Haldiram's Ragulla 1kg",
+        "price": 35
+      },
+      "oishiGreenTea500Ml": {
+        "displayName": "Oishi Green Tea 500ml",
+        "price": 7.99
+      },
+      "adasalSalgamSuyu330Ml": {
+        "displayName": "Adasal Salgam Suyu 330ml",
+        "price": 10
+      },
+      "nsunWatermelon380Ml": {
+        "displayName": "NSUN Watermelon 380ml",
+        "price": 7
+      },
+      "yaylaAyran1L": {
+        "displayName": "Yayla Ayran 1L",
+        "price": 12
+      }
+    }
   },
   "teaCoffee": {
     "displayName": {
       "en": "Tea & Coffee",
       "pl": "Tea & Coffee"
     },
-    "products": {}
+    "products": {
+      "azercayBuket50G": {
+        "displayName": "Azercay Buket 50g",
+        "price": 15
+      },
+      "tataTeaGoldPack500G": {
+        "displayName": "TATA TEA Gold pack 500g",
+        "price": 45
+      },
+      "goldKiliInstantGingerTumericDrink160G": {
+        "displayName": "GOLD KILI Instant Ginger Tumeric Drink 160g",
+        "price": 23
+      },
+      "goldKiliRedDateTea180G": {
+        "displayName": "GOLD KILI Red Date Tea 180g",
+        "price": 18
+      },
+      "redLabel500G": {
+        "displayName": "Red Label 500g",
+        "price": 29.99
+      },
+      "redLabel900G": {
+        "displayName": "Red Label 900g",
+        "price": 59.89
+      },
+      "tajMahal500G": {
+        "displayName": "Taj Mahal 500g",
+        "price": 35
+      },
+      "tataTeaGoldBox500G": {
+        "displayName": "TATA TEA Gold Box 500g",
+        "price": 45
+      },
+      "slinmyGreenTea40G": {
+        "displayName": "Slinmy Green Tea 40g",
+        "price": 7.99
+      },
+      "caykurCayCicegi500G": {
+        "displayName": "CAYKUR Cay Cicegi 500g",
+        "price": 29
+      },
+      "caykurFiliz500G": {
+        "displayName": "CAYKUR Filiz 500g",
+        "price": 25
+      },
+      "caykurRizeTuristCayi500G": {
+        "displayName": "CAYKUR Rize Turist Cayi 500g",
+        "price": 23
+      },
+      "redLabelNaturalCare500G": {
+        "displayName": "Red Label Natural Care 500g",
+        "price": 18
+      },
+      "konuzTeaTheVertDeChine200G": {
+        "displayName": "Konuz Tea The vert de chine 200g",
+        "price": 22
+      },
+      "hungPhatTraNgheTumericTea50G": {
+        "displayName": "HUNG PHAT Tra Nghe Tumeric Tea 50g",
+        "price": 18
+      },
+      "tajMahal250G": {
+        "displayName": "Taj Mahal 250g",
+        "price": 23
+      },
+      "waghBakri225G": {
+        "displayName": "Wagh Bakri 225g",
+        "price": 18
+      },
+      "waghBakriMasalaChai250G": {
+        "displayName": "Wagh Bakri Masala Chai 250g",
+        "price": 18
+      },
+      "specialGunpowderGreenTea250G": {
+        "displayName": "SPECIAL GUNPOWDER Green Tea 250g",
+        "price": 22
+      },
+      "royalChaiKashmiriPinkChai200G": {
+        "displayName": "Royal Chai Kashmiri Pink Chai 200g",
+        "price": 35
+      },
+      "bourazaExtraFinChunmee200G": {
+        "displayName": "Bouraza Extra Fin Chunmee 200g",
+        "price": 18
+      },
+      "horlicksWorkPlus400G": {
+        "displayName": "Horlicks Work Plus 400g",
+        "price": 26
+      },
+      "cadburyBournVita1Kg": {
+        "displayName": "CADBURY Bourn Vita 1kg",
+        "price": 30
+      },
+      "nestleNido400G": {
+        "displayName": "NESTLE Nido 400g",
+        "price": 32
+      },
+      "horlicksClassicMalt500G": {
+        "displayName": "HORLICKS Classic Malt 500g",
+        "price": 6
+      },
+      "cadburyBournVita500G": {
+        "displayName": "CADBURY Bourn Vita 500g",
+        "price": 26
+      },
+      "mahmoodCoffeeOriginal432G": {
+        "displayName": "MAHMOOD Coffee original 432g",
+        "price": 22
+      },
+      "mahmoodCoffeeVanilla432G": {
+        "displayName": "MAHMOOD Coffee Vanilla 432g",
+        "price": 22
+      },
+      "doubleHorseHealthMix500G": {
+        "displayName": "DOUBLE HORSE Health Mix 500g",
+        "price": 26
+      },
+      "tataTeaGold1Kg": {
+        "displayName": "TATA TEA Gold 1kg",
+        "price": 60
+      },
+      "bruGreenLabelCoffee200G": {
+        "displayName": "Bru Green Label coffee 200g",
+        "price": 18
+      }
+    }
   },
   "readyToEat": {
     "displayName": {
       "en": "Ready To Eat",
       "pl": "Ready To Eat"
     },
-    "products": {}
+    "products": {
+      "ashokaPunjabiCholey": {
+        "displayName": "ASHOKA Punjabi Choley",
+        "price": 15
+      },
+      "ashokaDalTadka": {
+        "displayName": "Ashoka Dal Tadka",
+        "price": 15
+      },
+      "ashokaMatarPaneerTofu": {
+        "displayName": "Ashoka Matar Paneer(Tofu)",
+        "price": 15
+      },
+      "ashokaBhindiMasala": {
+        "displayName": "Ashoka Bhindi Masala",
+        "price": 15
+      },
+      "ashokaSaagAloo": {
+        "displayName": "Ashoka Saag Aloo",
+        "price": 15
+      },
+      "pitaBread": {
+        "displayName": "pita bread",
+        "price": 7.38
+      },
+      "ashokaBombayBiriyani": {
+        "displayName": "ASHOKA Bombay Biriyani",
+        "price": 15
+      },
+      "gitsGulabJamun200G": {
+        "displayName": "Gits Gulab Jamun 200g",
+        "price": 13
+      },
+      "gitsGulabJamun500G": {
+        "displayName": "Gits Gulab Jamun 500g",
+        "price": 18
+      }
+    }
+  },
+  "oil": {
+    "displayName": {
+      "en": "Oil",
+      "pl": "Oil"
+    },
+    "products": {
+      "pranMustardOil250Ml": {
+        "displayName": "Pran Mustard oil 250ml",
+        "price": 10
+      },
+      "heeraAlsiOil250Ml": {
+        "displayName": "Heera Alsi Oil 250ml",
+        "price": 28
+      },
+      "heeraPureSesameOil250Ml": {
+        "displayName": "Heera Pure sesame Oil 250ml",
+        "price": 20
+      },
+      "lakshmiGroundOil1L": {
+        "displayName": "Lakshmi Ground Oil 1L",
+        "price": 40
+      },
+      "pranMustardOil1L": {
+        "displayName": "Pran Mustard oil 1l",
+        "price": 40
+      },
+      "hamdaedKachiGhaniMustardOil1L": {
+        "displayName": "Hamdaed Kachi Ghani Mustard oil 1l",
+        "price": 42
+      },
+      "ktc100PureCoconutOil250Ml": {
+        "displayName": "KTC 100% Pure coconut oil 250ml",
+        "price": 15
+      },
+      "ktC100PureCoconutOil500Ml": {
+        "displayName": "KtC 100% Pure coconut oil 500ml",
+        "price": 18
+      },
+      "jivaaDesiGhee540Ml": {
+        "displayName": "Jivaa Desi Ghee 540ml",
+        "price": 35
+      },
+      "idhayam1L": {
+        "displayName": "Idhayam 1l",
+        "price": 38
+      },
+      "coldPressedOilGingellySesameOil750Ml": {
+        "displayName": "Cold pressed oil Gingelly Sesame oil 750ml",
+        "price": 36
+      },
+      "mumtazVegetableGhee500G": {
+        "displayName": "Mumtaz vegetable ghee 500g",
+        "price": 28
+      },
+      "ashokaPureButterGhee500G": {
+        "displayName": "Ashoka Pure Butter ghee 500g",
+        "price": 55
+      },
+      "trsPureButterGhee1Kg": {
+        "displayName": "Trs pure Butter Ghee 1kg",
+        "price": 68
+      },
+      "gwaalaPureButterGhee1Kg": {
+        "displayName": "Gwaala Pure butter ghee 1kg",
+        "price": 90
+      },
+      "aseelVegetableFat500Ml": {
+        "displayName": "Aseel Vegetable fat 500ml",
+        "price": 28
+      }
+    }
+  },
+  "freshVegetables": {
+    "displayName": {
+      "en": "Fresh Vegetables",
+      "pl": "Fresh Vegetables"
+    },
+    "products": {
+      "freshOkra1Kg": {
+        "displayName": "Fresh Okra 1kg",
+        "price": 30
+      },
+      "freshVegDrumsticks1Kg": {
+        "displayName": "Fresh veg drumsticks 1kg",
+        "price": 50
+      },
+      "freshPapaya1Kg": {
+        "displayName": "Fresh Papaya 1kg",
+        "price": 43.2
+      },
+      "freshChilli1Kg": {
+        "displayName": "Fresh chilli 1kg",
+        "price": 30
+      },
+      "freshLauki1Kg": {
+        "displayName": "Fresh Lauki 1kg",
+        "price": 36
+      },
+      "freshRedSmallOnions1Kg": {
+        "displayName": "Fresh red small onions 1kg",
+        "price": 45
+      },
+      "freshCoconut": {
+        "displayName": "Fresh coconut",
+        "price": 5.5
+      },
+      "freshGourBean1Kg": {
+        "displayName": "Fresh Gour bean 1kg",
+        "price": 35
+      },
+      "freshMint": {
+        "displayName": "Fresh mint",
+        "price": 6
+      },
+      "freshCoriander": {
+        "displayName": "Fresh Coriander",
+        "price": 7
+      },
+      "freshKarela1Kg": {
+        "displayName": "Fresh karela 1kg",
+        "price": 40
+      },
+      "freshGuava1Kg": {
+        "displayName": "Fresh Guava 1kg",
+        "price": 40
+      },
+      "freshIndainMango": {
+        "displayName": "Fresh indain mango",
+        "price": 12
+      },
+      "freshRedChilli": {
+        "displayName": "Fresh red chilli",
+        "price": 45
+      },
+      "freshParwal": {
+        "displayName": "Fresh parwal",
+        "price": 40
+      },
+      "freshAmla1Kg": {
+        "displayName": "Fresh amla 1kg",
+        "price": 38
+      },
+      "freshCasava1Kg": {
+        "displayName": "Fresh Casava 1kg",
+        "price": 40
+      },
+      "freshImbir1Kg": {
+        "displayName": "Fresh imbir 1kg",
+        "price": 35
+      }
+    }
+  },
+  "freshMeats": {
+    "displayName": {
+      "en": "Fresh meats",
+      "pl": "Fresh meats"
+    },
+    "products": {
+      "freshChickenWhole1Kg": {
+        "displayName": "Fresh Chicken Whole 1kg",
+        "price": 16
+      },
+      "freshMuttonMeat1Kg": {
+        "displayName": "Fresh Mutton Meat 1kg",
+        "price": 41.98
+      },
+      "freshBeef1Kg": {
+        "displayName": "Fresh Beef 1kg",
+        "price": 50
+      },
+      "freshChickenFillets1Kg": {
+        "displayName": "Fresh Chicken Fillets 1kg",
+        "price": 32
+      },
+      "freshChickenThighs1Kg": {
+        "displayName": "Fresh Chicken Thighs 1kg",
+        "price": 17
+      }
+    }
   }
 }
 

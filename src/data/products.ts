@@ -1,6 +1,7 @@
 export interface Product {
   displayName: string;
   price?: number; // Price in PLN
+  description?: string;
   picture?: string;
 }
 

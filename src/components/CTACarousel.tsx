@@ -11,14 +11,17 @@ import {
 import Image, { StaticImageData } from "next/image";
 import Autoplay from "embla-carousel-autoplay";
 import { useState } from "react";
+import meats from "@/public/homeSlider/meat.png";
+import vegetables from "@/public/homeSlider/vegetables.png";
+import products from "@/public/homeSlider/products.png";
+import groceries from "@/public/homeSlider/groceries.png";
 
-const slides: { image?: StaticImageData; alt: string }[] = [
+const slides: { image: StaticImageData; alt: string }[] = [
   // WARN: Delete optional image property, it's only there until I get the actual images
-  { alt: "Image 1" },
-  { alt: "Image 2" },
-  { alt: "Image 3" },
-  { alt: "Image 4" },
-  { alt: "Image 5" },
+  { image: groceries, alt: "Picture of indian groceries" },
+  { image: vegetables, alt: "Picture of vegetables" },
+  { image: products, alt: "Picture of indian products" },
+  { image: meats, alt: "Picture of meat" },
 ];
 
 function CTACarousel() {
@@ -27,7 +30,7 @@ function CTACarousel() {
   return (
     <>
       <Carousel
-        plugins={[Autoplay({ delay: 2000 })]}
+        plugins={[Autoplay({ delay: 3000 })]}
         setApi={setApi}
         className="h-full top-0 bottom-0 left-0 right-0"
       >
@@ -36,7 +39,12 @@ function CTACarousel() {
             return (
               <CarouselItem className="" key={index}>
                 {slide.image ? (
-                  <Image src={slide.image} alt={slide.alt} />
+                  <Image
+                    loading={index == 0 ? "eager" : "lazy"}
+                    className="w-2/3"
+                    src={slide.image}
+                    alt={slide.alt}
+                  />
                 ) : (
                   <p>Pls send me the images dawg</p>
                 )}

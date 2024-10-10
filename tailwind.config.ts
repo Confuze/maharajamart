@@ -19,8 +19,8 @@ const config: Config = {
       gridAutoColumns: {
         featuredDesktop: "20%",
         featuredMobile: "50%",
-        categoriesDesktop: "calc(100% / 7)",
-        categoriesMobile: "calc(100% / 3)",
+        categoriesDesktop: "calc(100% / 5)",
+        categoriesMobile: "calc(100% / 2)",
       },
       gridColumn: {
         middle: "2 / 4",

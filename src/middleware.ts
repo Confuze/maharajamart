@@ -1,13 +1,26 @@
-import createMiddleware from "next-intl/middleware";
-import { defaultLocale, localePrefix, locales } from "./config";
+import { NextRequest, NextResponse } from "next/server";
+import basicAuth from "./middlewares/auth";
+import intl from "./middlewares/intl";
 
-export default createMiddleware({
-  defaultLocale,
-  locales,
-  localePrefix,
-});
+export default function middleware(req: NextRequest) {
+  const ignoreRegex = RegExp(
+    "/((?!api|_next/static|_next/image|favicon.ico).*)",
+  );
+
+  if (!ignoreRegex.test(req.nextUrl.pathname)) {
+    console.log(req.nextUrl.pathname, ": non-localised");
+    return NextResponse.next();
+  }
+
+  console.log(req.nextUrl.pathname);
+
+  if (req.nextUrl.pathname.includes("/admin-maharajamart")) {
+    return basicAuth(req);
+  } else {
+    return intl(req);
+  }
+}
 
 export const config = {
-  // Match only internationalized pathnames
-  matcher: ["/", "/(pl|en)/:path*", "/((?!_next|_vercel|.*\\..*).*)"],
+  matcher: ["/((?!api|_next/static|_next/image|favicon.ico).*)"],
 };

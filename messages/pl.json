@@ -49,26 +49,49 @@
     }
   },
   "About": {
-    "title": "o nas",
-    "test": "polshki"
+    "title": "O nas",
+    "content": "Witamy w Maharaja Mart, kompleksowym sklepie z autentycznymi indyjskimi produktami spożywczymi i zachwycającą eksploracją międzynarodowych smaków! Z pasją wprowadzamy żywy smak Indii do Wrocławia i Poznania, jednocześnie celebrując bogate tradycje kulinarne Afryki, Indonezji, Wietnamu i Pakistanu.<br><br><h3>Nasza historia</h3>Maharaja Mart powstał w oparciu o przekonanie, że jedzenie jest uniwersalnym językiem, łączącym ludzi z różnych środowisk. Dążymy do stworzenia przyjaznej przestrzeni, w której każdy może odkryć nowe składniki, rozbudzić swoje kubki smakowe i wyruszyć w pyszną podróż odkrywania kultury.<br><br><h3>Nasze zaangażowanie</h3><b>Szeroki wybór</b>: Oferujemy szeroki wybór indyjskich produktów spożywczych, od pachnącego ryżu basmati i aromatycznych przypraw po aromatyczne dals i gotowe do spożycia curry. Posiadamy również zróżnicowaną gamę produktów afrykańskich, indonezyjskich, wietnamskich i pakistańskich, dzięki czemu można znaleźć wszystkie składniki potrzebne do stworzenia autentycznych potraw z całego świata.<br><b>Gwarancja Halal</b>: Rozumiemy znaczenie religijnych ograniczeń dietetycznych. Znaczna część naszego indyjskiego asortymentu posiada certyfikat Halal, zapewniając spokój ducha naszym muzułmańskim klientom.<br><b>Inkluzywność</b>: Maharaja Mart obejmuje wszystkie religie i kultury. Celebrujemy różnorodność i promujemy zrozumienie poprzez wspólną miłość do jedzenia.<br>Celebrujemy różnorodność i promujemy zrozumienie poprzez wspólną miłość do jedzenia.<br><b>Duch społeczności</b>: Jesteśmy aktywnie zaangażowani w wydarzenia kulturalne we Wrocławiu i Poznaniu. Szukaj naszego stoiska na lokalnych festiwalach, gdzie możesz spróbować pysznego jedzenia, poznać różne tradycje kulinarne i doświadczyć radości wspólnoty.<br><br><h3>Dołącz do rodziny Maharaja Mart</h3>Niezależnie od tego, czy jesteś doświadczonym kucharzem, czy dopiero zaczynasz odkrywać świat przypraw, jesteśmy tutaj, aby Cię poprowadzić. Nasz przyjazny personel posiada wiedzę na temat naszych produktów i chętnie odpowie na Twoje pytania. Odwiedź nas we Wrocławiu lub Poznaniu, przejrzyj nasze alejki i rozpocznij smakową przygodę!  Z niecierpliwością czekamy na powitanie w rodzinie Maharaja Mart."
+  },
+  "Contact": {
+    "title": "Kontakt",
+    "content": "Zapraszamy do kontaktu pod numerem: "
   },
   "Category": {
-    "noProudcts": "Brak dostępnych produktów w tej kategorii."
+    "noProudcts": "Brak dostępnych produktów w tej kategorii.",
+    "loading": "Wczytywanie więcej produktów..."
   },
   "Product": {
     "added": "Produkt został dodany do koszyka",
-    "addedDescription": "{quantity, plural, one {# sztukę} few {# sztuki} many {# sztuk} other {}} produktu \"{name}\" {quantity, plural, one {został dodany} few {zostały dodane} many {zostało dodane} other {zostało dodane}} do koszyka",
+    "addedDescription": "{quantity, plural, one {# sztuka} few {# sztuki} many {# sztuk} other {}} produktu \"{name}\" {quantity, plural, one {został dodany} few {zostały dodane} many {zostało dodane} other {zostało dodane}} do koszyka",
     "maxQuantity": "Nie można dodać więcej niż 100 sztuk tego produktu do koszyka",
     "quantity": "Ilość"
   },
   "Cart": {
     "items": "artykułów",
     "cart": "Koszyk",
+    "singlePrice": "Cena jednego produktu: ",
     "totalPrice": "Cena w sumie: ",
     "productPrice": "Cena produktów: ",
     "deliveryFee": "Opłata za dostawę: ",
     "transactionFee": "Opłata za płatność: ",
     "addedAtCheckout": "Naliczone w kasie",
     "proceed": "Przejdź do kasy"
+  },
+  "Checkout": {
+    "title": "Kasa",
+    "fullName": "Imię i nazwisko",
+    "address": "Ulica, numer domu, numer mieszkania",
+    "extraInfo": "Dodatkowe informacje",
+    "extraInfoDesc": "Dodatkowe wskazówki",
+    "postalCode": "Kod pocztowy",
+    "town": "Miejscowość",
+    "email": "Adres mailowy",
+    "phone": "Numer telefonu",
+    "pay": "Zapłać",
+    "paymentInfo": "Obsługujemy płatności kartą, Apple Pay, Google Pay, przelewem oraz BLIK za pomocą przelewy24. Opłata za płatność jest odsetką od transakcji, którą pobiera przelewy24.",
+    "paymentError": "Wystąpił błąd. Płatność nie mogła zostać zarejestrowana",
+    "redirecting": "Trwa przekierowywanie do serwisu przelewy24",
+    "success": "Pomyślnie zarejestrowano zamówienie",
+    "successDesc": "Gratulacje! Twoje zamówienie zostało zarejestrowane w naszym systemie. Wkrótce otrzymasz potwierdzenie płatności na skrzynkę mailową. Gdy wyślemy przesyłkę otrzymasz maila z danymi dostawy."
   }
 }
