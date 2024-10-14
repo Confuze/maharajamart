@@ -1,18 +1,115 @@
 # INFO: This file is only for testing the nginx reverse proxy, not for actual development
 
 services:
+  mongo1:
+    container_name: mongo1
+    image: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - "mongo1_data:/data/db"
+      - "mongo1_config:/data/configdb"
+      - "./replica.key:/data/replica.key"
+    environment:
+      - MONGO_INITDB_DATABASE=maharajamart
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=prisma
+      - MONGO_REPLICA_SET_NAME=rs0
+      - MONGODB_ADVERTISED_HOSTNAME=127.0.0.1
+    command:
+      [
+        "--replSet",
+        "rs0",
+        "--bind_ip_all",
+        "--port",
+        "27017",
+        "--keyFile",
+        "/data/replica.key",
+      ]
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    restart: always
+  mongo2:
+    container_name: mongo2
+    image: mongo
+    ports:
+      - "27018:27018"
+    volumes:
+      - "mongo2_data:/data/db"
+      - "mongo2_config:/data/configdb"
+      - "./replica.key:/data/replica.key"
+    environment:
+      - MONGO_INITDB_DATABASE=maharajamart
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=prisma
+      - MONGO_REPLICA_SET_NAME=rs0
+      - MONGODB_ADVERTISED_HOSTNAME=127.0.0.1
+    command:
+      [
+        "--replSet",
+        "rs0",
+        "--bind_ip_all",
+        "--port",
+        "27018",
+        "--keyFile",
+        "/data/replica.key",
+      ]
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    restart: always
+  mongo3:
+    container_name: mongo3
+    image: mongo
+    ports:
+      - "27019:27019"
+    volumes:
+      - "mongo3_data:/data/db"
+      - "mongo3_config:/data/configdb"
+      - "./replica.key:/data/replica.key"
+    environment:
+      - MONGO_INITDB_DATABASE=maharajamart
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=prisma
+      - MONGO_REPLICA_SET_NAME=rs0
+      - MONGODB_ADVERTISED_HOSTNAME=127.0.0.1
+    command:
+      [
+        "--replSet",
+        "rs0",
+        "--bind_ip_all",
+        "--port",
+        "27019",
+        "--keyFile",
+        "/data/replica.key",
+      ]
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    restart: always
+  mongodb-init:
+    image: mongo
+    container_name: mongodb-init
+    depends_on:
+      - mongo1
+      - mongo2
+      - mongo3
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    command: bash -c "chmod +x init-replica-set.sh && ./init-replica-set.sh"
+    volumes:
+      - "./init-replica-set.sh:/init-replica-set.sh"
+    restart: no
   app:
     container_name: nextjs
     build: .
     ports:
       - "3000:3000"
-    environment:
-      - MONGODB_URI=mongodb://mongo:27017/maharajamart
     depends_on:
+      - mongodb-init
       - mongo1
       - mongo2
       - mongo3
     restart: always
+    env_file: .env.local
   nginx:
     image: nginx:latest
     container_name: nginx
@@ -25,39 +122,6 @@ services:
     volumes:
       - /etc/ssl/:/etc/nginx/ssl:ro # self signed certificate and key from openssl FOR DEVELOPMENT ONLY
     restart: always
-  mongo1:
-    image: mongo
-    ports:
-      - "27018:27017"
-    volumes:
-      - "mongo1_data:/data/db"
-      - "mongo1_config:/data/configdb"
-    environment:
-      - MONGO_INITDB_DATABASE=maharajamart
-      - MONGO_REPLICA_SET_NAME=rs0
-    command: "--replSet rs0 --bind_ip_all"
-  mongo2:
-    image: mongo
-    ports:
-      - "27019:27017"
-    volumes:
-      - "mongo1_data:/data/db"
-      - "mongo1_config:/data/configdb"
-    environment:
-      - MONGO_INITDB_DATABASE=maharajamart
-      - MONGO_REPLICA_SET_NAME=rs0
-    command: "--replSet rs0 --bind_ip_all"
-  mongo3:
-    image: mongo
-    ports:
-      - "27017:27017"
-    volumes:
-      - "mongo1_data:/data/db"
-      - "mongo1_config:/data/configdb"
-    environment:
-      - MONGO_INITDB_DATABASE=maharajamart
-      - MONGO_REPLICA_SET_NAME=rs0
-    command: "--replSet rs0 --bind_ip_all"
 
 volumes:
   mongo1_data:

@@ -3,6 +3,8 @@ import { fontSans, fontSerif } from "../fonts";
 import { cn } from "@/src/lib/utils";
 import "@/src/styles/globals.css";
 
+export const dynamic = "force-dynamic";
+
 export default async function AdminLayout({
   children,
   params: { locale = "pl" },

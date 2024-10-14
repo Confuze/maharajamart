@@ -1,8 +1,6 @@
 import { Order, PrismaClient } from "@prisma/client";
-import { Button } from "./ui/button";
 import { products } from "../data/products";
 import Link from "next/link";
-import { markAsShipped } from "../lib/markAsShipped";
 import MarkAsShippedButton from "./MarkAsShippedButton";
 
 function AdminOrder({ order }: { order: Order }) {

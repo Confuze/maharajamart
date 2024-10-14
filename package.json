@@ -4,12 +4,13 @@
   "private": true,
   "scripts": {
     "dev": "NODE_OPTIONS='--inspect' next dev",
-    "build": "npm run genPrisma && next build",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "ngrok": "ngrok http --url=firmly-quick-whale.ngrok-free.app 127.0.0.1:3000",
     "genProd": "NODE_OPTIONS='--loader ts-node/esm' ts-node ./src/data/generateProducts.ts",
-    "genPrisma": "prisma db push"
+    "genPrisma": "prisma db push",
+    "prismaProd": "prisma generate"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",

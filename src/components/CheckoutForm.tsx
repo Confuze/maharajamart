@@ -131,7 +131,7 @@ export default function CheckoutForm() {
               name="email"
               render={({ field }) => (
                 <FormItem className="my-6">
-                  <FormLabel>{t("fullName")}</FormLabel>
+                  <FormLabel>{t("email")}</FormLabel>
                   <FormControl>
                     <Input
                       type="email"

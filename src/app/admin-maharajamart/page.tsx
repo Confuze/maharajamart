@@ -6,7 +6,8 @@ export const metadata: Metadata = {
   title: "Admin panel",
 };
 
-// admin page with some (TODO: figure out what kind) authentification
+export const dynamic = "force-dynamic";
+
 export default async function Admin() {
   const prisma = new PrismaClient();
   const notPaidOrders = await prisma.order.findMany({

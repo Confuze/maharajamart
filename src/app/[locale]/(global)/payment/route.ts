@@ -115,6 +115,7 @@ export async function POST(req: Request) {
       timeLimit: 15,
       channel: 16,
       sign: sign,
+      encoding: "UTF-8",
     },
     {
       auth: {
