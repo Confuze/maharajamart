@@ -1,5 +1,5 @@
 # INFO: This file is only for testing the nginx reverse proxy, not for actual development
-version: "3.8"
+version: "3"
 
 services:
   mongo1:
