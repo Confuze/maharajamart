@@ -117,6 +117,7 @@ export default function CheckoutForm() {
                   <FormControl>
                     <Input
                       type="text"
+                      required
                       className="min-w-48"
                       placeholder="Jan Kowalski"
                       {...field}

@@ -18,7 +18,7 @@ function Reviews() {
       >
         <CarouselContent
           active={false}
-          className="lg:*:basis-1/3 -w-full -mr-32"
+          className="lg:*:basis-1/3 -w-full flex items-center -mr-32"
         >
           {keys.map((key) => {
             // WARN: score should definitely not be a string but for whatever reason this is the only way that works.

@@ -2,6 +2,7 @@ import { Clock, MapPin, Phone } from "lucide-react";
 import { useTranslations } from "next-intl";
 import React from "react";
 import { Link } from "../navigation";
+import { SiFacebook, SiInstagram } from "@icons-pack/react-simple-icons";
 
 function Footer() {
   const t = useTranslations("Layout.infobar");
@@ -11,7 +12,7 @@ function Footer() {
         MAHARAJA MART
       </h1>
       <p className="">
-        <Clock className="h-4 lg:h-5" /> {t("open")} 7:00 - 16:00
+        <Clock className="h-4 lg:h-5" /> {t("open")}{" "}
       </p>
       <Link href="https://maps.app.goo.gl/TeojK7BkL4xveWmFA">
         <MapPin className="h-4 lg:h-5" />
@@ -21,6 +22,14 @@ function Footer() {
         <Phone className="h-4 lg:h-5" />
         537 354 886
       </Link>
+      <div className="float !gap-3 mt-3">
+        <Link href="https://www.instagram.com/maharajamartwroclaw">
+          <SiInstagram className="h-10 lg:h-14" />
+        </Link>
+        <Link href="https://www.facebook.com/profile.php?id=100085702502876&">
+          <SiFacebook className="h-10 lg:h-14" />
+        </Link>
+      </div>
     </footer>
   );
 }

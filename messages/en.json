@@ -1,7 +1,7 @@
 {
   "Layout": {
     "infobar": {
-      "open": "Open from:"
+      "open": "Open from: 10:00 - 21:00 (mon - sat) 11:00 - 19:00 (sun)"
     },
     "nav": {
       "home": "Home",
@@ -33,17 +33,17 @@
     "reviews": {
       "1": {
         "title": "Outstanding service",
-        "review": "Libero sit sit qui reprehenderit accusamus. Voluptas aut unde expedita  eum. Qui quia ut eos neque qui iusto. Sunt vitae error eius quia saepe  doloremque. Minima quia",
+        "review": "Very friendly and helpful staff. I needed the ingredients for the chicken rogan and was helped to choose them. The food came out delicious ❤️ recommend!!!",
         "score": "5"
       },
       "2": {
         "title": "Fenomenal products",
-        "review": "Libero sit sit qui reprehenderit accusamus. Voluptas aut unde expedita  eum. Qui quia ut eos neque qui iusto. Sunt vitae error eius quia saepe  doloremque. Minima quia",
+        "review": "Large selection of products including spices, sweets and halal products; such as broth, meat and jelly. Very good location and the shop is neat and well-equipped, with friendly staff :) what's more, there is the chance of special orders, after talking to a member of staff!",
         "score": "5"
       },
       "3": {
-        "title": "Marvelous smells",
-        "review": "Libero sit sit qui reprehenderit accusamus. Voluptas aut unde expedita  eum. Qui quia ut eos neque qui iusto. Sunt vitae error eius quia saepe  doloremque. Minima quia",
+        "title": "Great vibes",
+        "review": "I invite you to visit this place wonderful nice people from India you can taste specialties from this magical country listen to beautiful music and fall in love forever",
         "score": "5"
       }
     }

@@ -18,7 +18,11 @@ let currentCategory = "cosmetics";
 for (const sheetProduct of sheetProducts) {
   const name = _.camelCase(_.deburr(sheetProduct.products));
 
-  if (typeof sheetProduct.pricePln === "string") {
+  if (
+    sheetProduct.pricePln?.toString().match(/^\d/) &&
+    typeof sheetProduct.pricePln === "string"
+  ) {
+  } else if (typeof sheetProduct.pricePln === "string") {
     // If buyPrice is a string, it means it's a category row
     newProducts[name] = {
       displayName: {
@@ -29,13 +33,20 @@ for (const sheetProduct of sheetProducts) {
     };
     currentCategory = name;
   } else if (typeof sheetProduct.pricePln === "number") {
+    const picture = sheetProduct.picture?.startsWith("http")
+      ? sheetProduct.picture
+      : undefined;
+
     let newProduct: Product = {
       displayName: sheetProduct.products,
       price: sheetProduct.pricePln,
       description: sheetProduct.description,
-      picture: sheetProduct.picture,
+      picture: picture,
     };
-    newProducts[currentCategory].products[name] = newProduct;
+
+    if (newProduct.price)
+      // Makes sure no products get added if price=0
+      newProducts[currentCategory].products[name] = newProduct;
   }
 }
 

@@ -1514,10 +1514,6 @@
       "pl": "Snacks & Drinks & Sweets"
     },
     "products": {
-      "dollysMiniGoldenPineappleBiscuits380G": {
-        "displayName": "DOLLY'S Mini Golden Pineapple biscuits 380g",
-        "price": 0
-      },
       "rasanandKesarMangoes850G": {
         "displayName": "Rasanand Kesar Mangoes 850g",
         "price": 17
@@ -2373,4 +2369,3 @@
     }
   }
 }
-

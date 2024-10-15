@@ -2,6 +2,7 @@ import { Order } from "@prisma/client";
 import { products } from "../data/products";
 import Link from "next/link";
 import MarkAsShippedButton from "./MarkAsShippedButton";
+import { cn } from "../lib/utils";
 
 function AdminOrder({ order }: { order: Order }) {
   return (
@@ -41,7 +42,14 @@ function AdminOrder({ order }: { order: Order }) {
           </div>
         );
       })}
-      <p className="text-red-600 font-bold text-2xl">NOT SHIPPED</p>
+      <p
+        className={cn(
+          order.shipped && "text-green-600",
+          "text-red-600 font-bold text-2xl",
+        )}
+      >
+        {order.shipped ? "SHIPPED" : "NOT SHIPPED"}
+      </p>
       <MarkAsShippedButton id={order.id} unMark={order.shipped} />
     </div>
   );

@@ -7,7 +7,7 @@ import { cn } from "../lib/utils";
 import { useMemo } from "react";
 import { useTranslations } from "next-intl";
 
-function CartButton() {
+function CartButton({ ...props }) {
   const state = useCartState();
   const t = useTranslations("Layout.nav");
   const itemCount = useMemo(() => {
@@ -20,7 +20,7 @@ function CartButton() {
   }, [state]);
 
   return (
-    <Link href="/cart" className="flex items-center relative">
+    <Link href="/cart" className="flex items-center relative" {...props}>
       <ShoppingBasket className="h-8 mr-1" /> {t("cart")}
       <div
         className={cn(
