@@ -1,4 +1,4 @@
-version: "3"
+version: "3.8"
 
 services:
   mongo1:
@@ -98,7 +98,7 @@ services:
     volumes:
       - "./init-replica-set.sh:/init-replica-set.sh"
       - "./.env:/.env"
-    restart: no
+    restart: "no"
   app:
     container_name: nextjs
     build:

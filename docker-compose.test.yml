@@ -1,5 +1,5 @@
 # INFO: This file is only for testing the nginx reverse proxy, not for actual development
-version: "3"
+version: "3.8"
 
 services:
   mongo1:
@@ -99,7 +99,7 @@ services:
     volumes:
       - "./init-replica-set.sh:/init-replica-set.sh"
       - "./.env:/.env"
-    restart: no
+    restart: "no" # WHY IN THE WORLD IS THIS SUPPOSED TO BE A STRING????? EVERY OTHER VALUE ISN'T
   app:
     container_name: nextjs
     build:
