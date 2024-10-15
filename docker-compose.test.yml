@@ -12,8 +12,8 @@ services:
       - "./replica.key:/data/replica.key"
     environment:
       - MONGO_INITDB_DATABASE=maharajamart
-      - MONGO_INITDB_ROOT_USERNAME=root
-      - MONGO_INITDB_ROOT_PASSWORD=prisma
+      - MONGO_INITDB_ROOT_USERNAME=${MONGO_INITDB_ROOT_USERNAME:?error}
+      - MONGO_INITDB_ROOT_PASSWORD=${MONGO_INITDB_ROOT_PASSWORD:?error}
       - MONGO_REPLICA_SET_NAME=rs0
       - MONGODB_ADVERTISED_HOSTNAME=127.0.0.1
     command:
@@ -40,8 +40,8 @@ services:
       - "./replica.key:/data/replica.key"
     environment:
       - MONGO_INITDB_DATABASE=maharajamart
-      - MONGO_INITDB_ROOT_USERNAME=root
-      - MONGO_INITDB_ROOT_PASSWORD=prisma
+      - MONGO_INITDB_ROOT_USERNAME=${MONGO_INITDB_ROOT_USERNAME:?error}
+      - MONGO_INITDB_ROOT_PASSWORD=${MONGO_INITDB_ROOT_PASSWORD:?error}
       - MONGO_REPLICA_SET_NAME=rs0
       - MONGODB_ADVERTISED_HOSTNAME=127.0.0.1
     command:
@@ -68,8 +68,8 @@ services:
       - "./replica.key:/data/replica.key"
     environment:
       - MONGO_INITDB_DATABASE=maharajamart
-      - MONGO_INITDB_ROOT_USERNAME=root
-      - MONGO_INITDB_ROOT_PASSWORD=prisma
+      - MONGO_INITDB_ROOT_USERNAME=${MONGO_INITDB_ROOT_USERNAME:?error}
+      - MONGO_INITDB_ROOT_PASSWORD=${MONGO_INITDB_ROOT_PASSWORD:?error}
       - MONGO_REPLICA_SET_NAME=rs0
       - MONGODB_ADVERTISED_HOSTNAME=127.0.0.1
     command:
@@ -97,10 +97,14 @@ services:
     command: bash -c "chmod +x init-replica-set.sh && ./init-replica-set.sh"
     volumes:
       - "./init-replica-set.sh:/init-replica-set.sh"
+      - "./.env:/.env"
     restart: no
   app:
     container_name: nextjs
-    build: .
+    build:
+      context: .
+      args:
+        - DOCKER_ENV=test
     ports:
       - "3000:3000"
     depends_on:
@@ -109,7 +113,9 @@ services:
       - mongo2
       - mongo3
     restart: always
-    env_file: .env.local
+    environment:
+      - NODE_ENV=test
+    env_file: .env.test.local
   nginx:
     image: nginx:latest
     container_name: nginx

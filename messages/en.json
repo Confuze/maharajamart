@@ -92,6 +92,6 @@
     "paymentError": "Eror occured. Could not register transaction.",
     "redirecting": "Redirecting to przelewy24 payment website",
     "success": "Successfully registered order",
-    "successDesc": "Congratulations! Your order has been registered. You should receive a payment confirmation email right away. When we'll ship your order, we'll email you with the shipping information."
+    "successDesc": "Congratulations! Your order has been registered. You should receive a payment confirmation email right away. When we'll ship your order, we'll email you with the shipping information. If something went wrong, do not hesitate to call +48 537 354 886"
   }
 }
