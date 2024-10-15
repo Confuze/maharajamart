@@ -1,4 +1,5 @@
 # INFO: This file is only for testing the nginx reverse proxy, not for actual development
+version: "3"
 
 services:
   mongo1:
@@ -12,8 +13,8 @@ services:
       - "./replica.key:/data/replica.key"
     environment:
       - MONGO_INITDB_DATABASE=maharajamart
-      - MONGO_INITDB_ROOT_USERNAME=${MONGO_INITDB_ROOT_USERNAME}
-      - MONGO_INITDB_ROOT_PASSWORD=${MONGO_INITDB_ROOT_PASSWORD}
+      - MONGO_INITDB_ROOT_USERNAME=${MONGO_INITDB_ROOT_USERNAME:?error}
+      - MONGO_INITDB_ROOT_PASSWORD=${MONGO_INITDB_ROOT_PASSWORD:?error}
       - MONGO_REPLICA_SET_NAME=rs0
       - MONGODB_ADVERTISED_HOSTNAME=127.0.0.1
     command:
@@ -40,8 +41,8 @@ services:
       - "./replica.key:/data/replica.key"
     environment:
       - MONGO_INITDB_DATABASE=maharajamart
-      - MONGO_INITDB_ROOT_USERNAME=${MONGO_INITDB_ROOT_USERNAME}
-      - MONGO_INITDB_ROOT_PASSWORD=${MONGO_INITDB_ROOT_PASSWORD}
+      - MONGO_INITDB_ROOT_USERNAME=${MONGO_INITDB_ROOT_USERNAME:?error}
+      - MONGO_INITDB_ROOT_PASSWORD=${MONGO_INITDB_ROOT_PASSWORD:?error}
       - MONGO_REPLICA_SET_NAME=rs0
       - MONGODB_ADVERTISED_HOSTNAME=127.0.0.1
     command:
@@ -68,8 +69,8 @@ services:
       - "./replica.key:/data/replica.key"
     environment:
       - MONGO_INITDB_DATABASE=maharajamart
-      - MONGO_INITDB_ROOT_USERNAME=${MONGO_INITDB_ROOT_USERNAME}
-      - MONGO_INITDB_ROOT_PASSWORD=${MONGO_INITDB_ROOT_PASSWORD}
+      - MONGO_INITDB_ROOT_USERNAME=${MONGO_INITDB_ROOT_USERNAME:?error}
+      - MONGO_INITDB_ROOT_PASSWORD=${MONGO_INITDB_ROOT_PASSWORD:?error}
       - MONGO_REPLICA_SET_NAME=rs0
       - MONGODB_ADVERTISED_HOSTNAME=127.0.0.1
     command:
