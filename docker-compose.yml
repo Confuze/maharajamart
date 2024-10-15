@@ -1,26 +1,4 @@
 services:
-  app:
-    build: .
-    ports:
-      - "3000:3000"
-    environment:
-      - DATABASE_URL=mongodb://mongo:27017,mongo:27018,mongo:27019,r/maharajamart
-    depends_on:
-      - mongodb-init
-      - mongo1
-      - mongo2
-      - mongo3
-    restart: always
-  nginx:
-    image: nginx:latest
-    container_name: nginx
-    build: ./nginx/
-    ports:
-      - "80:80"
-      - "443:443"
-    volumes:
-      - /etc/letsencrypt/live/maharajamart.pl/:/etc/nginx/ssl:ro # certbot generates the key and cerificate in /etc/letsencrypt/live/[domain_name] so theorethicaly this volume should work perfectly. Obviously, run `certbot certonly` to generate the files first.
-    restart: always
   mongo1:
     container_name: mongo1
     image: mongo
@@ -29,10 +7,23 @@ services:
     volumes:
       - "mongo1_data:/data/db"
       - "mongo1_config:/data/configdb"
+      - "./replica.key:/data/replica.key"
     environment:
       - MONGO_INITDB_DATABASE=maharajamart
+      - MONGO_INITDB_ROOT_USERNAME=${MONGO_INITDB_ROOT_USERNAME}
+      - MONGO_INITDB_ROOT_PASSWORD=${MONGO_INITDB_ROOT_PASSWORD}
       - MONGO_REPLICA_SET_NAME=rs0
-    command: ["--replSet", "rs0", "--bind_ip_all", "--port", "27017"]
+      - MONGODB_ADVERTISED_HOSTNAME=127.0.0.1
+    command:
+      [
+        "--replSet",
+        "rs0",
+        "--bind_ip_all",
+        "--port",
+        "27017",
+        "--keyFile",
+        "/data/replica.key",
+      ]
     extra_hosts:
       - "host.docker.internal:host-gateway"
     restart: always
@@ -44,10 +35,23 @@ services:
     volumes:
       - "mongo2_data:/data/db"
       - "mongo2_config:/data/configdb"
+      - "./replica.key:/data/replica.key"
     environment:
       - MONGO_INITDB_DATABASE=maharajamart
+      - MONGO_INITDB_ROOT_USERNAME=${MONGO_INITDB_ROOT_USERNAME}
+      - MONGO_INITDB_ROOT_PASSWORD=${MONGO_INITDB_ROOT_PASSWORD}
       - MONGO_REPLICA_SET_NAME=rs0
-    command: ["--replSet", "rs0", "--bind_ip_all", "--port", "27018"]
+      - MONGODB_ADVERTISED_HOSTNAME=127.0.0.1
+    command:
+      [
+        "--replSet",
+        "rs0",
+        "--bind_ip_all",
+        "--port",
+        "27018",
+        "--keyFile",
+        "/data/replica.key",
+      ]
     extra_hosts:
       - "host.docker.internal:host-gateway"
     restart: always
@@ -59,10 +63,23 @@ services:
     volumes:
       - "mongo3_data:/data/db"
       - "mongo3_config:/data/configdb"
+      - "./replica.key:/data/replica.key"
     environment:
       - MONGO_INITDB_DATABASE=maharajamart
+      - MONGO_INITDB_ROOT_USERNAME=${MONGO_INITDB_ROOT_USERNAME}
+      - MONGO_INITDB_ROOT_PASSWORD=${MONGO_INITDB_ROOT_PASSWORD}
       - MONGO_REPLICA_SET_NAME=rs0
-    command: ["--replSet", "rs0", "--bind_ip_all", "--port", "27019"]
+      - MONGODB_ADVERTISED_HOSTNAME=127.0.0.1
+    command:
+      [
+        "--replSet",
+        "rs0",
+        "--bind_ip_all",
+        "--port",
+        "27019",
+        "--keyFile",
+        "/data/replica.key",
+      ]
     extra_hosts:
       - "host.docker.internal:host-gateway"
     restart: always
@@ -78,7 +95,37 @@ services:
     command: bash -c "chmod +x init-replica-set.sh && ./init-replica-set.sh"
     volumes:
       - "./init-replica-set.sh:/init-replica-set.sh"
+      - "./.env:/.env"
     restart: no
+  app:
+    container_name: nextjs
+    build:
+      context: .
+      args:
+        - DOCKER_ENV=test
+    ports:
+      - "3000:3000"
+    depends_on:
+      - mongodb-init
+      - mongo1
+      - mongo2
+      - mongo3
+    restart: always
+    environment:
+      - NODE_ENV=production
+    env_file: .env.production.local
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    build:
+      context: ./nginx/
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - /etc/letsencrypt/live/maharajamart.pl/:/etc/nginx/ssl:ro # certbot generates the key and cerificate in /etc/letsencrypt/live/[domain_name] so theorethicaly this volume should work perfectly. Obviously, run `certbot certonly` to generate the files first.
+    restart: always
 
 volumes:
   mongo1_data:

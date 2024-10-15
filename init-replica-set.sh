@@ -4,8 +4,6 @@ set -a
 source .env
 set +a
 
-printenv
-
 echo "Waiting for MongoDB to start on host.docker.internal:27017..."
 
 until mongosh --quiet --host host.docker.internal --username $MONGO_INITDB_ROOT_USERNAME --password $MONGO_INITDB_ROOT_PASSWORD --port 27017 --eval "db.runCommand({ ping: 1 }).ok" | grep 1 &>/dev/null; do

@@ -1,11 +1,11 @@
-import { Order, PrismaClient } from "@prisma/client";
+import { Order } from "@prisma/client";
 import { products } from "../data/products";
 import Link from "next/link";
 import MarkAsShippedButton from "./MarkAsShippedButton";
 
 function AdminOrder({ order }: { order: Order }) {
   return (
-    <div className="bg-background2 p-4 rounded-xl">
+    <div className="bg-background2 p-4 rounded-xl mb-4">
       <h1 className="font-bold text-secondary text-lg">
         Order from {order.createdAt.toLocaleString("en-GB")}
       </h1>

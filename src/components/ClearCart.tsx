@@ -10,7 +10,7 @@ function ClearCart() {
     updateCart({});
   }, [updateCart]);
 
-  return <>test</>;
+  return <></>;
 }
 
 export default ClearCart;

@@ -12,9 +12,7 @@ export default function middleware(req: NextRequest) {
     return NextResponse.next();
   }
 
-  console.log(req.nextUrl.pathname);
-
-  if (req.nextUrl.pathname.includes("/admin-maharajamart")) {
+  if (req.nextUrl.pathname.startsWith("/admin-maharajamart")) {
     return basicAuth(req);
   } else {
     return intl(req);

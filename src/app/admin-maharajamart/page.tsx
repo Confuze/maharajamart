@@ -11,13 +11,16 @@ export const dynamic = "force-dynamic";
 export default async function Admin() {
   const prisma = new PrismaClient();
   const notPaidOrders = await prisma.order.findMany({
-    where: { shipped: false },
+    where: { shipped: false, paid: true },
     orderBy: {
       createdAt: "asc",
     },
   });
 
   const last1000Orders = await prisma.order.findMany({
+    where: {
+      paid: true,
+    },
     take: 1000,
   });
 
