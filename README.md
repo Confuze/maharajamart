@@ -8,7 +8,7 @@ It is designed to be deployed with docker-compose on a vps and as such, the depl
 
 ## Local development environment
 
-1. Set up env variables
+### 1. Set up env variables
    There are two main env files for the dev environment: `.env` and `.env.development.local`
 
 `.env` needs to have the following two variables to make the docker containers (more on that later) work:
@@ -39,7 +39,7 @@ ADMIN_USER=
 ADMIN_PASS=
 ```
 
-2. Run database
+### 2. Run database
    The mongodb is ran with docker-compose with a replica set. Firstly you need to generate a replica key for authentication:
 
 ```
@@ -52,7 +52,7 @@ After that, you can run the database with
 docker-compose -f docker-compose.dev.yml up -d
 ```
 
-3. Run ngrok
+### 3. Run ngrok
    Since przelewy24 sends requests to a status api route on our nextjs server, we need to expose that route to the public. On a local machine we can do that with ngrok:
 
 ```
@@ -61,7 +61,7 @@ npm run ngrok
 
 It runs on a domain under my ngrok account specified in the package.json script. Feel free to change it.
 
-4. Run nextjs
+### 4. Run nextjs
    Lastly, when the db and ngrok are running, you can run nextjs with:
 
 ```
