@@ -112,6 +112,7 @@ export async function POST(req: Request) {
       language: "PL", // TODO: Localise
       urlReturn: `${process.env.PUBLIC_URL}/payment/success/`,
       urlStatus: `${process.env.API_URL}/payment/status/`,
+      waitForResult: true,
       timeLimit: 15,
       channel: 16,
       sign: sign,

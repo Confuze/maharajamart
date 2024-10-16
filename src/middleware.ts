@@ -8,7 +8,6 @@ export default function middleware(req: NextRequest) {
   );
 
   if (!ignoreRegex.test(req.nextUrl.pathname)) {
-    console.log(req.nextUrl.pathname, ": non-localised");
     return NextResponse.next();
   }
 

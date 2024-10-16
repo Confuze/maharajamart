@@ -39,7 +39,6 @@ function ProductCard({
           <Image
             className="text-[0] bg-cover"
             style={{ backgroundImage: `url(${placeholder.src})` }}
-            placeholder={`data:image/${placeholder}`}
             quality={75}
             fill
             src={product.picture || ""}

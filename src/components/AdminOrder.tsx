@@ -23,7 +23,7 @@ function AdminOrder({ order }: { order: Order }) {
         const product = products[item.categorySlug].products[item.productSlug];
         return (
           <div
-            className="bg-primary p-2 rounded-lg text-background"
+            className="mb-2 bg-primary p-2 rounded-lg text-background"
             key={index}
           >
             {index !== 0 && <br />}
@@ -44,8 +44,8 @@ function AdminOrder({ order }: { order: Order }) {
       })}
       <p
         className={cn(
-          order.shipped && "text-green-600",
-          "text-red-600 font-bold text-2xl",
+          order.shipped ? "text-green-600" : "text-red-600",
+          "font-bold text-2xl",
         )}
       >
         {order.shipped ? "SHIPPED" : "NOT SHIPPED"}

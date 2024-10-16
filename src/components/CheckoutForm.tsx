@@ -53,10 +53,20 @@ export default function CheckoutForm() {
   const router = useRouter();
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
-    toast(t("redirecting"));
     updateCheckoutFormValues(values);
 
+    let promiseResolve, promiseReject;
+
+    const promise = new Promise((resolve, reject) => {
+      promiseResolve = resolve;
+      promiseReject = reject;
+    });
+
+    toast.promise(promise, {
+      loading: t("redirecting"),
+      success: t("redirecting"),
+      error: t("paymentError"),
+    });
     try {
       const response = await fetch("/payment/", {
         method: "POST",
@@ -66,15 +76,14 @@ export default function CheckoutForm() {
         }),
       });
       if (!response.ok) {
-        toast.error(t("paymentError"), {
-          description: response.status,
-        });
         throw new Error(`Response status: ${response.status}`);
       }
 
       const json = await response.json();
+      promiseResolve!();
       router.replace(json.url);
     } catch (error: any) {
+      promiseReject!();
       console.error(error.message);
     }
   }

@@ -18,7 +18,6 @@ RUN \
   else echo "Lockfile not found." && exit 1; \
   fi
 
-
 # Rebuild the source code only when needed
 FROM base AS builder
 WORKDIR /app
@@ -52,7 +51,7 @@ ENV NODE_ENV=${DOCKER_ENV}
 RUN addgroup --system --gid 1001 nodejs
 RUN adduser --system --uid 1001 nextjs
 
-COPY --from=builder /app/public ./public
+COPY --from=builder --chown=10101 /app/public ./public
 
 # Set the correct permission for prerender cache
 RUN mkdir .next

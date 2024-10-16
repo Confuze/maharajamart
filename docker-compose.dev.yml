@@ -7,13 +7,13 @@ services:
     ports:
       - "27017:27017"
     volumes:
-      - "mongo1_data:/data/db"
-      - "mongo1_config:/data/configdb"
+      - "dev_mongo1_data:/data/db"
+      - "dev_mongo1_config:/data/configdb"
       - "./replica.key:/data/replica.key"
     environment:
       - MONGO_INITDB_DATABASE=maharajamart
-      - MONGO_INITDB_ROOT_USERNAME=root
-      - MONGO_INITDB_ROOT_PASSWORD=prisma
+      - MONGO_INITDB_ROOT_USERNAME=${MONGO_INITDB_ROOT_USERNAME:?error}
+      - MONGO_INITDB_ROOT_PASSWORD=${MONGO_INITDB_ROOT_PASSWORD:?error}
       - MONGO_REPLICA_SET_NAME=rs0
       - MONGODB_ADVERTISED_HOSTNAME=127.0.0.1
     command:
@@ -35,13 +35,13 @@ services:
     ports:
       - "27018:27018"
     volumes:
-      - "mongo2_data:/data/db"
-      - "mongo2_config:/data/configdb"
+      - "dev_mongo2_data:/data/db"
+      - "dev_mongo2_config:/data/configdb"
       - "./replica.key:/data/replica.key"
     environment:
       - MONGO_INITDB_DATABASE=maharajamart
-      - MONGO_INITDB_ROOT_USERNAME=root
-      - MONGO_INITDB_ROOT_PASSWORD=prisma
+      - MONGO_INITDB_ROOT_USERNAME=${MONGO_INITDB_ROOT_USERNAME:?error}
+      - MONGO_INITDB_ROOT_PASSWORD=${MONGO_INITDB_ROOT_PASSWORD:?error}
       - MONGO_REPLICA_SET_NAME=rs0
       - MONGODB_ADVERTISED_HOSTNAME=127.0.0.1
     command:
@@ -63,13 +63,13 @@ services:
     ports:
       - "27019:27019"
     volumes:
-      - "mongo3_data:/data/db"
-      - "mongo3_config:/data/configdb"
+      - "dev_mongo3_data:/data/db"
+      - "dev_mongo3_config:/data/configdb"
       - "./replica.key:/data/replica.key"
     environment:
       - MONGO_INITDB_DATABASE=maharajamart
-      - MONGO_INITDB_ROOT_USERNAME=root
-      - MONGO_INITDB_ROOT_PASSWORD=prisma
+      - MONGO_INITDB_ROOT_USERNAME=${MONGO_INITDB_ROOT_USERNAME:?error}
+      - MONGO_INITDB_ROOT_PASSWORD=${MONGO_INITDB_ROOT_PASSWORD:?error}
       - MONGO_REPLICA_SET_NAME=rs0
       - MONGODB_ADVERTISED_HOSTNAME=127.0.0.1
     command:
@@ -94,22 +94,16 @@ services:
       - mongo3
     extra_hosts:
       - "host.docker.internal:host-gateway"
-    entrypoint:
-      - bash
-      - -c
-      - |
-        chmod 400 /data/replica.key
-        chown 999:999 /data/replica.key
     command: bash -c "chmod +x init-replica-set.sh && ./init-replica-set.sh"
     volumes:
-      - "./init-replica-set.sh:/init-replica-set.sh"
-      - "./replica.key:/replica.key"
-    restart: no
+      - "./init-replica-set.dev.sh:/init-replica-set.sh"
+      - "./.env:/.env"
+    restart: "no" # WHY IN THE WORLD IS THIS SUPPOSED TO BE A STRING????? EVERY OTHER VALUE ISN'T
 
 volumes:
-  mongo1_data:
-  mongo2_data:
-  mongo3_data:
-  mongo1_config:
-  mongo2_config:
-  mongo3_config:
+  dev_mongo1_data:
+  dev_mongo2_data:
+  dev_mongo3_data:
+  dev_mongo1_config:
+  dev_mongo2_config:
+  dev_mongo3_config:

@@ -8,8 +8,8 @@ services:
     ports:
       - "27017:27017"
     volumes:
-      - "mongo1_data:/data/db"
-      - "mongo1_config:/data/configdb"
+      - "test_mongo1_data:/data/db"
+      - "test_mongo1_config:/data/configdb"
       - "./replica.key:/data/replica.key"
     environment:
       - MONGO_INITDB_DATABASE=maharajamart
@@ -36,8 +36,8 @@ services:
     ports:
       - "27018:27018"
     volumes:
-      - "mongo2_data:/data/db"
-      - "mongo2_config:/data/configdb"
+      - "test_mongo2_data:/data/db"
+      - "test_mongo2_config:/data/configdb"
       - "./replica.key:/data/replica.key"
     environment:
       - MONGO_INITDB_DATABASE=maharajamart
@@ -64,8 +64,8 @@ services:
     ports:
       - "27019:27019"
     volumes:
-      - "mongo3_data:/data/db"
-      - "mongo3_config:/data/configdb"
+      - "test_mongo3_data:/data/db"
+      - "test_mongo3_config:/data/configdb"
       - "./replica.key:/data/replica.key"
     environment:
       - MONGO_INITDB_DATABASE=maharajamart
@@ -131,9 +131,9 @@ services:
     restart: always
 
 volumes:
-  mongo1_data:
-  mongo2_data:
-  mongo3_data:
-  mongo1_config:
-  mongo2_config:
-  mongo3_config:
+  test_mongo1_data:
+  test_mongo2_data:
+  test_mongo3_data:
+  test_mongo1_config:
+  test_mongo2_config:
+  test_mongo3_config:
