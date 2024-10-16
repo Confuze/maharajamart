@@ -1,36 +1,77 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Maharajamart
 
-## Getting Started
+Maharajamart is a full stack e-commerce app that sells various indian groceries and delivers them all around poland.
 
-First, run the development server:
+It was made with nextjs, typescript, tailwind, shadcn, next-intl, mongodb, prisma, nginx, docker and more
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+It is designed to be deployed with docker-compose on a vps and as such, the deployment steps will be for that environment.
+
+## Local development environment
+
+1. Set up env variables
+   There are two main env files for the dev environment: `.env` and `.env.development.local`
+
+`.env` needs to have the following two variables to make the docker containers (more on that later) work:
+
+```
+MONGO_INITDB_ROOT_USERNAME=
+MONGO_INITDB_ROOT_PASSWORD=
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The rest of the environment variables are availible in `.env.example` in this repository. They may be put either in `.env` or `.env.development.local`, since nextjs loads both directories. If multiple environments are going to be ran on the same machine, it is recommended to put the env variables shared acrossed the environments in `.env` and ones specific to the environment in `.env.development.local`. For example, here is a setup that I use to run the `development` and `testing` environment on my local machine:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+# .env
+MONGO_INITDB_ROOT_USERNAME=
+MONGO_INITDB_ROOT_PASSWORD=
+P24_CRC_KEY=
+P24_MERCHANT_ID=
+P24_API_KEY=
+P24_API_DOMAIN=
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+```
+# .env.development.local
+API_URL=
+PUBLIC_URL=
+DATABASE_URL=
+ADMIN_USER=
+ADMIN_PASS=
+```
 
-## Learn More
+2. Run database
+   The mongodb is ran with docker-compose with a replica set. Firstly you need to generate a replica key for authentication:
 
-To learn more about Next.js, take a look at the following resources:
+```
+openssl rand -base64 756 > replica.key
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+After that, you can run the database with
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+```
+docker-compose -f docker-compose.dev.yml up -d
+```
 
-## Deploy on Vercel
+3. Run ngrok
+   Since przelewy24 sends requests to a status api route on our nextjs server, we need to expose that route to the public. On a local machine we can do that with ngrok:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```
+npm run ngrok
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+It runs on a domain under my ngrok account specified in the package.json script. Feel free to change it.
+
+4. Run nextjs
+   Lastly, when the db and ngrok are running, you can run nextjs with:
+
+```
+npm run dev
+```
+
+## Testing environment
+
+tbc
+
+## Production environment
+
+tbc
