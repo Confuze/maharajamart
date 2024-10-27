@@ -21,7 +21,7 @@ export default function About({
 
   return (
     <div className="px-8 lg:px-[25%]">
-      <h1 className="my-4 text-3xl lg:text-5xl font-serif text-secondary">
+      <h1 className="my-6 text-3xl lg:text-5xl font-serif text-secondary">
         {t("title")}
       </h1>
       <article

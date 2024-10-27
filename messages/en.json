@@ -79,6 +79,8 @@
   },
   "Checkout": {
     "title": "Checkout",
+    "contact": "Contact information",
+    "shipping": "Shipping",
     "fullName": "Full name",
     "address": "Adress (street, house/flat number)",
     "extraInfo": "Extra info",
@@ -87,7 +89,7 @@
     "town": "Town",
     "email": "Email adress",
     "phone": "Phone number",
-    "pay": "Pay",
+    "pay": "Pay now",
     "paymentInfo": "We support payment via card, Apple Pay, Google Pay, transfer and BLIK with przelewy24. The payment fee is an additional fee required by przelewy24 to process the transaction.",
     "paymentError": "Eror occured. Could not register transaction.",
     "redirecting": "Redirecting to przelewy24 payment website",

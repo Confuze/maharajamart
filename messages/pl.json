@@ -79,6 +79,8 @@
   },
   "Checkout": {
     "title": "Kasa",
+    "contact": "Informacje kontaktowe",
+    "shipping": "Dostawa",
     "fullName": "Imię i nazwisko",
     "address": "Ulica, numer domu, numer mieszkania",
     "extraInfo": "Dodatkowe informacje",
@@ -87,7 +89,7 @@
     "town": "Miejscowość",
     "email": "Adres mailowy",
     "phone": "Numer telefonu",
-    "pay": "Zapłać",
+    "pay": "Zapłać teraz",
     "paymentInfo": "Obsługujemy płatności kartą, Apple Pay, Google Pay, przelewem oraz BLIK za pomocą przelewy24. Opłata za płatność jest odsetką od transakcji, którą pobiera przelewy24.",
     "paymentError": "Wystąpił błąd. Płatność nie mogła zostać zarejestrowana",
     "redirecting": "Trwa przekierowywanie do serwisu przelewy24",

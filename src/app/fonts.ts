@@ -9,5 +9,5 @@ export const fontSerif = Judson({
 export const fontSans = Merriweather_Sans({
   subsets: ["latin-ext"],
   variable: "--font-sans",
-  weight: ["400"],
+  weight: ["400", "600"],
 });

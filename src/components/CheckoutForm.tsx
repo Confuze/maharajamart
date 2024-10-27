@@ -21,6 +21,13 @@ import { useRouter } from "../navigation";
 import { useAppStore } from "../lib/storage";
 import { toast } from "sonner";
 import { formSchema } from "../lib/zodSchemas";
+import p24logo from "@/public/przelewy24-logo.svg";
+import mbankLogo from "@/public/mbank.svg";
+import pkoLogo from "@/public/pko.svg";
+import pocztowy24logo from "@/public/pocztowy24.svg";
+import blikLogo from "@/public/blik.svg";
+import Image from "next/image";
+import { PhoneInput } from "./PhoneInput";
 
 export default function CheckoutForm() {
   const t = useTranslations("Checkout");
@@ -53,6 +60,7 @@ export default function CheckoutForm() {
   const router = useRouter();
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
+    console.log(values);
     updateCheckoutFormValues(values);
 
     let promiseResolve, promiseReject;
@@ -114,14 +122,34 @@ export default function CheckoutForm() {
           onSubmit={form.handleSubmit(onSubmit)}
         >
           <div className="basis-1/2">
-            <h1 className="mb-2 text-secondary font-serif text-4xl">
+            <h1 className="my-6 text-secondary font-serif text-4xl">
               {t("title")}
             </h1>
+            <h3 className="mb-0 font-serif text-2xl">{t("contact")}</h3>
+            <FormField
+              control={form.control}
+              name="email"
+              render={({ field }) => (
+                <FormItem className="my-6 mt-3">
+                  <FormLabel>{t("email")}</FormLabel>
+                  <FormControl>
+                    <Input
+                      type="email"
+                      className="min-w-48"
+                      placeholder="jan@kowalski.pl"
+                      {...field}
+                    ></Input>
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <h3 className="mb-0 font-serif text-2xl">{t("shipping")}</h3>
             <FormField
               control={form.control}
               name="name"
               render={({ field }) => (
-                <FormItem className="my-6">
+                <FormItem className="my-6 mt-3">
                   <FormLabel>{t("fullName")}</FormLabel>
                   <FormControl>
                     <Input
@@ -138,35 +166,16 @@ export default function CheckoutForm() {
             />
             <FormField
               control={form.control}
-              name="email"
-              render={({ field }) => (
-                <FormItem className="my-6">
-                  <FormLabel>{t("email")}</FormLabel>
-                  <FormControl>
-                    <Input
-                      type="email"
-                      className="min-w-48"
-                      placeholder="jan@kowalski.pl"
-                      {...field}
-                    ></Input>
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
               name="phone"
               render={({ field }) => (
                 <FormItem className="my-6">
-                  <FormLabel>{t("phone")}</FormLabel>
+                  <FormLabel>
+                    <div className="flex gap-2 items-end justify-between">
+                      {t("phone")}
+                    </div>
+                  </FormLabel>
                   <FormControl>
-                    <Input
-                      type="tel"
-                      className="min-w-48"
-                      placeholder="123 456 789"
-                      {...field}
-                    ></Input>
+                    <PhoneInput placeholder="123 456 789" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -190,42 +199,44 @@ export default function CheckoutForm() {
                 </FormItem>
               )}
             />
-            <FormField
-              control={form.control}
-              name="postalCode"
-              render={({ field }) => (
-                <FormItem className="my-6">
-                  <FormLabel>{t("postalCode")}</FormLabel>
-                  <FormControl>
-                    <Input
-                      type="text"
-                      className="min-w-48"
-                      placeholder="12-345"
-                      {...field}
-                    ></Input>
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name="town"
-              render={({ field }) => (
-                <FormItem className="my-6">
-                  <FormLabel>{t("town")}</FormLabel>
-                  <FormControl>
-                    <Input
-                      type="text"
-                      className="min-w-48"
-                      placeholder="Warszawa"
-                      {...field}
-                    ></Input>
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
+            <div className="flex gap-4 flex-wrap basis-full md:*:basis-[calc(100%/2-0.5rem)] w-full my-6">
+              <FormField
+                control={form.control}
+                name="postalCode"
+                render={({ field }) => (
+                  <FormItem className="w-full">
+                    <FormLabel>{t("postalCode")}</FormLabel>
+                    <FormControl>
+                      <Input
+                        type="text"
+                        className="min-w-48"
+                        placeholder="12-345"
+                        {...field}
+                      ></Input>
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="town"
+                render={({ field }) => (
+                  <FormItem className="w-full">
+                    <FormLabel>{t("town")}</FormLabel>
+                    <FormControl>
+                      <Input
+                        type="text"
+                        className="min-w-48"
+                        placeholder="Warszawa"
+                        {...field}
+                      ></Input>
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+            </div>
             <FormField
               control={form.control}
               name="extraInfo"
@@ -234,7 +245,7 @@ export default function CheckoutForm() {
                   <FormLabel>{t("extraInfo")}</FormLabel>
                   <FormControl>
                     <Input
-                      type="tel"
+                      type="text"
                       className="min-w-48"
                       placeholder={t("extraInfoDesc")}
                       {...field}
@@ -245,9 +256,9 @@ export default function CheckoutForm() {
               )}
             />
           </div>
-          <div className="basis-1/2 bg-background2 rounded-3xl p-8 flex gap-8 flex-col justify-between">
+          <div className="basis-1/2 bg-background2 rounded-xl lg:rounded-3xl p-4 lg:p-8 flex gap-8 flex-col justify-between">
             <div>
-              <div className="flex justify-between font-serif text-2xl lg:text-4xl text-secondary">
+              <div className="mb-4 flex justify-between font-serif text-2xl lg:text-4xl text-secondary">
                 <h3 className="">{t2("totalPrice")}</h3>
                 <span className="font-bold text-right">{fullPrice} zł</span>
               </div>
@@ -264,10 +275,38 @@ export default function CheckoutForm() {
                 <span className="font-bold text-right">{paymentFee} zł</span>
               </div>
             </div>
-            <div>
+            <div className="mt-16">
+              <div className="flex *:rounded *:basis-[calc(100%/3-0.5rem)] flex-wrap lg:*:basis-[calc(100%/6-0.5rem)] *:h-10 *:p-2 gap-2 *:border-solid *:border-[1px] *:border-neutral-300 *:bg-neutral-50 mb-4">
+                <Image
+                  src={p24logo}
+                  alt="logo of przelewy24, the payment service"
+                  className="h-full w-full"
+                />
+                <Image
+                  src={mbankLogo}
+                  alt="logo of przelewy24, the payment service"
+                  className="h-full w-full"
+                />
+                <Image
+                  src={pkoLogo}
+                  alt="logo of przelewy24, the payment service"
+                  className="h-full w-full"
+                />
+                <Image
+                  src={pocztowy24logo}
+                  alt="logo of przelewy24, the payment service"
+                  className="h-full w-full"
+                />
+                <Image
+                  src={blikLogo}
+                  alt="logo of przelewy24, the payment service"
+                  className="h-full w-full"
+                />
+                <div className="text-neutral-500  text-center text-sm">+33</div>
+              </div>
               <p className="text-sm text-neutral-700">{t("paymentInfo")}</p>
               <Button type="submit" size="lg" className="w-full mt-2">
-                {t("pay")}
+                <div>{t("pay")}</div>
               </Button>
             </div>
           </div>
