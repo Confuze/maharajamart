@@ -2,13 +2,14 @@
 
 import { ShoppingBasket } from "lucide-react";
 import { Link } from "../navigation";
-import { useCartState } from "../lib/useStore";
+import { useCartId, useCartState } from "../lib/useStore";
 import { cn } from "../lib/utils";
 import { useMemo } from "react";
 import { useTranslations } from "next-intl";
 
 function CartButton({ ...props }) {
   const state = useCartState();
+
   const t = useTranslations("Layout.nav");
   const itemCount = useMemo(() => {
     if (!state) return;

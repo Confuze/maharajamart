@@ -1,11 +1,22 @@
 import { useState, useEffect } from "react";
-import { ICart, IStore, useAppStore } from "./storage";
+import { ICartContents, useAppStore } from "./storage";
 import { formSchema } from "../lib/zodSchemas";
 import { z } from "zod";
 
 export const useCartState = () => {
-  const result = useAppStore((state) => state.cart);
-  const [data, setData] = useState<ICart>();
+  const result = useAppStore((state) => state.cart.contents);
+  const [data, setData] = useState<ICartContents>();
+
+  useEffect(() => {
+    setData(result);
+  }, [result]);
+
+  return data;
+};
+
+export const useCartId = () => {
+  const result = useAppStore((state) => state.cart.id);
+  const [data, setData] = useState<string>();
 
   useEffect(() => {
     setData(result);

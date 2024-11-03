@@ -21,6 +21,8 @@ const config: Config = {
         featuredMobile: "50%",
         categoriesDesktop: "calc(100% / 5)",
         categoriesMobile: "calc(100% / 2)",
+        paymentMethodsDesktop: "calc(100% / 6)",
+        paymentMethodsMobile: "calc(100% / 3)",
       },
       gridColumn: {
         middle: "2 / 4",

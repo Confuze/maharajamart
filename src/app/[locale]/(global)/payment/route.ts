@@ -1,5 +1,5 @@
 import crypto from "crypto";
-import { ICart } from "@/src/lib/storage";
+import { ICart, ICartContents } from "@/src/lib/storage";
 import { z } from "zod";
 import { formSchema } from "@/src/lib/zodSchemas";
 import { products } from "@/src/data/products";
@@ -8,10 +8,12 @@ import { NextResponse } from "next/server";
 import { corsHeaders } from "@/src/lib/corsHeaders";
 import { PrismaClient } from "@prisma/client";
 import { calculateSHA384 } from "@/src/lib/sign";
+import { deliveryPrices } from "@/src/lib/deliveryPrices";
 
 interface IData {
   formValues: z.infer<typeof formSchema>;
-  cart: ICart;
+  cart: ICartContents;
+  cartId: string;
 }
 
 export async function POST(req: Request) {
@@ -36,6 +38,29 @@ export async function POST(req: Request) {
   if (!Object.keys(cart).length) {
     NextResponse.json(
       { error: "400 Bad Request", message: "Cart must not be empty" },
+      { headers: corsHeaders, status: 400 },
+    );
+  }
+
+  const previousOrder = await prisma.order.findUnique({
+    where: {
+      cartId: data.cartId,
+    },
+  });
+
+  if (previousOrder && !previousOrder.paid)
+    await prisma.order.delete({
+      where: {
+        id: previousOrder.id,
+      },
+    });
+  else if (previousOrder?.paid) {
+    return NextResponse.json(
+      {
+        error: "400 Bad Request",
+        message:
+          "Invalid cartId. Object with this cartId already exists and it is paid for. Please generate new cartId.",
+      },
       { headers: corsHeaders, status: 400 },
     );
   }
@@ -72,7 +97,8 @@ export async function POST(req: Request) {
 
     return price;
   })();
-  const deliveryFee = productsPrice >= 200 ? 0 : 20;
+  const deliveryFee =
+    productsPrice >= 200 ? 0 : deliveryPrices[formValues.shippingMethod];
   const paymentFee =
     Math.round(((productsPrice + deliveryFee) * 0.0129 + 0.3) * 100) / 100;
   const fullPrice = Math.round(
@@ -110,11 +136,11 @@ export async function POST(req: Request) {
       country: "PL",
       phone: phone,
       language: "PL", // TODO: Localise
-      urlReturn: `${process.env.PUBLIC_URL}/payment/success/`,
+      urlReturn: `${process.env.PUBLIC_URL}/payment/redirect/`,
       urlStatus: `${process.env.API_URL}/payment/status/`,
       waitForResult: true,
       timeLimit: 15,
-      channel: 16,
+      channel: 8199, // 8199 = 1 + 2 + 4 + 8192, card + ApplePay + GooglePay + transfer + traditional transfer + blik
       sign: sign,
       encoding: "UTF-8",
     },
@@ -128,15 +154,16 @@ export async function POST(req: Request) {
 
   if (transaction.status == 200) {
     try {
-      const order = await prisma.order.create({
+      await prisma.order.create({
         data: {
           sessionId: sessionId,
           formValues: formValues,
+          deliveryFee: deliveryFee,
           cart: Object.values(cart),
+          cartId: data.cartId,
           price: fullPrice,
         },
       });
-      console.log(order);
     } catch (error) {
       return console.error(error);
     } finally {

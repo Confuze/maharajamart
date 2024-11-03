@@ -1,5 +1,4 @@
-- [x] Card hover state
-- [x] Shadcn component setup
+- [x] Card hover state [x] Shadcn component setup
 - [x] Products json file generated from excel sheet
   - [x] Add all products
 - [x] Layout
@@ -34,9 +33,29 @@
 - [x] Admin panel
 - [x] Favicon
 - [ ] optional: (but important) Search feature
-- [ ] Deploy
+- [ ] optional: Convert cart and products into set
+- [x] Deploy
   - [x] Dockerize for vps deploy
   - [x] Nginx reverse proxy for ssl
+
+- [x] Branches
+      image
+      instagram facebook links
+      google maps
+      adress
+      phone number
+
+- [x] Smaller featured
+- [x] Quantity
+- [x] Already added to cart text
+- [ ] Suggested products
+
+- [ ]
+  Delivery
+  kurier 20 zł
+  paczkomat 12 zł
+  uber 15 zł
+  pickup at store 0 zł
 
 ---
 

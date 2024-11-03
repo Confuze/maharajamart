@@ -64,9 +64,9 @@ function MobileNav({ locale }: { locale: string }) {
               onClick={() => {
                 setSheetOpen(false);
               }}
-              href="/contact"
+              href="/branches"
             >
-              {t("nav.contact")}
+              {t("nav.branches")}
             </Link>
             <Accordion type="single" collapsible>
               <AccordionItem value="item-1">

@@ -10,7 +10,13 @@ import { cn } from "../lib/utils";
 import { useCartState } from "../lib/useStore";
 import { Link } from "../navigation";
 
-function AddToCartButton({ product }: { product: CardInfo }) {
+function AddToCartButton({
+  product,
+  quantity,
+}: {
+  product: CardInfo;
+  quantity: number;
+}) {
   const t = useTranslations("Layout.products");
   const t2 = useTranslations("Product");
   const t3 = useTranslations("Cart");
@@ -21,7 +27,8 @@ function AddToCartButton({ product }: { product: CardInfo }) {
     e.preventDefault();
     if (!product.slug) return;
     if (
-      (state![generateKey(product.category, product.slug)]?.quantity || 0) + 1 >
+      (state![generateKey(product.category, product.slug)]?.quantity || 0) +
+        quantity >
       100
     )
       return toast.error(t2("maxQuantity"));
@@ -30,11 +37,11 @@ function AddToCartButton({ product }: { product: CardInfo }) {
     addCartItem({
       productSlug: product.slug,
       categorySlug: product.category,
-      quantity: 1,
+      quantity: quantity,
     });
     toast(t2("added"), {
       description: t2("addedDescription", {
-        quantity: 1,
+        quantity: quantity,
         name: product.displayName,
       }),
       action: (
@@ -51,7 +58,7 @@ function AddToCartButton({ product }: { product: CardInfo }) {
   return (
     <Button
       size="sm"
-      className="rounded-full lg:rounded-xl h-8 lg:h-auto lg:aspect-auto p-2 aspect-square lg:py-2 lg:px-4"
+      className="rounded-full text-nowrap lg:rounded-xl h-8 lg:h-min lg:aspect-auto p-2 aspect-square lg:py-2 lg:px-4"
       onClick={
         product.slug
           ? (e) => {

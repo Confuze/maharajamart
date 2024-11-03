@@ -9,8 +9,13 @@ export interface ICartItem {
   productSlug: string;
 }
 
-export interface ICart {
+export interface ICartContents {
   [key: string]: ICartItem;
+}
+
+export interface ICart {
+  id: string;
+  contents: ICartContents;
 }
 
 export interface IStore {
@@ -21,21 +26,28 @@ export interface IStore {
   updateCartItem: (cartItem: ICartItem) => void;
   addCartItem: (cartItem: ICartItem) => void;
   removeCartItem: (cartItem: ICartItem) => void;
+  generateNewId: () => void;
 }
 
-// the store itself does not need any change
+// NOTE: This may not be the cleanest code. There is a lot of repetition, especially with the id when setting a new cart but I can't think of a cleaner way to write this.
+// WARN: REMEMBER, always use copies of the get() method, javascript passes objects by reference, not copy and react doesn't do deep searches so it will consider the object identical, therefore not triggering a rerender.
 export const useAppStore = create<IStore>()(
   persist(
     (set, get) => ({
-      cart: {},
+      cart: {
+        id: "",
+        contents: {},
+      },
       checkoutFormValues: {
         name: "",
         email: "",
         phone: "",
+        company: "",
         address: "",
         postalCode: "",
         town: "",
         extraInfo: "",
+        shippingMethod: "CLOSE_DELIVERY",
       },
       updateCheckoutFormValues: (newValues: z.infer<typeof formSchema>) => {
         set({ ...get(), checkoutFormValues: newValues });
@@ -47,49 +59,78 @@ export const useAppStore = create<IStore>()(
         // INFO: The difference between this and the addCartItem method is this doesn't increment quantity when the item already exists, just overrides it.
         set({
           cart: {
-            ...get().cart,
-            [generateKey(cartItem.categorySlug, cartItem.productSlug)]:
-              cartItem,
+            id: get().cart.id,
+            contents: {
+              ...get().cart.contents,
+              [generateKey(cartItem.categorySlug, cartItem.productSlug)]:
+                cartItem,
+            },
           },
         });
       },
       addCartItem: (cartItem: ICartItem) => {
         const key = generateKey(cartItem.categorySlug, cartItem.productSlug);
-        if (get().cart[key]) {
-          const newQuantity = get().cart[key].quantity + cartItem.quantity;
+        if (get().cart.contents[key]) {
+          const newQuantity =
+            get().cart.contents[key].quantity + cartItem.quantity;
           set({
             cart: {
-              ...get().cart,
-              [key]: {
-                ...(get().cart[key] as ICartItem),
-                quantity: newQuantity, // INFO: The type casting and the non-null assertion is there because typescript thinks get().cart[key] can be undefined even though the if statement checks exactly that. (It assumes it can change since get() is a function, but it never can)
+              id: get().cart.id,
+              contents: {
+                ...get().cart.contents,
+                [key]: {
+                  ...get().cart.contents[key],
+                  quantity: newQuantity,
+                },
               },
             },
           });
         } else {
           set({
             cart: {
-              ...get().cart,
-              [generateKey(cartItem.categorySlug, cartItem.productSlug)]:
-                cartItem,
+              id: get().cart.id,
+              contents: {
+                ...get().cart.contents,
+                [generateKey(cartItem.categorySlug, cartItem.productSlug)]:
+                  cartItem,
+              },
             },
           });
         }
       },
       removeCartItem: (cartItem: ICartItem) => {
-        let newCart = get().cart;
+        let newCartContents = { ...get().cart.contents };
 
-        delete newCart[
+        delete newCartContents[
           generateKey(cartItem.categorySlug, cartItem.productSlug)
         ];
 
         set({
-          cart: { ...newCart }, // INFO: Must create copy of newCart, otherwise react thinks it hasn't changed because it compares by reference
+          cart: { id: get().cart.id, contents: newCartContents }, // INFO: Must create copy of newCart, otherwise react thinks it hasn't changed because it compares by reference
+        });
+      },
+      generateNewId: () => {
+        set({
+          cart: {
+            id: crypto.randomUUID(),
+            contents: get().cart.contents,
+          },
         });
       },
     }),
     {
       name: "cart",
+      onRehydrateStorage: (state) => {
+        // Generates a new uuid if one has not been set yet
+        return (state, error) => {
+          if (error) console.log("Hydration failed, ", error);
+          else {
+            if (!state) return;
+            if (state.cart.id === "") state.generateNewId();
+            console.log("Hydration finished");
+          }
+        };
+      },
     },
   ),
 );

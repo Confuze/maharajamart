@@ -22,8 +22,8 @@ export default function Navbar({ locale }: { locale: string }) {
             <NavigationMenuLink href="/about">{t("about")}</NavigationMenuLink>
           </NavigationMenuItem>
           <NavigationMenuItem>
-            <NavigationMenuLink href="/contact">
-              {t("contact")}
+            <NavigationMenuLink href="/branches">
+              {t("branches")}
             </NavigationMenuLink>
           </NavigationMenuItem>
           <NavigationMenuItem>
@@ -52,7 +52,7 @@ export default function Navbar({ locale }: { locale: string }) {
           </NavigationMenuItem>
         </NavigationMenuList>
       </NavigationMenu>
-      <div className="flex gap-20">
+      <div className="flex gap-20 xl:gap-28">
         <LanguagePicker locale={locale} />
         <CartButton />
       </div>

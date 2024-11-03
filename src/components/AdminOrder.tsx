@@ -4,12 +4,27 @@ import Link from "next/link";
 import MarkAsShippedButton from "./MarkAsShippedButton";
 import { cn } from "../lib/utils";
 
+const deliveryMethodTitles = {
+  CLOSE_DELIVERY: "Close delivery (uber, etc.)",
+  COURIER: "Courier (DHL/DPD/UPS)",
+  PARCEL_MACHINE: "Parcel machine (Inpost/Orlen paczka)",
+  PICKUP_AT_STORE: "Pickup at store",
+};
+
 function AdminOrder({ order }: { order: Order }) {
   return (
     <div className="bg-background2 p-4 rounded-xl mb-4">
       <h1 className="font-bold text-secondary text-lg">
         Order from {order.createdAt.toLocaleString("en-GB")}
       </h1>
+      <p>Total price: {order.price / 100} zł</p>
+      <p>
+        Delivery fee (paid by customer, included in total price):{" "}
+        {order.deliveryFee} zł
+      </p>
+      <p>
+        Delivery method: {deliveryMethodTitles[order.formValues.shippingMethod]}
+      </p>
       <p className="font-bold font-serif text-xl">Customer information</p>
       <p>Name: {order.formValues.name}</p>
       <p>Email address: {order.formValues.email}</p>

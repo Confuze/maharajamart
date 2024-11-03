@@ -9,7 +9,9 @@ function InfoBar({ locale }: { locale: string }) {
   return (
     <div className="w-full text-sm py-2 px-2 lg:px-24 flex items-center justify-between text-background bg-secondary">
       <Link href="/">
-        <h4 className="font-serif text-xl font-bold">MAHARAJA MART</h4>
+        <h4 className="font-serif text-2xl lg:text-3xl font-bold">
+          MAHARAJA MART
+        </h4>
       </Link>
       <div className="hidden lg:flex *:flex *:items-center gap-14 content-end ">
         <p className="">

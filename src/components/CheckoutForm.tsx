@@ -15,7 +15,7 @@ import {
 import { Input } from "./ui/input";
 import { Button } from "./ui/button";
 import { useEffect, useMemo } from "react";
-import { useCartState, useFormState } from "../lib/useStore";
+import { useCartId, useCartState, useFormState } from "../lib/useStore";
 import { products } from "../data/products";
 import { useRouter } from "../navigation";
 import { useAppStore } from "../lib/storage";
@@ -28,11 +28,14 @@ import pocztowy24logo from "@/public/pocztowy24.svg";
 import blikLogo from "@/public/blik.svg";
 import Image from "next/image";
 import { PhoneInput } from "./PhoneInput";
+import { RadioGroup, RadioGroupItem } from "./ui/radio-group";
+import { deliveryPrices } from "../lib/deliveryPrices";
 
 export default function CheckoutForm() {
   const t = useTranslations("Checkout");
   const t2 = useTranslations("Cart");
   const state = useCartState();
+  const id = useCartId();
   const formState = useFormState();
   const { updateCheckoutFormValues: updateCheckoutFormValues } = useAppStore();
 
@@ -45,13 +48,17 @@ export default function CheckoutForm() {
             name: "",
             email: "",
             phone: "",
+            company: "",
             address: "",
             postalCode: "",
             town: "",
             extraInfo: "",
+            shippingMethod: "CLOSE_DELIVERY",
           };
     }, [formState]),
   });
+
+  console.log(formState);
 
   useEffect(() => {
     if (formState) form.reset(formState);
@@ -60,7 +67,6 @@ export default function CheckoutForm() {
   const router = useRouter();
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
     updateCheckoutFormValues(values);
 
     let promiseResolve, promiseReject;
@@ -81,6 +87,7 @@ export default function CheckoutForm() {
         body: JSON.stringify({
           formValues: values,
           cart: state,
+          cartId: id,
         }),
       });
       if (!response.ok) {
@@ -109,10 +116,12 @@ export default function CheckoutForm() {
 
     return price;
   }, [state]);
-  const deliveryFee = productsPrice >= 200 ? 0 : 20;
+  const deliveryFee =
+    productsPrice >= 200 ? 0 : deliveryPrices[form.watch("shippingMethod")];
   const paymentFee =
-    Math.round(((productsPrice + deliveryFee) * 0.0129 + 0.3) * 100) / 100;
+    Math.round((productsPrice + deliveryFee) * 0.015 * 100) / 100;
   const fullPrice = productsPrice + deliveryFee + paymentFee;
+  console.log(deliveryFee, form.watch("shippingMethod"));
 
   return (
     <div className="px-8 lg:px-0 lg:w-3/5">
@@ -183,6 +192,28 @@ export default function CheckoutForm() {
             />
             <FormField
               control={form.control}
+              name="company"
+              render={({ field }) => (
+                <FormItem className="my-6">
+                  <FormLabel>
+                    <div className="flex gap-2 items-end justify-between">
+                      {t("company")} ({t("optional")})
+                    </div>
+                  </FormLabel>
+                  <FormControl>
+                    <Input
+                      type="text"
+                      className="min-w-48"
+                      placeholder={t("companyPlaceholder")}
+                      {...field}
+                    ></Input>
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
               name="address"
               render={({ field }) => (
                 <FormItem className="my-6">
@@ -242,7 +273,9 @@ export default function CheckoutForm() {
               name="extraInfo"
               render={({ field }) => (
                 <FormItem className="my-6">
-                  <FormLabel>{t("extraInfo")}</FormLabel>
+                  <FormLabel>
+                    {t("extraInfo")} ({t("optional")})
+                  </FormLabel>
                   <FormControl>
                     <Input
                       type="text"
@@ -255,28 +288,119 @@ export default function CheckoutForm() {
                 </FormItem>
               )}
             />
+            <h3 className="mb-0 font-serif text-2xl">{t("shippingMethod")}</h3>
+            <FormField
+              control={form.control}
+              name="shippingMethod"
+              render={({ field }) => (
+                <FormItem className="space-y-3">
+                  <FormLabel>{t("shippingMethodDesc")}</FormLabel>
+                  <FormControl>
+                    <RadioGroup
+                      onValueChange={field.onChange}
+                      defaultValue={field.value}
+                      className="flex flex-col space-y-1"
+                    >
+                      <FormItem className="space-x-3 space-y-0">
+                        <FormControl>
+                          <RadioGroupItem value="CLOSE_DELIVERY">
+                            <div className="flex gap-4 items-center justify-between">
+                              <FormLabel className="text-xs cursor-pointer">
+                                <h3 className="text-secondary text-lg mb-2">
+                                  {t("shippingMethods.closeDelivery")}
+                                </h3>
+                                <p> {t("shippingMethods.closeDeliveryDesc")}</p>
+                              </FormLabel>
+                              <p className="text-nowrap">
+                                {deliveryPrices.CLOSE_DELIVERY} zł
+                              </p>
+                            </div>
+                          </RadioGroupItem>
+                        </FormControl>
+                      </FormItem>
+                      <FormItem className="space-x-3 space-y-0">
+                        <FormControl>
+                          <RadioGroupItem value="COURIER">
+                            <div className="flex gap-4 items-center justify-between">
+                              <FormLabel className="text-xs cursor-pointer">
+                                <h3 className="text-secondary text-lg mb-2">
+                                  {t("shippingMethods.courier")}
+                                </h3>
+                                <p> {t("shippingMethods.courierDesc")}</p>
+                              </FormLabel>
+                              <p className="text-nowrap">
+                                {deliveryPrices.COURIER} zł
+                              </p>
+                            </div>
+                          </RadioGroupItem>
+                        </FormControl>
+                      </FormItem>
+                      <FormItem className="space-x-3 space-y-0">
+                        <FormControl>
+                          <RadioGroupItem value="PARCEL_MACHINE">
+                            <div className="flex gap-4 items-center justify-between">
+                              <FormLabel className="text-xs cursor-pointer">
+                                <h3 className="text-secondary text-lg mb-2">
+                                  {t("shippingMethods.parcelMachine")}
+                                </h3>
+                                <p> {t("shippingMethods.parcelMachineDesc")}</p>
+                              </FormLabel>
+                              <p className="text-nowrap">
+                                {deliveryPrices.PARCEL_MACHINE} zł
+                              </p>
+                            </div>
+                          </RadioGroupItem>
+                        </FormControl>
+                      </FormItem>
+                      <FormItem className="space-x-3 space-y-0">
+                        <FormControl>
+                          <RadioGroupItem value="PICKUP_AT_STORE">
+                            <div className="flex gap-4 items-center justify-between">
+                              <FormLabel className="text-xs cursor-pointer">
+                                <h3 className="text-secondary text-lg mb-2">
+                                  {t("shippingMethods.pickupAtStore")}
+                                </h3>
+                                <p> {t("shippingMethods.pickupAtStoreDesc")}</p>
+                              </FormLabel>
+                              <p className="text-nowrap">
+                                {deliveryPrices.PICKUP_AT_STORE} zł
+                              </p>
+                            </div>
+                          </RadioGroupItem>
+                        </FormControl>
+                      </FormItem>
+                    </RadioGroup>
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
           </div>
-          <div className="basis-1/2 bg-background2 rounded-xl lg:rounded-3xl p-4 lg:p-8 flex gap-8 flex-col justify-between">
+          <div className="lg:sticky lg:top-6 self-start basis-1/2 h-[60vh] bg-background2 rounded-xl lg:rounded-2xl p-4 lg:p-8 flex gap-8 flex-col justify-between">
             <div>
-              <div className="mb-4 flex justify-between font-serif text-2xl lg:text-4xl text-secondary">
-                <h3 className="">{t2("totalPrice")}</h3>
-                <span className="font-bold text-right">{fullPrice} zł</span>
-              </div>
-              <div className="flex justify-between lg:text-xl">
+              <h2 className="mb-4 text-secondary font-serif text-4xl">
+                {t("summary")}
+              </h2>
+              <div className="flex justify-between lg:text-lg">
                 <span className="">{t2("productPrice")}</span>
                 <span className="font-bold text-right">{productsPrice} zł</span>
               </div>
-              <div className="flex justify-between lg:text-xl">
+              <div className="flex justify-between lg:text-lg">
                 <span className="">{t2("deliveryFee")}</span>
                 <span className="font-bold text-right">{deliveryFee} zł</span>
               </div>
-              <div className="flex justify-between lg:text-xl">
+              <div className="flex justify-between lg:text-lg">
                 <span className="">{t2("transactionFee")}</span>
                 <span className="font-bold text-right">{paymentFee} zł</span>
               </div>
+              <hr className="my-3 border-primary border-t-1" />
+              <div className="mb-4 flex justify-between text-lg lg:text-xl text-secondary">
+                <h3 className="">{t2("totalPrice")}</h3>
+                <span className="font-bold text-right">{fullPrice} zł</span>
+              </div>
             </div>
             <div className="mt-16">
-              <div className="flex *:rounded *:basis-[calc(100%/3-0.5rem)] flex-wrap lg:*:basis-[calc(100%/6-0.5rem)] *:h-10 *:p-2 gap-2 *:border-solid *:border-[1px] *:border-neutral-300 *:bg-neutral-50 mb-4">
+              <div className="grid w-full overflow-hidden grid-cols-3 lg:grid-cols-6 *:rounded *:h-10 *:p-2 gap-2 *:border-solid *:border-[1px] *:border-neutral-300 *:bg-neutral-50 mb-4">
                 <Image
                   src={p24logo}
                   alt="logo of przelewy24, the payment service"

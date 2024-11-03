@@ -6,15 +6,24 @@
     "nav": {
       "home": "Start",
       "about": "O nas",
-      "contact": "Kontakt",
+      "branches": "Placówki i kontakt",
       "products": "Produkty",
       "allProducts": "Wszystkie produkty",
       "cart": "Koszyk"
     },
     "products": {
       "promotion": "Promocja",
+      "alreadyInCart": "Dodane do koszyka",
       "addToCart": "Dodaj do koszyka",
-      "details": "Dowiedz się więcej"
+      "details": "Dowiedz się więcej",
+      "suggested": "Zobacz również"
+    },
+    "redirect": {
+      "checking": "Sprawdzanie transakcji...",
+      "success": "Płatność zakończona pomyślnie",
+      "successDesc": "Zamówienie zostało potwierdzone",
+      "error": "Płatność nie powiodła się.",
+      "errorDesc": "Zamówienie nie zostało potwierdzone"
     }
   },
   "Home": {
@@ -52,9 +61,13 @@
     "title": "O nas",
     "content": "Witamy w Maharaja Mart, kompleksowym sklepie z autentycznymi indyjskimi produktami spożywczymi i zachwycającą eksploracją międzynarodowych smaków! Z pasją wprowadzamy żywy smak Indii do Wrocławia i Poznania, jednocześnie celebrując bogate tradycje kulinarne Afryki, Indonezji, Wietnamu i Pakistanu.<br><br><h3>Nasza historia</h3>Maharaja Mart powstał w oparciu o przekonanie, że jedzenie jest uniwersalnym językiem, łączącym ludzi z różnych środowisk. Dążymy do stworzenia przyjaznej przestrzeni, w której każdy może odkryć nowe składniki, rozbudzić swoje kubki smakowe i wyruszyć w pyszną podróż odkrywania kultury.<br><br><h3>Nasze zaangażowanie</h3><b>Szeroki wybór</b>: Oferujemy szeroki wybór indyjskich produktów spożywczych, od pachnącego ryżu basmati i aromatycznych przypraw po aromatyczne dals i gotowe do spożycia curry. Posiadamy również zróżnicowaną gamę produktów afrykańskich, indonezyjskich, wietnamskich i pakistańskich, dzięki czemu można znaleźć wszystkie składniki potrzebne do stworzenia autentycznych potraw z całego świata.<br><b>Gwarancja Halal</b>: Rozumiemy znaczenie religijnych ograniczeń dietetycznych. Znaczna część naszego indyjskiego asortymentu posiada certyfikat Halal, zapewniając spokój ducha naszym muzułmańskim klientom.<br><b>Inkluzywność</b>: Maharaja Mart obejmuje wszystkie religie i kultury. Celebrujemy różnorodność i promujemy zrozumienie poprzez wspólną miłość do jedzenia.<br>Celebrujemy różnorodność i promujemy zrozumienie poprzez wspólną miłość do jedzenia.<br><b>Duch społeczności</b>: Jesteśmy aktywnie zaangażowani w wydarzenia kulturalne we Wrocławiu i Poznaniu. Szukaj naszego stoiska na lokalnych festiwalach, gdzie możesz spróbować pysznego jedzenia, poznać różne tradycje kulinarne i doświadczyć radości wspólnoty.<br><br><h3>Dołącz do rodziny Maharaja Mart</h3>Niezależnie od tego, czy jesteś doświadczonym kucharzem, czy dopiero zaczynasz odkrywać świat przypraw, jesteśmy tutaj, aby Cię poprowadzić. Nasz przyjazny personel posiada wiedzę na temat naszych produktów i chętnie odpowie na Twoje pytania. Odwiedź nas we Wrocławiu lub Poznaniu, przejrzyj nasze alejki i rozpocznij smakową przygodę!  Z niecierpliwością czekamy na powitanie w rodzinie Maharaja Mart."
   },
-  "Contact": {
-    "title": "Kontakt",
-    "content": "Zapraszamy do kontaktu pod numerem: "
+  "Branches": {
+    "title": "Placówki i kontakt",
+    "open": "Otwarte od: ",
+    "maharajaOpen": "10:00 - 21:00 (pon - sob)",
+    "restaurantOpen": "11:00 - 21:00 (pon - czw) 12:00 - 21:00 (pt - nd)",
+    "restaurant": "Maharaja Art of Food Restauracja",
+    "restaurantDesc": "Zapraszamy również do naszej restauracji we wrocławiu"
   },
   "Category": {
     "noProudcts": "Brak dostępnych produktów w tej kategorii.",
@@ -69,27 +82,44 @@
   "Cart": {
     "items": "artykułów",
     "cart": "Koszyk",
-    "singlePrice": "Cena jednego produktu: ",
+    "singlePrice": "Cena jednej sztuki: ",
     "totalPrice": "Cena w sumie: ",
     "productPrice": "Cena produktów: ",
     "deliveryFee": "Opłata za dostawę: ",
     "transactionFee": "Opłata za płatność: ",
     "addedAtCheckout": "Naliczone w kasie",
+    "summary": "Podsumowanie koszyka",
     "proceed": "Przejdź do kasy"
   },
   "Checkout": {
     "title": "Kasa",
     "contact": "Informacje kontaktowe",
     "shipping": "Dostawa",
+    "shippingMethod": "Metoda dostawy",
+    "shippingMethodDesc": "Skontaktujemy się z państwem w celu przekazania danych wysyłki tuż po nadaniu przesyłki",
+    "shippingMethods": {
+      "closeDelivery": "Dostawa w pobliżu sklepu",
+      "closeDeliveryDesc": "Opcja dla szybkich zamówień prosto do domu na adres w odległości poniżej 25km od sklepu. Dodatkowe koszty mogą zostać naliczone, jeśli koszt dostawy przekroczy 30 zł.",
+      "courier": "Kurier",
+      "courierDesc": "Dostawa prosto do domu, za pomocą DPD/DHL/UPS.",
+      "parcelMachine": "Paczkomat",
+      "parcelMachineDesc": "Dostawa do najbliższego paczkomatu do adresu, za pomocą Inpost/Orlen Paczka.",
+      "pickupAtStore": "Odbiór w sklepie",
+      "pickupAtStoreDesc": "Opcja darmowa. Skontaktujemy się telefonicznie, aby ustalić czas odbioru."
+    },
+    "optional": "Opcjonalne",
     "fullName": "Imię i nazwisko",
     "address": "Ulica, numer domu, numer mieszkania",
     "extraInfo": "Dodatkowe informacje",
     "extraInfoDesc": "Dodatkowe wskazówki",
+    "company": "Firma",
+    "companyPlaceholder": "Nazwa firmy",
     "postalCode": "Kod pocztowy",
     "town": "Miejscowość",
     "email": "Adres mailowy",
     "phone": "Numer telefonu",
     "pay": "Zapłać teraz",
+    "summary": "Podsumowanie zamówienia",
     "paymentInfo": "Obsługujemy płatności kartą, Apple Pay, Google Pay, przelewem oraz BLIK za pomocą przelewy24. Opłata za płatność jest odsetką od transakcji, którą pobiera przelewy24.",
     "paymentError": "Wystąpił błąd. Płatność nie mogła zostać zarejestrowana",
     "redirecting": "Trwa przekierowywanie do serwisu przelewy24",

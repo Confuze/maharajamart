@@ -1,6 +1,5 @@
 // This is your Prisma schema file,
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
-
 // Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
 // Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
 
@@ -14,14 +13,23 @@ datasource db {
 }
 
 model Order {
-  id          String      @id @default(auto()) @map("_id") @db.ObjectId
-  sessionId   String      @unique
-  formValues  FormValues
-  cart        CartItem[]
-  price       Int
-  paid        Boolean     @default(false)
-  shipped     Boolean     @default(false)
-  createdAt   DateTime    @default(now())
+  id              String      @id @default(auto()) @map("_id") @db.ObjectId
+  sessionId       String      @unique
+  formValues      FormValues
+  cart            CartItem[]
+  cartId          String      @unique
+  price           Int
+  deliveryFee     Int
+  paid            Boolean     @default(false)
+  shipped         Boolean     @default(false)
+  createdAt       DateTime    @default(now())
+}
+
+enum ShippingMethod {
+  CLOSE_DELIVERY
+  COURIER
+  PARCEL_MACHINE
+  PICKUP_AT_STORE
 }
 
 type CartItem {
@@ -31,11 +39,13 @@ type CartItem {
 }
 
 type FormValues {
-  name        String
-  email       String
-  phone       String
-  address     String
-  postalCode  String
-  town        String
-  extraInfo   String?
+  name            String
+  email           String
+  phone           String
+  company         String?
+  address         String
+  postalCode      String
+  town            String
+  extraInfo       String?
+  shippingMethod  ShippingMethod
 }

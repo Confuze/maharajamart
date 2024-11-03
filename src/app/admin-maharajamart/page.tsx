@@ -21,8 +21,12 @@ export default async function Admin() {
     where: {
       paid: true,
     },
+    orderBy: {
+      createdAt: "asc",
+    },
     take: 1000,
   });
+  console.log(notPaidOrders);
 
   return (
     <>
@@ -30,13 +34,17 @@ export default async function Admin() {
         Maharajamart administration panel
       </h1>
       <h3 className="font-serif text-3xl">Orders to ship</h3>
-      {notPaidOrders.map((order) => {
-        return <AdminOrder order={order} key={order.id} />;
-      }) || "No orders yet"}
+      {notPaidOrders.length // why does javascript treat [] as a truthy value???
+        ? notPaidOrders.map((order) => {
+            return <AdminOrder order={order} key={order.id} />;
+          })
+        : "No orders yet"}
       <h3 className="font-serif text-3xl">Last 1000 orders</h3>
-      {last1000Orders.map((order) => {
-        return <AdminOrder order={order} key={order.id} />;
-      }) || "No orders yet"}
+      {last1000Orders.length
+        ? last1000Orders.map((order) => {
+            return <AdminOrder order={order} key={order.id} />;
+          })
+        : "No orders yet"}
     </>
   );
 }
