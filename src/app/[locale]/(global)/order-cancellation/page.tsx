@@ -12,7 +12,11 @@ export async function generateMetadata({
   return { title: t("title") };
 }
 
-function OrderCancellation({ locale }: { locale: string }) {
+function OrderCancellation({
+  params: { locale },
+}: {
+  params: { locale: "en" | "pl" };
+}) {
   unstable_setRequestLocale(locale);
 
   const t = useTranslations("OrderCancellation");
