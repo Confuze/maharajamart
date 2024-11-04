@@ -21,7 +21,7 @@ import { useTranslations } from "next-intl";
 import { Link } from "../navigation";
 import { Menu } from "lucide-react";
 
-function MobileNav({ locale }: { locale: string }) {
+function MobileNav({ locale }: { locale: "en" | "pl" }) {
   const t = useTranslations("Layout");
   const [sheetOpen, setSheetOpen] = useState(false);
 

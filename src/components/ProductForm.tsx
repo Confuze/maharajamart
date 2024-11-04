@@ -109,7 +109,7 @@ function ProductForm({ product }: { product: IFormProduct }) {
                       HTMLInputElement | HTMLTextAreaElement
                     >,
                   ) => {
-                    e.key === "Enter" && e.preventDefault();
+                    if (e.key === "Enter") e.preventDefault();
                   }}
                   {...field}
                 ></Input>

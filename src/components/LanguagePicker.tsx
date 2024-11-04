@@ -17,10 +17,10 @@ import {
 import { SelectIcon } from "@radix-ui/react-select";
 import { Globe } from "lucide-react";
 
-export default function LanguagePicker({ locale }: { locale: any }) {
+export default function LanguagePicker({ locale }: { locale: "en" | "pl" }) {
   // INFO: I don't care it's any, I'm not gonna spend an hour setting the right type for this with the state and everything for a variable that I'm gonna use 3 times
-  const [selectedLocale, setSelectedLocale] = useState(locale);
-  const languages: any = { en: "English", pl: "Polski" }; // INFO: Same as same as line 13
+  const languages = { en: "English", pl: "Polski" }; // INFO: Same as same as line 13
+  const [selectedLocale, setSelectedLocale] = useState<"en" | "pl">(locale);
   const pathname = usePathname();
   const router = useRouter();
 
@@ -30,7 +30,10 @@ export default function LanguagePicker({ locale }: { locale: any }) {
   }, [selectedLocale]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
-    <Select value={selectedLocale} onValueChange={setSelectedLocale}>
+    <Select
+      value={selectedLocale}
+      onValueChange={(value: "en" | "pl") => setSelectedLocale(value)}
+    >
       <SelectTrigger>
         <SelectIcon>
           <Globe className="h-5 mr-1" />

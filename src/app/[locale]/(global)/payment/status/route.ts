@@ -50,6 +50,6 @@ export async function POST(req: Request) {
     },
   });
 
-  prisma.$disconnect;
+  prisma.$disconnect();
   return Response.json({ message: "Success" }, { status: 200 });
 }

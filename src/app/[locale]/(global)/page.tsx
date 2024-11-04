@@ -3,7 +3,7 @@ import CTASecetion from "@/src/components/CTASecetion";
 import FeaturedCarousel from "@/src/components/FeaturedCarousel";
 import { useTranslations } from "next-intl";
 import { unstable_setRequestLocale } from "next-intl/server";
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 import scooter from "@/public/scooter.svg";
 import AllCategories from "@/src/components/AllCategories";
 import Reviews from "@/src/components/Reviews";

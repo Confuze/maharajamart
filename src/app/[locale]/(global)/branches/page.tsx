@@ -17,7 +17,7 @@ export async function generateMetadata({
   };
 }
 
-export default function Contact({
+export default function Branches({
   params: { locale },
 }: {
   params: { locale: string };

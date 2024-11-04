@@ -7,12 +7,11 @@ import ProductForm from "@/src/components/ProductForm";
 import { Metadata } from "next";
 import ProductCard from "@/src/components/ProductCard";
 import { useMemo } from "react";
-import { generateKey } from "@/src/lib/storage";
 
 export const dynamic = "error";
 
 export function generateStaticParams() {
-  const paramsArray: any[] = []; // Don't care, not making another interface just for the params
+  const paramsArray: unknown[] = [];
   Object.keys(products).map((category) => {
     return Object.keys(products[category].products).forEach((element) => {
       paramsArray.push({
@@ -46,7 +45,7 @@ export default function Product({
   const product = products[category].products[slug];
   const catProducts = products[category].products;
   const randomSuggested = useMemo(() => {
-    let productsCopy = {
+    const productsCopy = {
       ...catProducts,
     };
     delete productsCopy[slug]; // remove current product from array of possible recommended products

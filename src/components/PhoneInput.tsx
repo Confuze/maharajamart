@@ -54,7 +54,8 @@ const PhoneInput: React.ForwardRefExoticComponent<PhoneInputProps> =
            *
            * @param {E164Number | undefined} value - The entered value
            */
-          onChange={(value) => onChange?.(value || ("" as any))}
+          // eslint-disable-next-line
+          onChange={(value) => onChange?.(value || ("" as any))} // E164Number is not an exported type so any must be used as far as I'm aware.
           {...props}
         />
       );

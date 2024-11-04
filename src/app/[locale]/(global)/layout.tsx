@@ -40,7 +40,7 @@ export default async function LocaleLayout({
   params: { locale = "pl" },
 }: {
   children: React.ReactNode;
-  params: { locale: string };
+  params: { locale: "en" | "pl" };
 }) {
   unstable_setRequestLocale(locale);
   const messages = await getMessages();

@@ -11,7 +11,7 @@ import {
 } from "./ui/navigation-menu";
 import CartButton from "./CartButton";
 
-export default function Navbar({ locale }: { locale: string }) {
+export default function Navbar({ locale }: { locale: "en" | "pl" }) {
   const t = useTranslations("Layout.nav");
 
   return (

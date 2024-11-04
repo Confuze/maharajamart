@@ -2,7 +2,7 @@
 
 import { ShoppingBasket } from "lucide-react";
 import { Link } from "../navigation";
-import { useCartId, useCartState } from "../lib/useStore";
+import { useCartState } from "../lib/useStore";
 import { cn } from "../lib/utils";
 import { useMemo } from "react";
 import { useTranslations } from "next-intl";

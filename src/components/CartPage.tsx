@@ -7,7 +7,7 @@ import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { Button } from "./ui/button";
 import { cn } from "../lib/utils";
-import { useMemo, useRef } from "react";
+import { useMemo } from "react";
 import { Link } from "../navigation";
 import { Input } from "./ui/input";
 import { Label } from "./ui/label";

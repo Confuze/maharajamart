@@ -138,7 +138,7 @@ function ProductCard({
                     HTMLInputElement | HTMLTextAreaElement
                   >,
                 ) => {
-                  e.key === "Enter" && e.preventDefault();
+                  if (e.key === "Enter") e.preventDefault();
                 }}
                 onChange={(e) => {
                   if (!schema.safeParse(parseInt(e.target.value)).success)

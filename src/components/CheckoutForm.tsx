@@ -95,9 +95,11 @@ export default function CheckoutForm() {
       const json = await response.json();
       promiseResolve!();
       router.replace(json.url);
-    } catch (error: any) {
+    } catch (error: unknown) {
       promiseReject!();
-      console.error(error.message);
+      if (error instanceof Error) {
+        console.error(error.message);
+      }
     }
   }
 

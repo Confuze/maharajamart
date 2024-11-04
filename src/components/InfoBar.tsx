@@ -1,9 +1,9 @@
-import { Clock, MapPin, Menu, Phone, ShoppingBasket } from "lucide-react";
+import { Clock, MapPin, Phone } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Link } from "../navigation";
 import MobileNav from "./MobileNav";
 
-function InfoBar({ locale }: { locale: string }) {
+function InfoBar({ locale }: { locale: "en" | "pl" }) {
   const t = useTranslations("Layout");
 
   return (

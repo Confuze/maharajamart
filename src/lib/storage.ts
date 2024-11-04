@@ -99,7 +99,7 @@ export const useAppStore = create<IStore>()(
         }
       },
       removeCartItem: (cartItem: ICartItem) => {
-        let newCartContents = { ...get().cart.contents };
+        const newCartContents = { ...get().cart.contents };
 
         delete newCartContents[
           generateKey(cartItem.categorySlug, cartItem.productSlug)
@@ -120,7 +120,7 @@ export const useAppStore = create<IStore>()(
     }),
     {
       name: "cart",
-      onRehydrateStorage: (state) => {
+      onRehydrateStorage: () => {
         // Generates a new uuid if one has not been set yet
         return (state, error) => {
           if (error) console.log("Hydration failed, ", error);

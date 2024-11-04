@@ -35,6 +35,7 @@ function AllCategories({ locale }: { locale: "en" | "pl" }) {
       </div>
       <CarouselContent className="-mr-4 -mb-4 -w-full grid grid-rows-2 auto-cols-categoriesMobile lg:auto-cols-categoriesDesktop grid-flow-col">
         {Object.keys(products).map((key) => {
+          // eslint-disable-next-line
           const image: any = (categoryIcons as any)[key]; // hacky, but there isn't really a better way to do this. Just gotta trust that the names match.
           return (
             <Link href={`/products/${key}`} key={key}>

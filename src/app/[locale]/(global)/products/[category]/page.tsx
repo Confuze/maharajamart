@@ -3,11 +3,9 @@
 
 import ProductCard from "@/src/components/ProductCard";
 import { products } from "@/src/data/products";
-import { cn } from "@/src/lib/utils";
-import { Link } from "@/src/navigation";
 import { Metadata } from "next";
 import { useTranslations } from "next-intl";
-import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
+import { unstable_setRequestLocale } from "next-intl/server";
 
 export const dynamic = "error";
 

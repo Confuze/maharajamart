@@ -26,7 +26,7 @@ import _ from "lodash";
 
 import sheetProductsNoType from "./sheetProducts.json";
 const sheetProducts: ISheetProduct[] = sheetProductsNoType; // suprisingly this appears to be the cleanest way to cast a type onto a json file
-let newProducts: Products = {};
+const newProducts: Products = {};
 let currentCategory = "cosmetics";
 
 for (const sheetProduct of sheetProducts) {
@@ -51,7 +51,7 @@ for (const sheetProduct of sheetProducts) {
       ? sheetProduct.picture
       : undefined;
 
-    let newProduct: Product = {
+    const newProduct: Product = {
       displayName: sheetProduct.products,
       price: sheetProduct.pricePln,
       description: sheetProduct.description,

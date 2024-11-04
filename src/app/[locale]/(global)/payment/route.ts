@@ -1,5 +1,5 @@
 import crypto from "crypto";
-import { ICart, ICartContents } from "@/src/lib/storage";
+import { ICartContents } from "@/src/lib/storage";
 import { z } from "zod";
 import { formSchema } from "@/src/lib/zodSchemas";
 import { products } from "@/src/data/products";
@@ -167,7 +167,7 @@ export async function POST(req: Request) {
     } catch (error) {
       return console.error(error);
     } finally {
-      prisma.$disconnect;
+      prisma.$disconnect();
     }
 
     return Response.json({
