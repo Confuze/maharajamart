@@ -6,7 +6,7 @@ import React from "react";
 export async function generateMetadata({
   params: { locale },
 }: {
-  params: { locale: string };
+  params: { locale: "en" | "pl" };
 }): Promise<Metadata> {
   const t = await getTranslations({ locale, namespace: "OrderCancellation" });
   return { title: t("title") };
