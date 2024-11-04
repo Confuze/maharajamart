@@ -37,7 +37,7 @@ export default function Contact({
           open={t("maharajaOpen")}
           location="Stawowa 12, 50-018 Wrocław"
           locationURL="https://maps.app.goo.gl/LzFCmQjoyY1L1Grm6"
-          phone="537354886"
+          phone="537 354 886"
         />
         <Branch
           name="Maharaja Mart Poznań"
@@ -45,7 +45,7 @@ export default function Contact({
           open={t("maharajaOpen")}
           location="Gwarna 9, 61-702 Poznań"
           locationURL="https://maps.app.goo.gl/zseBqKVYRgk6Ntj87"
-          phone="575543954"
+          phone="575 543 954"
         />
         <Branch
           name={t("restaurant")}
@@ -54,7 +54,7 @@ export default function Contact({
           open={t("restaurantOpen")}
           location="Hugona Kołłątaja 22, 50-002 Wrocław"
           locationURL="https://maps.app.goo.gl/6sA1ywm9DhQLJZeb7"
-          phone="511365829"
+          phone="511 365 829"
         />
       </div>
     </div>

@@ -27,6 +27,11 @@ export default function Navbar({ locale }: { locale: string }) {
             </NavigationMenuLink>
           </NavigationMenuItem>
           <NavigationMenuItem>
+            <NavigationMenuLink href="/order-cancellation">
+              {t("orderCancellation")}
+            </NavigationMenuLink>
+          </NavigationMenuItem>
+          <NavigationMenuItem>
             <NavigationMenuTrigger>{t("products")}</NavigationMenuTrigger>
             <NavigationMenuContent className="min-w-[30vw] grid gap-x-4 grid-cols-3">
               <NavigationMenuLink
@@ -52,7 +57,7 @@ export default function Navbar({ locale }: { locale: string }) {
           </NavigationMenuItem>
         </NavigationMenuList>
       </NavigationMenu>
-      <div className="flex gap-20 xl:gap-28">
+      <div className="flex gap-20">
         <LanguagePicker locale={locale} />
         <CartButton />
       </div>

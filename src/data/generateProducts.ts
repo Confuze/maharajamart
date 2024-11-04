@@ -6,6 +6,20 @@ interface ISheetProduct {
   picture?: string;
 }
 
+const categoryTranslations: { [key: string]: string } = {
+  cosmetics: "Kosmetyki",
+  spices: "Przyprawy",
+  picklesPastes: "Kiszonki i pasty",
+  sauces: "Sosy",
+  riceFlour: "Ryż i mąka",
+  snacksDrinksSweets: "Przekąski, napoje i słodycze",
+  teaCoffee: "Kawa i herbata",
+  readyToEat: "Gotowe do zjedzenia",
+  oil: "Oleje",
+  freshVegetables: "Świeże warzywa",
+  freshMeats: "Świeże mięso",
+};
+
 import { Product, Products } from "./products";
 import fs from "fs";
 import _ from "lodash";
@@ -27,7 +41,7 @@ for (const sheetProduct of sheetProducts) {
     newProducts[name] = {
       displayName: {
         en: sheetProduct.products,
-        pl: sheetProduct.products,
+        pl: categoryTranslations[name],
       },
       products: {},
     };

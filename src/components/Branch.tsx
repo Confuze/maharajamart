@@ -42,7 +42,7 @@ function Branch({
           <MapPin className="h-4 flex-shrink-0" />
           {location}
         </Link>
-        <Link href={`tel:+48${phone}`}>
+        <Link href={`tel:+48 ${phone}`}>
           <Phone className="h-4 flex-shrink-0" />
           {phone}
         </Link>

@@ -39,3 +39,7 @@ next-env.d.ts
 
 # mongodb
 replica.key
+
+# certificates
+*.crt
+*.key

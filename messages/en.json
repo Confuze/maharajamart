@@ -7,6 +7,7 @@
       "home": "Home",
       "about": "About us",
       "branches": "Branches & contact",
+      "orderCancellation": "Order cancellation",
       "products": "Products",
       "allProducts": "All products",
       "cart": "Cart"
@@ -69,6 +70,10 @@
     "restaurant": "Maharaja Art of Food Restaurant",
     "restaurantDesc": "We also invite everybody to our restaurant."
   },
+  "OrderCancellation": {
+    "title": "Order cancellation",
+    "description": "If you need to cancel your order, please call our number: +48 537 354 886 (Wroclaw) or +48 575 543 954 (Poznań)"
+  },
   "Category": {
     "noProudcts": "No products in this category availible yet.",
     "loading": "Loading more products..."
@@ -97,6 +102,7 @@
     "shipping": "Delivery",
     "shippingMethod": "Delivery method",
     "shippingMethodDesc": "We will contact you shortly after sending the parcel",
+    "freeShipping": "Free shipping! - your order costs over 200 zł, so we offer free shipping.",
     "shippingMethods": {
       "closeDelivery": "Delivery close to shop",
       "closeDeliveryDesc": "Option for quick delivery to an address in proximity closer than 25km from one of our shops. We will contact you via phone to arrange the time of delivery. Extra costs may apply if the delivery price exceeds 30 zł.",

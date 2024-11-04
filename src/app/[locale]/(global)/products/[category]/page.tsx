@@ -41,7 +41,7 @@ export default function Category({
       <h1 className="font-serif text-center lg:text-left lg:pl-20 text-4xl lg:text-5xl text-secondary my-8">
         {products[category].displayName[locale]}
       </h1>
-      <div className="w-full gap-8 overflow-hidden px-8 lg:px-20 -w-full grid auto-rows-min grid-cols-2 lg:grid-cols-5">
+      <div className="w-full gap-4 lg:gap-8 overflow-hidden px-4 lg:px-20 -w-full grid auto-rows-min grid-cols-2 lg:grid-cols-5">
         {Object.keys(catProducts).map((key, index) => {
           const product = catProducts[key];
 

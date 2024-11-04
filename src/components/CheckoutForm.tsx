@@ -58,8 +58,6 @@ export default function CheckoutForm() {
     }, [formState]),
   });
 
-  console.log(formState);
-
   useEffect(() => {
     if (formState) form.reset(formState);
   }, [formState, form]);
@@ -121,7 +119,6 @@ export default function CheckoutForm() {
   const paymentFee =
     Math.round((productsPrice + deliveryFee) * 0.015 * 100) / 100;
   const fullPrice = productsPrice + deliveryFee + paymentFee;
-  console.log(deliveryFee, form.watch("shippingMethod"));
 
   return (
     <div className="px-8 lg:px-0 lg:w-3/5">
@@ -294,7 +291,9 @@ export default function CheckoutForm() {
               name="shippingMethod"
               render={({ field }) => (
                 <FormItem className="space-y-3">
-                  <FormLabel>{t("shippingMethodDesc")}</FormLabel>
+                  <FormLabel>
+                    <p>{t("shippingMethodDesc")}</p>
+                  </FormLabel>
                   <FormControl>
                     <RadioGroup
                       onValueChange={field.onChange}
@@ -312,7 +311,10 @@ export default function CheckoutForm() {
                                 <p> {t("shippingMethods.closeDeliveryDesc")}</p>
                               </FormLabel>
                               <p className="text-nowrap">
-                                {deliveryPrices.CLOSE_DELIVERY} zł
+                                {productsPrice >= 200
+                                  ? 0
+                                  : deliveryPrices.CLOSE_DELIVERY}{" "}
+                                zł
                               </p>
                             </div>
                           </RadioGroupItem>
@@ -329,7 +331,10 @@ export default function CheckoutForm() {
                                 <p> {t("shippingMethods.courierDesc")}</p>
                               </FormLabel>
                               <p className="text-nowrap">
-                                {deliveryPrices.COURIER} zł
+                                {productsPrice >= 200
+                                  ? 0
+                                  : deliveryPrices.COURIER}{" "}
+                                zł
                               </p>
                             </div>
                           </RadioGroupItem>
@@ -346,7 +351,10 @@ export default function CheckoutForm() {
                                 <p> {t("shippingMethods.parcelMachineDesc")}</p>
                               </FormLabel>
                               <p className="text-nowrap">
-                                {deliveryPrices.PARCEL_MACHINE} zł
+                                {productsPrice >= 200
+                                  ? 0
+                                  : deliveryPrices.PARCEL_MACHINE}{" "}
+                                zł
                               </p>
                             </div>
                           </RadioGroupItem>
@@ -363,7 +371,10 @@ export default function CheckoutForm() {
                                 <p> {t("shippingMethods.pickupAtStoreDesc")}</p>
                               </FormLabel>
                               <p className="text-nowrap">
-                                {deliveryPrices.PICKUP_AT_STORE} zł
+                                {productsPrice >= 200
+                                  ? 0
+                                  : deliveryPrices.PICKUP_AT_STORE}{" "}
+                                zł
                               </p>
                             </div>
                           </RadioGroupItem>
@@ -375,6 +386,9 @@ export default function CheckoutForm() {
                 </FormItem>
               )}
             />
+            {productsPrice >= 200 && (
+              <p className="mt-2 text-sm leading-none">{t("freeShipping")}</p>
+            )}
           </div>
           <div className="lg:sticky lg:top-6 self-start basis-1/2 h-[60vh] bg-background2 rounded-xl lg:rounded-2xl p-4 lg:p-8 flex gap-8 flex-col justify-between">
             <div>

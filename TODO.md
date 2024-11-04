@@ -37,6 +37,8 @@
 - [x] Deploy
   - [x] Dockerize for vps deploy
   - [x] Nginx reverse proxy for ssl
+- [ ] IMPORTANT: allow access to db only localy with ufw
+- [x] Add translations for categories
 
 - [x] Branches
       image
@@ -48,9 +50,9 @@
 - [x] Smaller featured
 - [x] Quantity
 - [x] Already added to cart text
-- [ ] Suggested products
+- [x] Suggested products
 
-- [ ]
+- [x]
   Delivery
   kurier 20 zł
   paczkomat 12 zł
