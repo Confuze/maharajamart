@@ -103,7 +103,7 @@ function ProductCard({
               {isAddedToCart && t("alreadyInCart")}
             </p>
           </div>
-          <div className="mt-4 flex flex-wrap items-end grow gap-2 justify-between">
+          <div className="mt-4 flex flex-shrink flex-wrap items-end gap-2 justify-between">
             <div className="flex gap-1">
               <button
                 onClick={() => {
@@ -126,7 +126,7 @@ function ProductCard({
                 type="number"
                 className={cn(
                   !valid && "border-red-600",
-                  "max-w-12 no-increment",
+                  "max-w-8 no-increment px-1 text-center",
                 )}
                 defaultValue={1}
                 min={1}
