@@ -1,4 +1,3 @@
-import ClearCart from "@/src/components/ClearCart";
 import { Metadata } from "next";
 import { useTranslations } from "next-intl";
 import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
@@ -28,8 +27,6 @@ export default function Contact({
         {t("success")}
       </h1>
       <p>{t("successDesc")}</p>
-      <ClearCart />
-      {/* WARN: Less than ideal solution, if the user navigates to /payment/success without paying for their order, it will clear their cart anyway */}
     </div>
   );
 }

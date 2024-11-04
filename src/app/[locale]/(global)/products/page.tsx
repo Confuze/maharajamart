@@ -33,7 +33,7 @@ export default function Products({
       <h1 className="font-serif text-center lg:text-left lg:pl-20 text-4xl lg:text-5xl text-secondary my-8">
         {t("allProducts")}
       </h1>
-      <div className="w-full gap-8 overflow-hidden px-8 lg:px-20 -w-full grid auto-rows-min grid-cols-2 lg:grid-cols-5">
+      <div className="w-full gap-4 lg:gap-8 overflow-hidden px-4 lg:px-20 -w-full grid auto-rows-min grid-cols-2 lg:grid-cols-5">
         {Object.keys(products).map((categoryKey) => {
           const catProducts = products[categoryKey].products;
           return (

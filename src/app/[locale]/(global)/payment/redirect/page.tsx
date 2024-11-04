@@ -1,10 +1,12 @@
 "use client";
 
+import ClearCart from "@/src/components/ClearCart";
 import { checkForPaidOrder } from "@/src/lib/checkForOrder";
 import { useAppStore } from "@/src/lib/storage";
 import { useCartId } from "@/src/lib/useStore";
 import { useRouter } from "@/src/navigation";
 import { useTranslations } from "next-intl";
+import { unstable_setRequestLocale } from "next-intl/server";
 import {
   useCallback,
   useEffect,
@@ -14,7 +16,8 @@ import {
 } from "react";
 import { toast } from "sonner";
 
-function Redirect() {
+function Redirect({ params: { locale } }: { params: { locale: string } }) {
+  unstable_setRequestLocale(locale);
   const t = useTranslations("Layout.redirect");
   const { generateNewId } = useAppStore();
   const [isOrderPaidFor, setIsOrderPaidFor] = useState(false);
@@ -54,7 +57,7 @@ function Redirect() {
     }, [fn]);
     return useCallback((...args: unknown[]) => {
       const f = ref.current;
-      return f!(...args); // the variable SHOULD be a function since
+      return f!(...args);
     }, []);
   }
 
@@ -89,6 +92,11 @@ function Redirect() {
         <path d="M21 12a9 9 0 1 1-6.219-8.56" />
       </svg>
       <h1 className="text-center">{t("checking")}</h1>
+      {
+        isOrderPaidFor && (
+          <ClearCart />
+        ) /* WARN: I do not know why this is done with a component and not a useEffect but it should work the same so I'm not changing it */
+      }
     </div>
   );
 }

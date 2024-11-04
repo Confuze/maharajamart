@@ -68,6 +68,14 @@ function MobileNav({ locale }: { locale: string }) {
             >
               {t("nav.branches")}
             </Link>
+            <Link
+              onClick={() => {
+                setSheetOpen(false);
+              }}
+              href="/order-cancellation"
+            >
+              {t("nav.orderCancellation")}
+            </Link>
             <Accordion type="single" collapsible>
               <AccordionItem value="item-1">
                 <AccordionTrigger className="font-bold p-0 pb-2">

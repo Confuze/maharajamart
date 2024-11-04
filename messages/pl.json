@@ -7,6 +7,7 @@
       "home": "Start",
       "about": "O nas",
       "branches": "Placówki i kontakt",
+      "orderCancellation": "Order cancellation",
       "products": "Produkty",
       "allProducts": "Wszystkie produkty",
       "cart": "Koszyk"
@@ -69,6 +70,10 @@
     "restaurant": "Maharaja Art of Food Restauracja",
     "restaurantDesc": "Zapraszamy również do naszej restauracji we wrocławiu"
   },
+  "OrderCancellation": {
+    "title": "Anulowanie zamówienia",
+    "description": "W wypadku potrzeby anulowania zamówienia zapraszamy do zadzwonienia na numer +48 537 354 886 (Wrocław) lub +48 575 543 954 (Poznań)"
+  },
   "Category": {
     "noProudcts": "Brak dostępnych produktów w tej kategorii.",
     "loading": "Wczytywanie więcej produktów..."
@@ -97,6 +102,7 @@
     "shipping": "Dostawa",
     "shippingMethod": "Metoda dostawy",
     "shippingMethodDesc": "Skontaktujemy się z państwem w celu przekazania danych wysyłki tuż po nadaniu przesyłki",
+    "freeShipping": "Darmowa dostawa! - twoje zamówienie kosztuje ponad 200 zł, więc oferujemy darmową dostawę.",
     "shippingMethods": {
       "closeDelivery": "Dostawa w pobliżu sklepu",
       "closeDeliveryDesc": "Opcja dla szybkich zamówień prosto do domu na adres w odległości poniżej 25km od sklepu. Dodatkowe koszty mogą zostać naliczone, jeśli koszt dostawy przekroczy 30 zł.",

@@ -146,7 +146,7 @@ function FeaturedCarousel({ locale }: { locale: "en" | "pl" }) {
               )}
               key={index}
             >
-              <ProductCard locale={locale} product={featuredItem} />{" "}
+              <ProductCard locale={locale} product={featuredItem} cutTitle />
             </CarouselItem>
           );
         })}

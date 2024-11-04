@@ -2,7 +2,7 @@
   "cosmetics": {
     "displayName": {
       "en": "Cosmetics",
-      "pl": "Cosmetics"
+      "pl": "Kosmetyki"
     },
     "products": {
       "daburHerbalNeemToothpaste100G": {
@@ -339,7 +339,7 @@
   "spices": {
     "displayName": {
       "en": "Spices",
-      "pl": "Spices"
+      "pl": "Przyprawy"
     },
     "products": {
       "pranCrushedChill100G": {
@@ -811,7 +811,7 @@
   "picklesPastes": {
     "displayName": {
       "en": "Pickles & Pastes",
-      "pl": "Pickles & Pastes"
+      "pl": "Kiszonki i pasty"
     },
     "products": {
       "priyaGreenChilliPickle300G": {
@@ -967,7 +967,7 @@
   "sauces": {
     "displayName": {
       "en": "Sauces",
-      "pl": "Sauces"
+      "pl": "Sosy"
     },
     "products": {
       "heeraMincedGreenChilliPaste210G": {
@@ -1155,7 +1155,7 @@
   "riceFlour": {
     "displayName": {
       "en": "Rice & Flour",
-      "pl": "Rice & Flour"
+      "pl": "Ryż i mąka"
     },
     "products": {
       "zaukPunjabiBasmatiRice500G": {
@@ -1511,7 +1511,7 @@
   "snacksDrinksSweets": {
     "displayName": {
       "en": "Snacks & Drinks & Sweets",
-      "pl": "Snacks & Drinks & Sweets"
+      "pl": "Przekąski, napoje i słodycze"
     },
     "products": {
       "rasanandKesarMangoes850G": {
@@ -2015,7 +2015,7 @@
   "teaCoffee": {
     "displayName": {
       "en": "Tea & Coffee",
-      "pl": "Tea & Coffee"
+      "pl": "Kawa i herbata"
     },
     "products": {
       "azercayBuket50G": {
@@ -2147,7 +2147,7 @@
   "readyToEat": {
     "displayName": {
       "en": "Ready To Eat",
-      "pl": "Ready To Eat"
+      "pl": "Gotowe do zjedzenia"
     },
     "products": {
       "ashokaPunjabiCholey": {
@@ -2191,7 +2191,7 @@
   "oil": {
     "displayName": {
       "en": "Oil",
-      "pl": "Oil"
+      "pl": "Oleje"
     },
     "products": {
       "pranMustardOil250Ml": {
@@ -2263,7 +2263,7 @@
   "freshVegetables": {
     "displayName": {
       "en": "Fresh Vegetables",
-      "pl": "Fresh Vegetables"
+      "pl": "Świeże warzywa"
     },
     "products": {
       "freshOkra1Kg": {
@@ -2343,7 +2343,7 @@
   "freshMeats": {
     "displayName": {
       "en": "Fresh meats",
-      "pl": "Fresh meats"
+      "pl": "Świeże mięso"
     },
     "products": {
       "freshChickenWhole1Kg": {
