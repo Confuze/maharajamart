@@ -24,7 +24,7 @@ export default function LanguagePicker({ locale }: { locale: "en" | "pl" }) {
   const pathname = usePathname();
   const router = useRouter();
 
-  // WARN: I don't know if disabling the eslint rule is the right way to do things here but router and pathname can't be in the dependencies and I don't have any other solution
+  // TODO: Change into event handler, effect us not necessary here and may cause bugs`
   useEffect(() => {
     router.replace(pathname, { locale: selectedLocale });
   }, [selectedLocale]); // eslint-disable-line react-hooks/exhaustive-deps

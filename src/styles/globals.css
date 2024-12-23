@@ -12,3 +12,8 @@ input[type="number"].no-increment::-webkit-outer-spin-button {
   -moz-appearance: textfield;
   appearance: textfield;
 }
+
+.placeholder-background-image::before {
+  content: "";
+  background-image: var(--background-placeholder);
+}

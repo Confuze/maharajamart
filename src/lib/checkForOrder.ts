@@ -10,7 +10,7 @@ export async function checkForPaidOrder(id: string) {
     },
   });
 
-  console.log(currentOrder);
+  prisma.$disconnect();
   if (currentOrder) return true;
   else return false;
 }

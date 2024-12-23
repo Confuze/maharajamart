@@ -8,6 +8,10 @@ export async function POST(req: Request) {
   const order = await prisma.order.findUnique({
     where: { sessionId: data.sessionId as string },
   });
+  console.log(order);
+
+  // NOTE: This should be completely secure since sessionId should always be a secret
+  // but rejecting requests from adresses other than przelewy24 might be a good idea.
 
   const merchantId = process.env.P24_MERCHANT_ID;
 

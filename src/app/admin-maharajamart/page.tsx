@@ -26,7 +26,6 @@ export default async function Admin() {
     },
     take: 1000,
   });
-  console.log(notPaidOrders);
 
   return (
     <>

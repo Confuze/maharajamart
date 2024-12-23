@@ -7,7 +7,7 @@ import placeholder from "@/public/picturePlaceholder.png";
 import { Link } from "../navigation";
 import AddToCartButton from "./AddToCartButton";
 import { Input } from "./ui/input";
-import { useMemo, useRef, useState } from "react";
+import { CSSProperties, useMemo, useRef, useState } from "react";
 import { useCartState } from "../lib/useStore";
 import { cn } from "../lib/utils";
 import { z } from "zod";
@@ -27,6 +27,10 @@ interface PromotionInfo extends Product {
 }
 
 export type CardInfo = ProductInfo | PromotionInfo;
+
+interface PlaceholderStyle extends CSSProperties {
+  "--background-placeholder": string;
+}
 
 function ProductCard({
   product,
@@ -72,11 +76,19 @@ function ProductCard({
       <div className="flex flex-col overflow-visible bg-background2 w-full h-full p-2 lg:p-6 rounded-xl duration-150 hover:shadow-[0_0_.75rem_0rem_rgba(0,0,0,0.2)] hover:brightness-95">
         <div className="bg-white lg:border-4 lg:border-secondary overflow-hidden rounded-lg lg:rounded-3xl relative w-full aspect-square">
           <Image
-            className="text-[0] bg-cover"
-            style={{ backgroundImage: `url(${placeholder.src})` }}
+            className={cn(
+              product.picture ? "bg-white" : "bg-background2",
+              "text-[0] bg-cover object-contain",
+              "before:block before:absolute before:h-full before:w-full before:top-0 before:left-0 before:bg-black placeholder-background-image before:bg-cover",
+            )}
             quality={75}
+            style={
+              {
+                "--background-placeholder": `url(${placeholder.src})`,
+              } as PlaceholderStyle
+            }
             fill
-            src={product.picture || ""}
+            src={product.picture || placeholder}
             alt={product.displayName}
           />
         </div>

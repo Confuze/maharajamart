@@ -51,6 +51,7 @@
 - [x] Quantity
 - [x] Already added to cart text
 - [x] Suggested products
+- [ ] Remove image not loaded icon
 
 - [x]
   Delivery
