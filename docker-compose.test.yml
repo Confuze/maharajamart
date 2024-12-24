@@ -147,6 +147,7 @@ volumes:
   test_mongo1_config:
   test_mongo2_config:
   test_mongo3_config:
+
 networks:
   private:
     driver: bridge
@@ -156,3 +157,4 @@ networks:
     internal: true
   web:
     driver: bridge
+    internal: false
