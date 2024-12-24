@@ -156,4 +156,4 @@ networks:
     driver: bridge
     internal: true
   web:
-    external: true
+    driver: bridge
