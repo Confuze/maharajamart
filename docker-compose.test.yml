@@ -6,7 +6,7 @@ services:
     container_name: mongo1
     image: mongo
     ports:
-      - "27017:27017"
+      - "27017"
     volumes:
       - "test_mongo1_data:/data/db"
       - "test_mongo1_config:/data/configdb"
@@ -30,14 +30,11 @@ services:
     extra_hosts:
       - "host.docker.internal:host-gateway"
     restart: always
-    networks:
-      - db
-      - private
   mongo2:
     container_name: mongo2
     image: mongo
     ports:
-      - "27018:27018"
+      - "27018"
     volumes:
       - "test_mongo2_data:/data/db"
       - "test_mongo2_config:/data/configdb"
@@ -59,14 +56,11 @@ services:
         "/data/replica.key",
       ]
     restart: always
-    networks:
-      - db
-      - private
   mongo3:
     container_name: mongo3
     image: mongo
     ports:
-      - "27019:27019"
+      - "27019"
     volumes:
       - "test_mongo3_data:/data/db"
       - "test_mongo3_config:/data/configdb"
@@ -88,9 +82,6 @@ services:
         "/data/replica.key",
       ]
     restart: always
-    networks:
-      - db
-      - private
   mongodb-init:
     image: mongo
     container_name: mongodb-init
@@ -103,8 +94,6 @@ services:
       - "./init-replica-set.sh:/init-replica-set.sh"
       - "./.env:/.env"
     restart: "no" # WHY IN THE WORLD IS THIS SUPPOSED TO BE A STRING????? EVERY OTHER VALUE ISN'T
-    networks:
-      - db
   app:
     container_name: nextjs
     build:
@@ -112,7 +101,7 @@ services:
       args:
         - DOCKER_ENV=test
     ports:
-      - "3000:3000"
+      - "3000"
     depends_on:
       - mongodb-init
       - mongo1
@@ -122,9 +111,6 @@ services:
     environment:
       - NODE_ENV=test
     env_file: .env.test.local
-    networks:
-      - web
-      - private
   nginx:
     image: nginx:latest
     container_name: nginx
@@ -137,8 +123,6 @@ services:
     volumes:
       - /etc/ssl/:/etc/nginx/ssl:ro # self signed certificate and key from openssl FOR DEVELOPMENT ONLY
     restart: always
-    networks:
-      - web
 
 volumes:
   test_mongo1_data:
@@ -147,13 +131,3 @@ volumes:
   test_mongo1_config:
   test_mongo2_config:
   test_mongo3_config:
-
-networks:
-  private:
-    driver: bridge
-    internal: true
-  db: # additional private network without app container
-    driver: bridge
-    internal: true
-  web:
-    driver: bridge
