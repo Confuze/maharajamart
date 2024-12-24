@@ -156,5 +156,5 @@ networks:
     driver: bridge
     internal: true
   web:
-    driver: bridge
+    driver: host
     internal: false
