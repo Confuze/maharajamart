@@ -14,7 +14,6 @@ echo "MongoDB has started successfully"
 
 echo "Initiating MongoDB replica set..."
 
-# NOTE: It has been many moons since I've written this code and for the life of me, I do not understand why mongosh connects to host.docker.internal and not mongo1
 mongosh --host mongo1 --username $MONGO_INITDB_ROOT_USERNAME --password $MONGO_INITDB_ROOT_PASSWORD --port 27017 --eval "
   rs.initiate({
     _id: 'rs0',
