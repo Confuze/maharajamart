@@ -7,8 +7,9 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "./ui/carousel";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { cn } from "../lib/utils";
+import { localeType } from "../i18n/routing";
 
 const featured: CardInfo[] = [
   // INFO: This is just placeholder, there will be actual featured products here
@@ -114,8 +115,9 @@ const featured: CardInfo[] = [
   },
 ];
 
-function FeaturedCarousel({ locale }: { locale: "en" | "pl" }) {
+function FeaturedCarousel() {
   const t = useTranslations("Home");
+  const locale = useLocale() as localeType;
 
   return (
     <Carousel

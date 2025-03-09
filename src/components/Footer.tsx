@@ -1,7 +1,7 @@
 import { Clock, MapPin, Phone } from "lucide-react";
 import { useTranslations } from "next-intl";
 import React from "react";
-import { Link } from "../navigation";
+import { Link } from "../i18n/navigation";
 import { SiFacebook, SiInstagram } from "@icons-pack/react-simple-icons";
 
 function Footer() {
@@ -23,10 +23,16 @@ function Footer() {
         537 354 886
       </Link>
       <div className="float !gap-3 mt-3">
-        <Link target="_blank" href="https://www.instagram.com/maharajamartwroclaw">
+        <Link
+          target="_blank"
+          href="https://www.instagram.com/maharajamartwroclaw"
+        >
           <SiInstagram className="h-10 lg:h-14" />
         </Link>
-        <Link target="_blank" href="https://www.facebook.com/profile.php?id=100085702502876&">
+        <Link
+          target="_blank"
+          href="https://www.facebook.com/profile.php?id=100085702502876&"
+        >
           <SiFacebook className="h-10 lg:h-14" />
         </Link>
       </div>

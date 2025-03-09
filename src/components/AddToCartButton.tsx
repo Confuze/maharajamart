@@ -8,7 +8,7 @@ import { ShoppingCart } from "lucide-react";
 import { Button } from "./ui/button";
 import { cn } from "../lib/utils";
 import { useCartState } from "../lib/useStore";
-import { Link } from "../navigation";
+import { Link } from "../i18n/navigation";
 
 function AddToCartButton({
   product,

@@ -6,15 +6,18 @@
 // City
 // Phone number
 
+import { use } from "react";
+import { localeType } from "@/src/i18n/routing";
 import CheckoutForm from "@/src/components/CheckoutForm";
 import { Metadata } from "next";
-import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 
 export async function generateMetadata({
-  params: { locale },
+  params,
 }: {
-  params: { locale: "en" | "pl" };
+  params: Promise<{ locale: localeType }>;
 }): Promise<Metadata> {
+  const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "Checkout" });
   return {
     title: t("title"),
@@ -22,11 +25,12 @@ export async function generateMetadata({
 }
 
 export default function Checkout({
-  params: { locale },
+  params,
 }: {
-  params: { locale: string };
+  params: Promise<{ locale: localeType }>;
 }) {
-  unstable_setRequestLocale(locale);
+  const { locale } = use(params);
+  setRequestLocale(locale);
 
   return (
     <div className="flex justify-center">

@@ -5,7 +5,7 @@
 
 "use client";
 
-import { usePathname, useRouter } from "@/src/navigation";
+import { usePathname, useRouter } from "@/src/i18n/navigation";
 import { useEffect, useState } from "react";
 import {
   Select,

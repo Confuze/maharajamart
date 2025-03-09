@@ -1,4 +1,4 @@
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { products } from "../data/products";
 import {
   Carousel,
@@ -8,11 +8,13 @@ import {
   CarouselPrevious,
 } from "./ui/carousel";
 import Image from "next/image";
-import { Link } from "../navigation";
+import { Link } from "../i18n/navigation";
 import { categoryIcons } from "../lib/categoryIcons";
+import { localeType } from "../i18n/routing";
 
-function AllCategories({ locale }: { locale: "en" | "pl" }) {
+function AllCategories() {
   const t = useTranslations("Home");
+  const locale = useLocale() as localeType;
 
   return (
     <Carousel

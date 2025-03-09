@@ -8,7 +8,7 @@ import { useTranslations } from "next-intl";
 import { Button } from "./ui/button";
 import { cn } from "../lib/utils";
 import { useMemo } from "react";
-import { Link } from "../navigation";
+import { Link } from "../i18n/navigation";
 import { Input } from "./ui/input";
 import { Label } from "./ui/label";
 import { useAppStore } from "../lib/storage";

@@ -3,7 +3,7 @@ import ClearCart from "@/src/components/ClearCart";
 import { checkForPaidOrder } from "@/src/lib/checkForOrder";
 import { useAppStore } from "@/src/lib/storage";
 import { useCartId } from "@/src/lib/useStore";
-import { useRouter } from "@/src/navigation";
+import { useRouter } from "@/src/i18n/navigation";
 import { useTranslations } from "next-intl";
 import {
   useCallback,

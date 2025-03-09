@@ -7,13 +7,11 @@ export const dynamic = "force-dynamic";
 
 export default async function AdminLayout({
   children,
-  params: { locale = "pl" },
 }: {
   children: React.ReactNode;
-  params: { locale: string };
 }) {
   return (
-    <html className="min-h-full relative scroll-smooth" lang={locale}>
+    <html className="min-h-full relative scroll-smooth" lang="en">
       <body
         className={cn(
           "min-h-screen h-full bg-repeat bg-backround font-sans antialiased",

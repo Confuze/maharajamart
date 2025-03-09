@@ -1,27 +1,31 @@
+import { use } from "react";
+import { localeType } from "@/src/i18n/routing";
 import { Metadata } from "next";
 import { useTranslations } from "next-intl";
-import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 
 export async function generateMetadata({
-  params: { locale },
+  params,
 }: {
-  params: { locale: string };
+  params: Promise<{ locale: localeType }>;
 }): Promise<Metadata> {
+  const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "About" });
   return { title: t("title") };
 }
 
 export default function About({
-  params: { locale },
+  params,
 }: {
-  params: { locale: string };
+  params: Promise<{ locale: localeType }>;
 }) {
-  unstable_setRequestLocale(locale);
+  const { locale } = use(params);
+  setRequestLocale(locale);
   const t = useTranslations("About");
 
   return (
     <div className="px-8 lg:px-[25%]">
-      <h1 className="my-6 text-3xl lg:text-5xl font-serif text-secondary">
+      <h1 className="my-4 text-3xl lg:text-5xl font-serif text-secondary">
         {t("title")}
       </h1>
       <article

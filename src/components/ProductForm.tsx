@@ -19,7 +19,7 @@ import { z } from "zod";
 import { generateKey, useAppStore } from "../lib/storage";
 import { useCartState } from "../lib/useStore";
 import { toast } from "sonner";
-import { Link } from "../navigation";
+import { Link } from "../i18n/navigation";
 
 interface IFormProduct extends Product {
   productSlug: string;

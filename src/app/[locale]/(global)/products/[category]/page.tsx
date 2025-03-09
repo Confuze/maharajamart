@@ -3,11 +3,13 @@
 
 import ProductCard from "@/src/components/ProductCard";
 import { products } from "@/src/data/products";
+import { localeType } from "@/src/i18n/routing";
 import { Metadata } from "next";
 import { useTranslations } from "next-intl";
-import { unstable_setRequestLocale } from "next-intl/server";
+import { setRequestLocale } from "next-intl/server";
+import { use } from "react";
 
-export const dynamic = "error";
+export const dynamic = "force-static";
 
 export function generateStaticParams() {
   return Object.keys(products).map((key) => ({
@@ -16,21 +18,24 @@ export function generateStaticParams() {
 }
 
 export async function generateMetadata({
-  params: { locale, category },
+  params,
 }: {
-  params: { locale: "en" | "pl"; category: string };
+  params: Promise<{ locale: localeType; category: string }>;
 }): Promise<Metadata> {
+  const { locale, category } = await params;
+
   return {
     title: products[category].displayName[locale],
   };
 }
 
 export default function Category({
-  params: { locale, category },
+  params,
 }: {
-  params: { locale: "en" | "pl"; category: string };
+  params: Promise<{ locale: localeType; category: string }>;
 }) {
-  unstable_setRequestLocale(locale);
+  const { locale, category } = use(params);
+  setRequestLocale(locale);
   const catProducts = products[category].products;
   const t = useTranslations("Category");
 

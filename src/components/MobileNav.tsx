@@ -18,7 +18,7 @@ import {
 } from "./ui/accordion";
 import { products } from "../data/products";
 import { useTranslations } from "next-intl";
-import { Link } from "../navigation";
+import { Link } from "../i18n/navigation";
 import { Menu } from "lucide-react";
 
 function MobileNav({ locale }: { locale: "en" | "pl" }) {

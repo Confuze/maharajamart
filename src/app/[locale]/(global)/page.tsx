@@ -2,18 +2,21 @@ import CTACarousel from "@/src/components/CTACarousel";
 import CTASecetion from "@/src/components/CTASecetion";
 import FeaturedCarousel from "@/src/components/FeaturedCarousel";
 import { useTranslations } from "next-intl";
-import { unstable_setRequestLocale } from "next-intl/server";
 import Image from "next/image";
 import scooter from "@/public/scooter.svg";
 import AllCategories from "@/src/components/AllCategories";
 import Reviews from "@/src/components/Reviews";
+import { use } from "react";
+import { setRequestLocale } from "next-intl/server";
+import { localeType } from "@/src/i18n/routing";
 
 export default function Home({
-  params: { locale },
+  params,
 }: {
-  params: { locale: "en" | "pl" };
+  params: Promise<{ locale: localeType }>;
 }) {
-  unstable_setRequestLocale(locale);
+  const { locale } = use(params);
+  setRequestLocale(locale);
   const t = useTranslations("Home");
 
   return (
@@ -28,7 +31,7 @@ export default function Home({
         <CTACarousel />
       </CTASecetion>
       <Reviews />
-      <FeaturedCarousel locale={locale} />
+      <FeaturedCarousel />
       <CTASecetion
         title={t("delivery.title")}
         description={t("delivery.description")}
@@ -38,7 +41,7 @@ export default function Home({
       >
         <Image src={scooter} alt="Image of a delivery scooter" />
       </CTASecetion>
-      <AllCategories locale={locale} />
+      <AllCategories />
     </>
   );
 }

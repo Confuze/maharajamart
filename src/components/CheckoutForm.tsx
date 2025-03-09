@@ -17,7 +17,7 @@ import { Button } from "./ui/button";
 import { useEffect, useMemo } from "react";
 import { useCartId, useCartState, useFormState } from "../lib/useStore";
 import { products } from "../data/products";
-import { useRouter } from "../navigation";
+import { useRouter } from "../i18n/navigation";
 import { useAppStore } from "../lib/storage";
 import { toast } from "sonner";
 import { formSchema } from "../lib/zodSchemas";

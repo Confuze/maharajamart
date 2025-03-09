@@ -1,14 +1,14 @@
 import { products } from "@/src/data/products";
-import { unstable_setRequestLocale } from "next-intl/server";
+import { setRequestLocale } from "next-intl/server";
 import Image from "next/image";
 import placeholder from "@/public/picturePlaceholder.png";
 import { useTranslations } from "next-intl";
 import ProductForm from "@/src/components/ProductForm";
-import { Metadata } from "next";
 import ProductCard from "@/src/components/ProductCard";
-import { useMemo } from "react";
+import { use, useMemo } from "react";
+import { localeType } from "@/src/i18n/routing";
 
-export const dynamic = "error";
+export const dynamic = "force-static";
 
 export function generateStaticParams() {
   const paramsArray: unknown[] = [];
@@ -25,21 +25,24 @@ export function generateStaticParams() {
 }
 
 export async function generateMetadata({
-  params: { category, slug },
+  params,
 }: {
-  params: { category: string; slug: string };
-}): Promise<Metadata> {
+  params: Promise<{ category: string; slug: string }>;
+}) {
+  const { category, slug } = await params;
+
   return {
     title: products[category].products[slug]!.displayName,
   };
 }
 
 export default function Product({
-  params: { locale, category, slug },
+  params,
 }: {
-  params: { locale: "en" | "pl"; category: string; slug: string };
+  params: Promise<{ locale: localeType; category: string; slug: string }>;
 }) {
-  unstable_setRequestLocale(locale);
+  const { locale, category, slug } = use(params);
+  setRequestLocale(locale);
   const t = useTranslations("Layout.products");
   const t2 = useTranslations("Category");
   const product = products[category].products[slug];

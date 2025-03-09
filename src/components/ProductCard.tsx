@@ -4,7 +4,7 @@ import Image from "next/image";
 import { Product, products } from "../data/products";
 import { useTranslations } from "next-intl";
 import placeholder from "@/public/picturePlaceholder.png";
-import { Link } from "../navigation";
+import { Link } from "../i18n/navigation";
 import AddToCartButton from "./AddToCartButton";
 import { Input } from "./ui/input";
 import { CSSProperties, useMemo, useRef, useState } from "react";

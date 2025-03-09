@@ -1,7 +1,7 @@
 "use client";
 
 import { ShoppingBasket } from "lucide-react";
-import { Link } from "../navigation";
+import { Link } from "../i18n/navigation";
 import { useCartState } from "../lib/useStore";
 import { cn } from "../lib/utils";
 import { useMemo } from "react";

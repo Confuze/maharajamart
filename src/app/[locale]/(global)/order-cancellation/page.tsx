@@ -1,23 +1,26 @@
+import { localeType } from "@/src/i18n/routing";
 import { Metadata } from "next";
 import { useTranslations } from "next-intl";
-import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
-import React from "react";
+import { getTranslations, setRequestLocale } from "next-intl/server";
+import React, { use } from "react";
 
 export async function generateMetadata({
-  params: { locale },
+  params,
 }: {
-  params: { locale: "en" | "pl" };
+  params: Promise<{ locale: localeType }>;
 }): Promise<Metadata> {
+  const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "OrderCancellation" });
   return { title: t("title") };
 }
 
 function OrderCancellation({
-  params: { locale },
+  params,
 }: {
-  params: { locale: "en" | "pl" };
+  params: Promise<{ locale: localeType }>;
 }) {
-  unstable_setRequestLocale(locale);
+  const { locale } = use(params);
+  setRequestLocale(locale);
 
   const t = useTranslations("OrderCancellation");
 

@@ -6,7 +6,7 @@ import { headers } from "next/headers";
 export async function markAsShipped(id: string, unMark: boolean = false) {
   const prisma = new PrismaClient();
 
-  const headerList = headers();
+  const headerList = await headers();
 
   const auth =
     headerList.get("authorization") || headerList.get("Authorization");
