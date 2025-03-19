@@ -3,10 +3,11 @@ import { defineRouting } from "next-intl/routing";
 
 export const routing = defineRouting({
   // A list of all locales that are supported
-  locales: ["pl", "en"],
+  locales: ["en", "pl"],
 
   // Used when no locale matches
-  defaultLocale: "pl",
+  defaultLocale: "en",
+  localePrefix: "as-needed",
 });
 
 export type localeType = "pl" | "en";

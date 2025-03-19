@@ -1,5 +1,4 @@
 // TODO: Add subtitle for each category (not yet sure if this is a good idea)
-//
 
 import ProductCard from "@/src/components/ProductCard";
 import { products } from "@/src/data/products";

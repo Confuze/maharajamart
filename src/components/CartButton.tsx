@@ -3,11 +3,15 @@
 import { ShoppingBasket } from "lucide-react";
 import { Link } from "../i18n/navigation";
 import { useCartState } from "../lib/useStore";
-import { cn } from "../lib/utils";
-import { useMemo } from "react";
+import React, { useMemo } from "react";
 import { useTranslations } from "next-intl";
 
-function CartButton({ ...props }) {
+interface CartButtonProps {
+  mobile?: boolean;
+  [key: string]: unknown;
+}
+
+function CartButton({ mobile = false, ...props }: CartButtonProps) {
   const state = useCartState();
 
   const t = useTranslations("Layout.nav");
@@ -21,13 +25,15 @@ function CartButton({ ...props }) {
   }, [state]);
 
   return (
-    <Link href="/cart" className="flex items-center relative" {...props}>
-      <ShoppingBasket className="h-8 mr-1" /> {t("cart")}
+    <Link className="flex items-center relative" {...props} href="/cart">
+      <ShoppingBasket className="mr-1" size={20} />{" "}
+      <p className={mobile ? "hidden" : ""}>{t("cart")}</p>
       <div
-        className={cn(
-          (!state || Object.keys(state).length == 0) && "hidden",
-          "bg-secondary p-[3px] flex items-center justify-center rounded-full min-h-5 min-w-5 aspect-square absolute -bottom-[1px] -left-2 text-background text-xs text-center",
-        )}
+        className={
+          mobile
+            ? "hidden"
+            : "bg-secondary p-[3px] flex items-center justify-center rounded-full min-h-5 min-w-5 aspect-square absolute -bottom-[1px] -left-2 text-background text-xs text-center"
+        }
       >
         <p>{itemCount}</p>
       </div>

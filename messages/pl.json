@@ -84,9 +84,17 @@
     "maxQuantity": "Nie można dodać więcej niż 100 sztuk tego produktu do koszyka",
     "quantity": "Ilość"
   },
+  "Search": {
+    "search": "Wyszukaj",
+    "title": "Wyniki wyszukiwania"
+  },
   "Cart": {
     "items": "artykułów",
     "cart": "Koszyk",
+    "quantity": "Ilość",
+    "decQuantity": "Zmniejsz ilość",
+    "incQuantity": "Zwiększ ilość",
+    "remove": "Usuń z koszyka",
     "singlePrice": "Cena jednej sztuki: ",
     "totalPrice": "Cena w sumie: ",
     "productPrice": "Cena produktów: ",

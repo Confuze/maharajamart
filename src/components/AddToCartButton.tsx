@@ -45,9 +45,8 @@ function AddToCartButton({
         name: product.displayName,
       }),
       action: (
+        // Using basis is a hacky solution but it works and for whatever reason css won't let w-max or anything else work for this
         <Link className="w-full basis-1/3" href="/cart">
-          {" "}
-          {/* Using basis is a hacky solution but it works and for whatever reason css won't let w-max or anything else work for this */}
           <Button variant="link" className="p-0 w-full">
             {t3("cart")}
           </Button>
@@ -58,7 +57,7 @@ function AddToCartButton({
   return (
     <Button
       size="sm"
-      className="rounded-full text-nowrap lg:rounded-xl h-8 lg:h-min lg:aspect-auto p-2 aspect-square lg:py-2 lg:px-4"
+      className="rounded-full font-sans text-nowrap lg:rounded-lg h-8 lg:h-min lg:aspect-auto p-2 aspect-square lg:py-2 lg:px-4"
       onClick={
         product.slug
           ? (e) => {

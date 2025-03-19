@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { PrismaClient } from "@prisma/client";
 import AdminOrder from "@/src/components/AdminOrder";
+import { auth } from "@/auth";
 
 export const metadata: Metadata = {
   title: "Admin panel",
@@ -9,6 +10,9 @@ export const metadata: Metadata = {
 export const dynamic = "force-dynamic";
 
 export default async function Admin() {
+  const session = await auth();
+  console.log("admin:", session?.user);
+
   const prisma = new PrismaClient();
   const notPaidOrders = await prisma.order.findMany({
     where: { shipped: false, paid: true },

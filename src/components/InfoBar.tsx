@@ -2,8 +2,10 @@ import { Clock, MapPin, Phone } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Link } from "../i18n/navigation";
 import MobileNav from "./MobileNav";
+import CartButton from "./CartButton";
+import SearchInput from "./SearchInput";
 
-function InfoBar({ locale }: { locale: "en" | "pl" }) {
+function InfoBar() {
   const t = useTranslations("Layout");
 
   return (
@@ -13,7 +15,7 @@ function InfoBar({ locale }: { locale: "en" | "pl" }) {
           MAHARAJA MART
         </h4>
       </Link>
-      <div className="hidden lg:flex *:flex *:items-center gap-14 content-end ">
+      <div className="hidden lg:flex *:flex lg:text-base *:items-center gap-14 content-end ">
         <p className="">
           <Clock className="h-4" /> {t("infobar.open")}
         </p>
@@ -26,8 +28,10 @@ function InfoBar({ locale }: { locale: "en" | "pl" }) {
           537 354 886
         </Link>
       </div>
-      <div className="lg:hidden">
-        <MobileNav locale={locale} />
+      <div className="lg:hidden flex gap-1 w-fit items-center">
+        <SearchInput mobile />
+        <CartButton mobile />
+        <MobileNav />
       </div>
     </div>
   );

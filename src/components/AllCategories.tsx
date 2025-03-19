@@ -42,13 +42,13 @@ function AllCategories() {
           return (
             <Link href={`/products/${key}`} key={key}>
               <CarouselItem className="pr-4 pb-4">
-                <div className="w-full h-full flex items-center justify-center flex-col bg-background2 rounded-xl px-2 py-2 lg:py-6 duration-150 hover:shadow-[0_0_.75rem_0rem_rgba(0,0,0,0.2)] hover:scale-[97.5%]">
+                <div className="w-full h-full flex items-center justify-center flex-col bg-background2 rounded-xl p-2 lg:p-6 border lg:border-2 border-secondary border-opacity-25 duration-150 hover:shadow-[0_0_.75rem_0rem_rgba(0,0,0,0.2)] hover:scale-[97.5%]">
                   <Image
                     src={image}
-                    alt="rice icon"
-                    className="w-2/5 lg:px-4 aspect-square"
+                    alt="category icon"
+                    className="w-2/5 lg:px-4 aspect-square opacity-75"
                   />
-                  <p className="text-center font-serif text-sm lg:text-2xl">
+                  <p className="text-center font-serif text-sm lg:text-xl">
                     {products[key].displayName[locale]}
                   </p>
                 </div>

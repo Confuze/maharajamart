@@ -22,7 +22,7 @@ function Review({ title, review, score }: IReview) {
         })}
       </div>
       <h2 className="text-4xl mt-2 mb-3 font-bold">{title}</h2>
-      <p className="text-xl leading-none">{review}</p>
+      <p className="text-lg leading-none">{review}</p>
     </div>
   );
 }

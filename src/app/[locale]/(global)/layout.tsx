@@ -63,7 +63,7 @@ export default async function LocaleLayout({
     <html className="min-h-full relative scroll-smooth" lang={locale}>
       <body
         className={cn(
-          "min-h-screen h-full bg-repeat bg-backround font-sans antialiased",
+          "min-h-screen h-full text-primary bg-repeat bg-backround font-sans antialiased",
           fontSans.variable,
           fontSerif.variable,
         )}
@@ -75,8 +75,8 @@ export default async function LocaleLayout({
             }}
             className="bg-repeat bg-[length:100%] z-[-1] absolute bottom-0 left-0 right-0 top-0 overflow-hidden opacity-5"
           />
-          <InfoBar locale={locale} />
-          <Navbar locale={locale} />
+          <InfoBar />
+          <Navbar />
           <main className="min-h-[90vh]">{children}</main>
           <Footer />
           <Toaster richColors />

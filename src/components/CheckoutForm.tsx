@@ -123,14 +123,14 @@ export default function CheckoutForm() {
   const fullPrice = productsPrice + deliveryFee + paymentFee;
 
   return (
-    <div className="px-8 lg:px-0 lg:w-3/5">
+    <div className="px-8 mt-8 lg:px-0 lg:w-3/5">
       <Form {...form}>
         <form
           className="flex gap-8 lg:gap-16 flex-col lg:flex-row"
           onSubmit={form.handleSubmit(onSubmit)}
         >
           <div className="basis-1/2">
-            <h1 className="my-6 text-secondary font-serif text-4xl">
+            <h1 className="mb-6 text-secondary font-serif text-5xl">
               {t("title")}
             </h1>
             <h3 className="mb-0 font-serif text-2xl">{t("contact")}</h3>
@@ -392,7 +392,7 @@ export default function CheckoutForm() {
               <p className="mt-2 text-sm leading-none">{t("freeShipping")}</p>
             )}
           </div>
-          <div className="lg:sticky lg:top-6 self-start basis-1/2 h-[60vh] bg-background2 rounded-xl lg:rounded-2xl p-4 lg:p-8 flex gap-8 flex-col justify-between">
+          <div className="lg:sticky lg:top-6 self-start basis-1/2 h-[60vh] bg-background2 rounded-xl lg:rounded-2xl p-4 lg:p-8 flex gap-8 flex-col justify-between border lg:border-2 border-secondary border-opacity-25">
             <div>
               <h2 className="mb-4 text-secondary font-serif text-4xl">
                 {t("summary")}

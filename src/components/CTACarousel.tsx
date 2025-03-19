@@ -40,7 +40,9 @@ function CTACarousel() {
               <CarouselItem className="" key={index}>
                 {slide.image ? (
                   <Image
-                    loading={index == 0 ? "eager" : "lazy"}
+                    loading="eager"
+                    fetchPriority={index == 0 ? "high" : "low"}
+                    placeholder="blur"
                     className="w-2/3"
                     src={slide.image}
                     alt={slide.alt}

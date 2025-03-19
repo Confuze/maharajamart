@@ -9,8 +9,6 @@ import { useTranslations } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
 import { use } from "react";
 
-export const dynamic = "force-static";
-
 export function generateStaticParams() {
   return Object.keys(products).map((key) => ({
     category: key,

@@ -1,4 +1,4 @@
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import LanguagePicker from "./LanguagePicker";
 import { products } from "@/src/data/products";
 import {
@@ -10,12 +10,14 @@ import {
   NavigationMenuTrigger,
 } from "./ui/navigation-menu";
 import CartButton from "./CartButton";
+import SearchInput from "./SearchInput";
 
-export default function Navbar({ locale }: { locale: "en" | "pl" }) {
+export default function Navbar() {
+  const locale = useLocale();
   const t = useTranslations("Layout.nav");
 
   return (
-    <nav className="hidden lg:flex w-full justify-between items-center px-24 py-4 font-bold text-xl">
+    <nav className="hidden max-w-full min-w-0 lg:flex w-full justify-between items-center px-24 py-4 font-bold text-xl">
       <NavigationMenu>
         <NavigationMenuList>
           <NavigationMenuItem>
@@ -57,8 +59,9 @@ export default function Navbar({ locale }: { locale: "en" | "pl" }) {
           </NavigationMenuItem>
         </NavigationMenuList>
       </NavigationMenu>
-      <div className="flex gap-20">
-        <LanguagePicker locale={locale} />
+      <div className="flex gap-16 shrink max-w-full">
+        <SearchInput />
+        <LanguagePicker />
         <CartButton />
       </div>
     </nav>

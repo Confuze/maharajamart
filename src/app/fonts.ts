@@ -1,13 +1,33 @@
-import { Judson, Merriweather_Sans } from "next/font/google";
+import localFont from "next/font/local";
 
-export const fontSerif = Judson({
-  subsets: ["latin-ext"],
+export const fontSerif = localFont({
+  src: [
+    {
+      path: "../fonts/Aptos-Serif.ttf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../fonts/Aptos-Serif-Bold.ttf",
+      weight: "700",
+      style: "normal",
+    },
+  ],
   variable: "--font-serif",
-  weight: ["400", "700"],
 });
 
-export const fontSans = Merriweather_Sans({
-  subsets: ["latin-ext"],
+export const fontSans = localFont({
+  src: [
+    // {
+    //   path: "../fonts/Aptos.ttf",
+    //   weight: "400",
+    //   style: "normal",
+    // },
+    {
+      path: "../fonts/Aptos-SemiBold.ttf",
+      weight: "600",
+      style: "normal",
+    },
+  ],
   variable: "--font-sans",
-  weight: ["400", "600"],
 });

@@ -17,11 +17,12 @@ import {
   AccordionTrigger,
 } from "./ui/accordion";
 import { products } from "../data/products";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { Link } from "../i18n/navigation";
 import { Menu } from "lucide-react";
 
-function MobileNav({ locale }: { locale: "en" | "pl" }) {
+function MobileNav() {
+  const locale = useLocale();
   const t = useTranslations("Layout");
   const [sheetOpen, setSheetOpen] = useState(false);
 
@@ -36,7 +37,7 @@ function MobileNav({ locale }: { locale: "en" | "pl" }) {
         </SheetHeader>
         <nav className="font-bold text-lg">
           <div className="flex justify-between mt-6 mb-8">
-            <LanguagePicker locale={locale} />
+            <LanguagePicker />
             <CartButton
               onClick={() => {
                 setSheetOpen(false);

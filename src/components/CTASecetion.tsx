@@ -23,7 +23,7 @@ function CTASecetion({
   return (
     <section
       className={cn(
-        "justify-between flex-col lg:flex-row text-center lg:text-left text-background min-h-[70vh] w-full lg:w-11/12 p-4 pt-10 pb-20 lg:p-32 rounded-3xl lg:rounded-[32px] bg-primary flex mx-auto mt-10 lg:mt-14 mb-10 lg:mb-20 gap-12 lg:gap-0",
+        "justify-between flex-col lg:flex-row text-center lg:text-left text-background min-h-[70vh] w-full lg:w-11/12 p-4 pt-10 pb-20 lg:p-32 rounded-3xl lg:rounded-2xl bg-primary flex mx-auto mt-10 lg:mt-14 mb-10 lg:mb-20 gap-12 lg:gap-0",
         hero && "rounded-t-none mt-0",
         reverse && "lg:flex-row-reverse flex-col-reverse",
       )}

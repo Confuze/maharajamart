@@ -84,9 +84,17 @@
     "maxQuantity": "You can't add more than 100 of this product",
     "quantity": "Quantity"
   },
+  "Search": {
+    "search": "Search",
+    "title": "Search results"
+  },
   "Cart": {
     "items": "items",
     "cart": "Cart",
+    "quantity": "Quantity",
+    "decQuantity": "Decrease quantity",
+    "incQuantity": "Increase quantity",
+    "remove": "Usuń z koszyka",
     "totalPrice": "Total price: ",
     "singlePrice": "Singular price: ",
     "productPrice": "Product price: ",

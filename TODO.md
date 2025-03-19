@@ -21,7 +21,7 @@
 - [x] Product page
   - [x] Add to cart form
   - [x] Fully responsive
-  - [ ] optional: Recommended products
+  - [x] optional: Recommended products
 - [x] Cart system
   - [x] Cart page
   - [x] Persistent storage
@@ -32,12 +32,12 @@
 - [x] Payment processing
 - [x] Admin panel
 - [x] Favicon
-- [ ] optional: (but important) Search feature
+- [x] optional: (but important) Search feature
 - [ ] optional: Convert cart and products into set
 - [x] Deploy
   - [x] Dockerize for vps deploy
   - [x] Nginx reverse proxy for ssl
-- [ ] IMPORTANT: allow access to db only localy with ufw
+- [x] IMPORTANT: allow access to db only localy with ufw
 - [x] Add translations for categories
 
 - [x] Branches
@@ -52,16 +52,18 @@
 - [x] Already added to cart text
 - [x] Suggested products
 - [ ] Remove image not loaded icon
-
 - [x]
   Delivery
   kurier 20 zł
   paczkomat 12 zł
   uber 15 zł
   pickup at store 0 zł
+- [ ] deploy with free subdomain
+- [ ] add to google search console
 
 ---
 
+- [ ] optional: Calculate delivery prices
 - [ ] optional: Show cart items on hover of cart button in navbar
 - [ ] optional: Animations
 - [ ] optional: Loading states

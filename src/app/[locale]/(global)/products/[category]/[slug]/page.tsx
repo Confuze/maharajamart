@@ -8,8 +8,6 @@ import ProductCard from "@/src/components/ProductCard";
 import { use, useMemo } from "react";
 import { localeType } from "@/src/i18n/routing";
 
-export const dynamic = "force-static";
-
 export function generateStaticParams() {
   const paramsArray: unknown[] = [];
   Object.keys(products).map((category) => {
