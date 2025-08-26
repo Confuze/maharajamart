@@ -3,7 +3,7 @@ import React from "react";
 
 export default async function Login() {
   return (
-    <div className="flex items-center px-8 justify-center">
+    <div className="flex items-center p-8 justify-center">
       <LoginForm />
     </div>
   );

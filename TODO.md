@@ -31,9 +31,19 @@
 - [x] Checkout page
 - [x] Payment processing
 - [x] Admin panel
+- [x] Update cart system for db
+- [x] Revamp admin panel
+  - [ ] Main page
+  - [x] Categories
+    - [x] Product edit
+  - [x] Orders
+    - [x] Show orders by proximity to shop
+  - [x] Featured & archived
+- [x] ISR
+  - Sort of done - it works but it revalidates all products in all categories uftar updating just one product (thanks nextjs)
+- [x] Pagination for all products (ui)
 - [x] Favicon
 - [x] optional: (but important) Search feature
-- [ ] optional: Convert cart and products into set
 - [x] Deploy
   - [x] Dockerize for vps deploy
   - [x] Nginx reverse proxy for ssl
@@ -52,14 +62,10 @@
 - [x] Already added to cart text
 - [x] Suggested products
 - [ ] Remove image not loaded icon
-- [x]
-  Delivery
-  kurier 20 zł
-  paczkomat 12 zł
-  uber 15 zł
-  pickup at store 0 zł
+- [x] Delivery
 - [ ] deploy with free subdomain
 - [ ] add to google search console
+- [x] sitemap & robots
 
 ---
 
@@ -67,9 +73,9 @@
 - [ ] optional: Show cart items on hover of cart button in navbar
 - [ ] optional: Animations
 - [ ] optional: Loading states
-- [ ] optional: 100 100 100 100 lighthouse report (maybe a little overly ambitious)
-- [ ] optional: Custom 404 page
+- [x] optional: 100 100 100 100 lighthouse report (maybe a little overly ambitious)
+- [x] optional: Custom 404 page
 - [ ] optional: Responsive design for tablets
-- [ ] optional: emails??
-- [ ] optional: OG images
+- [x] optional: emails??
+- [x] optional: OG images
 - [ ] optional: Scalability - DB, search, cdn

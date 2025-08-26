@@ -1,6 +1,4 @@
-import { useLocale, useTranslations } from "next-intl";
 import LanguagePicker from "./LanguagePicker";
-import { products } from "@/src/data/products";
 import {
   NavigationMenu,
   NavigationMenuItem,
@@ -11,10 +9,18 @@ import {
 } from "./ui/navigation-menu";
 import CartButton from "./CartButton";
 import SearchInput from "./SearchInput";
+import { getLocale, getTranslations } from "next-intl/server";
+import prisma from "../lib/prisma";
+import { getLocalisedCategory } from "../data/products";
+import { localeType } from "../i18n/routing";
+import { Suspense } from "react";
 
-export default function Navbar() {
-  const locale = useLocale();
-  const t = useTranslations("Layout.nav");
+export default async function Navbar() {
+  const locale = (await getLocale()) as localeType;
+  const t = await getTranslations("Layout.nav");
+  const categories = await prisma.category.findMany({
+    where: { archived: false },
+  });
 
   return (
     <nav className="hidden max-w-full min-w-0 lg:flex w-full justify-between items-center px-24 py-4 font-bold text-xl">
@@ -38,20 +44,18 @@ export default function Navbar() {
             <NavigationMenuContent className="min-w-[30vw] grid gap-x-4 grid-cols-3">
               <NavigationMenuLink
                 className="text-sm font-medium decoration-background text-background"
-                href="/products"
+                href="/products/all/1"
               >
                 {t("allProducts")}
               </NavigationMenuLink>
-              {Object.keys(products).map((key) => {
-                const category = products[key];
-
+              {categories.map((category) => {
                 return (
                   <NavigationMenuLink
                     className="text-sm font-medium decoration-background text-background"
-                    href={`/products/${key}`}
-                    key={key}
+                    href={`/products/${category.slug}`}
+                    key={category.id}
                   >
-                    {category.displayName[locale as "en" | "pl"]}
+                    {getLocalisedCategory(locale, category)}
                   </NavigationMenuLink>
                 );
               })}
@@ -60,8 +64,10 @@ export default function Navbar() {
         </NavigationMenuList>
       </NavigationMenu>
       <div className="flex gap-16 shrink max-w-full">
-        <SearchInput />
-        <LanguagePicker />
+        <Suspense>
+          <SearchInput />
+          <LanguagePicker />
+        </Suspense>
         <CartButton />
       </div>
     </nav>

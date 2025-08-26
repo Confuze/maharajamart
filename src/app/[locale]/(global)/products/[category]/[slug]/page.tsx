@@ -1,93 +1,102 @@
-import { products } from "@/src/data/products";
-import { setRequestLocale } from "next-intl/server";
+// TODO: pagination IF there are many more products
+
+import { getLocale, getTranslations, setRequestLocale } from "next-intl/server";
 import Image from "next/image";
 import placeholder from "@/public/picturePlaceholder.png";
-import { useTranslations } from "next-intl";
 import ProductForm from "@/src/components/ProductForm";
 import ProductCard from "@/src/components/ProductCard";
-import { use, useMemo } from "react";
+import prisma from "@/src/lib/prisma";
+import { getLocalisedName } from "@/src/data/products";
 import { localeType } from "@/src/i18n/routing";
+import { notFound } from "next/navigation";
+import { Metadata } from "next";
 
-export function generateStaticParams() {
-  const paramsArray: unknown[] = [];
-  Object.keys(products).map((category) => {
-    return Object.keys(products[category].products).forEach((element) => {
-      paramsArray.push({
-        category: category,
-        slug: element,
-      });
-    });
+export async function generateStaticParams() {
+  const products = await prisma.product.findMany({
+    select: { slug: true, category: { select: { slug: true } } },
   });
 
-  return paramsArray;
+  return products.map((product) => {
+    return {
+      category: product.category.slug,
+      slug: product.slug,
+    };
+  });
 }
 
 export async function generateMetadata({
   params,
 }: {
   params: Promise<{ category: string; slug: string }>;
-}) {
+}): Promise<Metadata> {
   const { category, slug } = await params;
+  const locale = (await getLocale()) as localeType;
+  const product = await prisma.product.findUnique({
+    where: { slug: slug, category: { slug: category } },
+  })!;
+
+  if (!product) return notFound();
 
   return {
-    title: products[category].products[slug]!.displayName,
+    title: getLocalisedName(locale, product),
   };
 }
 
-export default function Product({
+export default async function Product({
   params,
 }: {
-  params: Promise<{ locale: localeType; category: string; slug: string }>;
+  params: Promise<{ category: string; slug: string; locale: localeType }>;
 }) {
-  const { locale, category, slug } = use(params);
+  const { category, slug, locale } = await params;
   setRequestLocale(locale);
-  const t = useTranslations("Layout.products");
-  const t2 = useTranslations("Category");
-  const product = products[category].products[slug];
-  const catProducts = products[category].products;
-  const randomSuggested = useMemo(() => {
-    const productsCopy = {
-      ...catProducts,
-    };
-    delete productsCopy[slug]; // remove current product from array of possible recommended products
-    const newProducts = Object.keys(productsCopy);
-    const generateRandomProduct = () => {
-      const generatedNumber = Math.random() * newProducts.length;
-      return newProducts.splice(generatedNumber, 1)[0];
-    };
+  const t = await getTranslations("Layout.products");
+  const t2 = await getTranslations("Category");
+  const product = await prisma.product.findUnique({
+    where: { slug: slug, category: { slug: category } },
+    include: { category: true },
+  });
+  if (!product) return notFound();
 
-    return [
-      generateRandomProduct(),
-      generateRandomProduct(),
-      generateRandomProduct(),
-      generateRandomProduct(),
-    ];
-  }, [catProducts, slug]);
+  const productsCount = await prisma.product.count({
+    where: {
+      category: { slug: category },
+      archived: false,
+    },
+  });
+  const skip = Math.floor(Math.random() * (productsCount - 4));
+  const suggested = await prisma.product.findMany({
+    where: {
+      category: { slug: category },
+      archived: false,
+      id: { not: product.id },
+    },
+    skip: skip,
+    take: 4,
+    include: { category: true },
+  });
 
   return (
     <div className="p-8 lg:p-0 pt-8 lg:flex lg:justify-center">
       <div className="lg:w-3/5">
         <section className="gap-4 lg:gap-20 flex justify-center flex-col lg:flex-row">
-          {product.picture && (
+          {(product.imageUrl || product.imageStoredInFs) && (
             <div className="relative lg:basis-2/5 h-[30vh] lg:h-[70vh] border-4 overflow-hidden border-secondary rounded-3xl">
               <Image
                 className="object-contain text-[0] bg-white bg-cover"
                 placeholder={`data:image/${placeholder}`}
                 quality={75}
                 fill
-                src={product.picture}
-                alt={product.displayName}
+                src={
+                  product.imageStoredInFs
+                    ? `/api/publicAssets/uploads/${product.id}.webp`
+                    : product.imageUrl || placeholder
+                }
+                alt={getLocalisedName(locale, product)}
               />
             </div>
           )}
           <div className="lg:basis-3/5">
-            <ProductForm
-              product={{
-                ...product,
-                productSlug: slug,
-                categorySlug: category,
-              }}
-            ></ProductForm>
+            <ProductForm product={product}></ProductForm>
           </div>
         </section>
         <section className="mt-8 lg:mt-16">
@@ -95,19 +104,10 @@ export default function Product({
             {t("suggested")}
           </h1>
           <div className="w-full gap-8 overflow-hidden grid auto-rows-min grid-cols-2 lg:grid-cols-4">
-            {randomSuggested.map((key, index) => {
-              const product = catProducts[key];
-
+            {suggested.map((product, index) => {
               return (
                 <div key={index}>
-                  <ProductCard
-                    locale={locale}
-                    product={{
-                      ...product,
-                      category: category,
-                      slug: key,
-                    }}
-                  />
+                  <ProductCard locale={locale} product={product} />
                 </div>
               );
             }) || t2("noProudcts")}

@@ -1,35 +1,23 @@
 import MiniSearch from "minisearch";
-import { Product, products } from "../data/products";
+import prisma from "./prisma";
 
-interface ArrayProduct extends Product {
-  slug: string;
-  category: string;
-  id: number;
-}
-
-let id = 0; // hacky, but should work
-
-const productsArray: ArrayProduct[] = [];
-const categoryKeys = Object.keys(products);
-
-categoryKeys.forEach((categoryKey) => {
-  const catProducts = products[categoryKey].products;
-
-  Object.keys(catProducts).forEach((productKey) => {
-    productsArray.push({
-      ...catProducts[productKey],
-      id: id,
-      category: categoryKey,
-      slug: productKey,
-    });
-    id++;
-  });
+const products = await prisma.product.findMany({
+  where: {
+    archived: false,
+  },
+  select: {
+    id: true,
+    name: true,
+    namePl: true,
+    description: true,
+    descriptionPl: true,
+  },
 });
 
 export const miniSearch = new MiniSearch({
-  fields: ["displayName", "description"],
-  storeFields: ["category", "slug"],
-  searchOptions: { boost: { title: 4 } },
+  fields: ["name", "description", "namePl", "descriptionPl"],
+  storeFields: ["id"],
+  searchOptions: { boost: { title: 5, titlePl: 4, description: 2 } },
 });
 
-miniSearch.addAll(productsArray);
+miniSearch.addAll(products);

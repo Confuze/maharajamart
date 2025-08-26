@@ -7,7 +7,7 @@ import { SiFacebook, SiInstagram } from "@icons-pack/react-simple-icons";
 function Footer() {
   const t = useTranslations("Layout.infobar");
   return (
-    <footer className="*:flex *:gap-1 *:items-center text-sm lg:text-xl mt-20 p-4 lg:p-16 bg-secondary text-background">
+    <footer className="*:flex *:gap-1 *:items-center text-md lg:text-xl mt-20 p-4 lg:p-16 bg-secondary text-background">
       <h1 className="text-2xl lg:text-5xl font-serif font-bold mb-4">
         MAHARAJA MART
       </h1>

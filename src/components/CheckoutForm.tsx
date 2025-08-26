@@ -1,7 +1,7 @@
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import {
@@ -16,7 +16,6 @@ import { Input } from "./ui/input";
 import { Button } from "./ui/button";
 import { useEffect, useMemo } from "react";
 import { useCartId, useCartState, useFormState } from "../lib/useStore";
-import { products } from "../data/products";
 import { useRouter } from "../i18n/navigation";
 import { useAppStore } from "../lib/storage";
 import { toast } from "sonner";
@@ -30,6 +29,7 @@ import Image from "next/image";
 import { PhoneInput } from "./PhoneInput";
 import { RadioGroup, RadioGroupItem } from "./ui/radio-group";
 import { deliveryPrices } from "../lib/deliveryPrices";
+import { localeType } from "../i18n/routing";
 
 export default function CheckoutForm() {
   const t = useTranslations("Checkout");
@@ -37,6 +37,7 @@ export default function CheckoutForm() {
   const state = useCartState();
   const id = useCartId();
   const formState = useFormState();
+  const locale = useLocale() as localeType;
   const { updateCheckoutFormValues: updateCheckoutFormValues } = useAppStore();
 
   const form = useForm<z.infer<typeof formSchema>>({
@@ -59,12 +60,32 @@ export default function CheckoutForm() {
   });
 
   useEffect(() => {
-    if (formState) form.reset(formState);
+    if (formState) form.reset(formState, {});
   }, [formState, form]);
 
   const router = useRouter();
 
+  const productsPrice = useMemo(() => {
+    let price = 0;
+    if (!state) return price;
+
+    Object.keys(state).forEach((key) => {
+      const product = state[key]!;
+      price += product.quantity * product.price;
+    });
+
+    return price;
+  }, [state]);
+  const deliveryFee =
+    productsPrice >= 200 ? 0 : deliveryPrices[form.watch("shippingMethod")];
+  const paymentFee =
+    Math.round(((productsPrice + deliveryFee) * 0.0129 + 0.3) * 100) / 100;
+  const addedPrice = productsPrice + deliveryFee + paymentFee;
+  const fullPrice = Math.ceil(addedPrice * 100) / 100;
+
   async function onSubmit(values: z.infer<typeof formSchema>) {
+    if (!state) return;
+
     updateCheckoutFormValues(values);
 
     let promiseResolve, promiseReject;
@@ -79,13 +100,25 @@ export default function CheckoutForm() {
       success: t("redirecting"),
       error: t("paymentError"),
     });
+
+    const cartArray = Object.keys(state).map((key) => {
+      const item = state[key];
+
+      return {
+        productId: item.id,
+        quantity: item.quantity,
+      };
+    });
+
     try {
-      const response = await fetch("/payment/", {
+      const response = await fetch("/api/payment/", {
         method: "POST",
         body: JSON.stringify({
           formValues: values,
-          cart: state,
+          cart: cartArray,
           cartId: id,
+          price: fullPrice,
+          locale: locale,
         }),
       });
       if (!response.ok) {
@@ -102,25 +135,6 @@ export default function CheckoutForm() {
       }
     }
   }
-
-  const productsPrice = useMemo(() => {
-    let price = 0;
-    if (!state) return price;
-
-    Object.keys(state).forEach((key) => {
-      const cartItem = state[key]!;
-      const product =
-        products[cartItem.categorySlug].products[cartItem.productSlug];
-      price += cartItem.quantity * product.price!;
-    });
-
-    return price;
-  }, [state]);
-  const deliveryFee =
-    productsPrice >= 200 ? 0 : deliveryPrices[form.watch("shippingMethod")];
-  const paymentFee =
-    Math.round((productsPrice + deliveryFee) * 0.015 * 100) / 100;
-  const fullPrice = productsPrice + deliveryFee + paymentFee;
 
   return (
     <div className="px-8 mt-8 lg:px-0 lg:w-3/5">
@@ -299,7 +313,7 @@ export default function CheckoutForm() {
                   <FormControl>
                     <RadioGroup
                       onValueChange={field.onChange}
-                      defaultValue={field.value}
+                      {...field}
                       className="flex flex-col space-y-1"
                     >
                       <FormItem className="space-x-3 space-y-0">

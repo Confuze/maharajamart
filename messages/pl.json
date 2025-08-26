@@ -75,10 +75,12 @@
     "description": "W wypadku potrzeby anulowania zamówienia zapraszamy do zadzwonienia na numer +48 537 354 886 (Wrocław) lub +48 575 543 954 (Poznań)"
   },
   "Category": {
+    "pagination": "Strona {index} z {pageCount}",
     "noProudcts": "Brak dostępnych produktów w tej kategorii.",
     "loading": "Wczytywanie więcej produktów..."
   },
   "Product": {
+    "archived": "Ten produkt jest niedostępny.",
     "added": "Produkt został dodany do koszyka",
     "addedDescription": "{quantity, plural, one {# sztuka} few {# sztuki} many {# sztuk} other {}} produktu \"{name}\" {quantity, plural, one {został dodany} few {zostały dodane} many {zostało dodane} other {zostało dodane}} do koszyka",
     "maxQuantity": "Nie można dodać więcej niż 100 sztuk tego produktu do koszyka",
@@ -102,7 +104,11 @@
     "transactionFee": "Opłata za płatność: ",
     "addedAtCheckout": "Naliczone w kasie",
     "summary": "Podsumowanie koszyka",
-    "proceed": "Przejdź do kasy"
+    "proceed": "Przejdź do kasy",
+    "updated": {
+      "title": "Zaaktualizowaliśmy twoje przedmioty w koszyku",
+      "description": "Wykryliśmy zmiany w naszej ofercie i uaktualniliśmy dane w twoim koszyku. {quantity, plural, one {# przedmiot został uaktualniony} few {# przedmioty zostały uaktualnione} many {# przedmiotów zostało uaktualnione} other {}}. Prosimy o sprawdzenie zmian przed przejściem do kasy."
+    }
   },
   "Checkout": {
     "title": "Kasa",
@@ -117,7 +123,7 @@
       "courier": "Kurier",
       "courierDesc": "Dostawa prosto do domu, za pomocą DPD/DHL/UPS.",
       "parcelMachine": "Paczkomat",
-      "parcelMachineDesc": "Dostawa do najbliższego paczkomatu do adresu, za pomocą Inpost/Orlen Paczka.",
+      "parcelMachineDesc": "Dostawa do najbliższego do adresu paczkomatu, za pomocą Inpost/Orlen Paczka.",
       "pickupAtStore": "Odbiór w sklepie",
       "pickupAtStoreDesc": "Opcja darmowa. Skontaktujemy się telefonicznie, aby ustalić czas odbioru."
     },

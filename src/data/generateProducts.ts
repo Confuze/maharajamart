@@ -20,11 +20,11 @@ const categoryTranslations: { [key: string]: string } = {
   freshMeats: "Świeże mięso",
 };
 
-import { Product, Products } from "./products";
+import { GeneratedProduct, Products } from "./products";
 import fs from "fs";
 import _ from "lodash";
 
-import sheetProductsNoType from "./sheetProducts.json";
+import sheetProductsNoType from "./sheetProducts.json" with { type: "json" };
 const sheetProducts: ISheetProduct[] = sheetProductsNoType; // suprisingly this appears to be the cleanest way to cast a type onto a json file
 const newProducts: Products = {};
 let currentCategory = "cosmetics";
@@ -51,7 +51,7 @@ for (const sheetProduct of sheetProducts) {
       ? sheetProduct.picture
       : undefined;
 
-    const newProduct: Product = {
+    const newProduct: GeneratedProduct = {
       displayName: sheetProduct.products,
       price: sheetProduct.pricePln,
       description: sheetProduct.description,
@@ -69,3 +69,5 @@ fs.writeFileSync(
   JSON.stringify(newProducts, null, 2),
   "utf-8",
 );
+
+console.log("succesfully updated products");

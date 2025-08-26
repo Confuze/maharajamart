@@ -1,12 +1,17 @@
 import { Clock, MapPin, Phone } from "lucide-react";
-import { useTranslations } from "next-intl";
 import { Link } from "../i18n/navigation";
 import MobileNav from "./MobileNav";
 import CartButton from "./CartButton";
 import SearchInput from "./SearchInput";
+import { getTranslations } from "next-intl/server";
+import prisma from "../lib/prisma";
+import { Suspense } from "react";
 
-function InfoBar() {
-  const t = useTranslations("Layout");
+async function InfoBar() {
+  const t = await getTranslations("Layout");
+  const categories = await prisma.category.findMany({
+    where: { archived: false },
+  });
 
   return (
     <div className="w-full text-sm py-2 px-2 lg:px-24 flex items-center justify-between text-background bg-secondary">
@@ -29,9 +34,11 @@ function InfoBar() {
         </Link>
       </div>
       <div className="lg:hidden flex gap-1 w-fit items-center">
-        <SearchInput mobile />
+        <Suspense>
+          <SearchInput mobile />
+        </Suspense>
         <CartButton mobile />
-        <MobileNav />
+        <MobileNav categories={categories} />
       </div>
     </div>
   );

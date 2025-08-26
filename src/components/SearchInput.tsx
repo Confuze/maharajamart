@@ -75,7 +75,7 @@ function SearchInput({ mobile }: { mobile?: boolean }) {
             </p>
           </button>
         ) : (
-          <button>
+          <button aria-label={t("search")}>
             <Search size={20} className="mr-1" />
           </button>
         )}

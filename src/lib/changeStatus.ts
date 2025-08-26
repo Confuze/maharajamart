@@ -1,11 +1,10 @@
 "use server";
 
 import { auth } from "@/auth";
-import { PrismaClient } from "@prisma/client";
+import prisma from "./prisma";
+import { Status } from "@prisma/client";
 
-export async function markAsShipped(id: string, unMark: boolean = false) {
-  const prisma = new PrismaClient();
-
+export async function changeStatus(id: string, status: Status) {
   const session = auth();
 
   if (!session) {
@@ -16,7 +15,7 @@ export async function markAsShipped(id: string, unMark: boolean = false) {
     .update({
       where: { id: id },
       data: {
-        shipped: !unMark,
+        status: status,
       },
     })
     .catch((error) => {
@@ -30,8 +29,6 @@ export async function markAsShipped(id: string, unMark: boolean = false) {
         { status: 500 },
       );
     });
-
-  prisma.$disconnect();
 
   return "Succesfully updated database entry";
 }

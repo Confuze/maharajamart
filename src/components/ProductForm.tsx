@@ -2,7 +2,7 @@
 
 import { Input } from "@/src/components/ui/input";
 import { Button } from "@/src/components/ui/button";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import {
   Form,
   FormControl,
@@ -11,25 +11,24 @@ import {
   FormLabel,
   FormMessage,
 } from "@/src/components/ui/form";
-import { Product } from "../data/products";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 
 import { z } from "zod";
-import { generateKey, useAppStore } from "../lib/storage";
+import { useAppStore } from "../lib/storage";
 import { useCartState } from "../lib/useStore";
 import { toast } from "sonner";
 import { Link } from "../i18n/navigation";
+import { CardInfo } from "../lib/prismaTypes";
+import { getLocalisedName } from "../data/products";
+import { localeType } from "../i18n/routing";
+import { TriangleAlert } from "lucide-react";
 
-interface IFormProduct extends Product {
-  productSlug: string;
-  categorySlug: string;
-}
-
-function ProductForm({ product }: { product: IFormProduct }) {
+function ProductForm({ product }: { product: CardInfo }) {
   const t = useTranslations("Product");
   const t2 = useTranslations("Layout.products");
   const t3 = useTranslations("Cart");
+  const locale = useLocale() as localeType;
   const { addCartItem } = useAppStore();
   const state = useCartState();
 
@@ -40,9 +39,7 @@ function ProductForm({ product }: { product: IFormProduct }) {
       .max(100)
       .refine(
         (val) => {
-          const addedProductQuantity =
-            state![generateKey(product.categorySlug, product.productSlug)]
-              ?.quantity || 0;
+          const addedProductQuantity = state![product.id]?.quantity || 0;
           return val + addedProductQuantity <= 100;
         },
         {
@@ -60,14 +57,13 @@ function ProductForm({ product }: { product: IFormProduct }) {
 
   function onSubmit(values: z.infer<typeof formSchema>) {
     addCartItem({
-      productSlug: product.productSlug,
-      categorySlug: product.categorySlug,
+      ...product,
       quantity: values.quantity,
     });
     toast(t("added"), {
       description: t("addedDescription", {
         quantity: values.quantity,
-        name: product.displayName,
+        name: getLocalisedName(locale, product),
       }),
       action: (
         <Link className="w-full basis-1/3" href="/cart">
@@ -84,9 +80,15 @@ function ProductForm({ product }: { product: IFormProduct }) {
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)}>
         <h1 className="mb-2 text-secondary font-serif text-4xl">
-          {product.displayName}
+          {getLocalisedName(locale, product)}
         </h1>
-        <p className="text-sm text-slate-700">{product.description}</p>
+        {product.archived && (
+          <div className="flex items-center mb-3 text-red-500">
+            <TriangleAlert className="mr-1" />
+            {t("archived")}
+          </div>
+        )}
+        <p className="text-sm text-slate-700 mb-4">{product.description}</p>
         <p className="text-xl">
           {(form.watch("quantity") || 1) * product.price!} zł
         </p>
@@ -118,7 +120,7 @@ function ProductForm({ product }: { product: IFormProduct }) {
             </FormItem>
           )}
         />
-        <Button type="submit" className="mt-4">
+        <Button disabled={product.archived} type="submit" className="mt-4">
           {t2("addToCart")}
         </Button>
       </form>

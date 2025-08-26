@@ -13,6 +13,7 @@ function ClearCart() {
 
     updateCart({
       id: id,
+      lastRevalidated: Date.now(),
       contents: {},
     });
   }, [updateCart, id]);

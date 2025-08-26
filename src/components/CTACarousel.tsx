@@ -17,7 +17,6 @@ import products from "@/public/homeSlider/products.png";
 import groceries from "@/public/homeSlider/groceries.png";
 
 const slides: { image: StaticImageData; alt: string }[] = [
-  // WARN: Delete optional image property, it's only there until I get the actual images
   { image: groceries, alt: "Picture of indian groceries" },
   { image: vegetables, alt: "Picture of vegetables" },
   { image: products, alt: "Picture of indian products" },
@@ -60,7 +59,8 @@ function CTACarousel() {
               <DotButton
                 key={index}
                 onClick={() => onDotButtonClick(index)}
-                className={`${index !== selectedIndex && "opacity-50"} mr-1 h-3 w-3 bg-neutral-400 rounded-full`}
+                aria-label={`switch to image ${index}`}
+                className={`${index !== selectedIndex && "opacity-50"} mr-2 h-4 w-4 bg-neutral-600 rounded-full`}
               ></DotButton>
             );
           })}

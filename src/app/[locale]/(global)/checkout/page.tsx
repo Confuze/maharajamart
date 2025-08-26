@@ -6,11 +6,11 @@
 // City
 // Phone number
 
-import { use } from "react";
 import { localeType } from "@/src/i18n/routing";
 import CheckoutForm from "@/src/components/CheckoutForm";
 import { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import CartRevalidator from "@/src/components/CartRevalidator";
 
 export async function generateMetadata({
   params,
@@ -24,16 +24,17 @@ export async function generateMetadata({
   };
 }
 
-export default function Checkout({
+export default async function Checkout({
   params,
 }: {
   params: Promise<{ locale: localeType }>;
 }) {
-  const { locale } = use(params);
+  const { locale } = await params;
   setRequestLocale(locale);
 
   return (
     <div className="flex justify-center">
+      <CartRevalidator cache={false} />
       <CheckoutForm />
     </div>
   );

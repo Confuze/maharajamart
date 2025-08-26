@@ -1,26 +1,28 @@
 "use client";
 
 import { useCartState } from "../lib/useStore";
-import { products } from "../data/products";
 import { useTranslations } from "next-intl";
 import { Button } from "./ui/button";
 import { cn } from "../lib/utils";
-import { useMemo } from "react";
+import { useEffect, useMemo } from "react";
 import { Link } from "../i18n/navigation";
 import CartItem from "./CartItem";
 
 function CartPage() {
   const state = useCartState();
+
+  useEffect(() => {
+    if (!state) return;
+  });
+
   const t = useTranslations("Cart");
   const productsPrice = useMemo(() => {
     let price = 0;
     if (!state) return price;
 
-    Object.keys(state).forEach((key) => {
+    Object.keys(state).forEach(async (key) => {
       const cartItem = state[key]!;
-      const product =
-        products[cartItem.categorySlug].products[cartItem.productSlug];
-      price += cartItem.quantity * product.price!;
+      price += cartItem.quantity * cartItem.price;
     });
 
     return price;
@@ -52,7 +54,7 @@ function CartPage() {
               Object.keys(state).map((key) => {
                 const cartItem = state[key]!;
 
-                return <CartItem cartItem={cartItem} key={key} />;
+                return <CartItem item={cartItem} key={key} />;
               })}
           </div>
         </div>

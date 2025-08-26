@@ -1,11 +1,18 @@
-import { Toaster } from "@/src/components/ui/sonner";
-import { fontSans, fontSerif } from "../fonts";
 import { cn } from "@/src/lib/utils";
+import React from "react";
+import { fontSans, fontSerif } from "../fonts";
 import "@/src/styles/globals.css";
+import { Metadata } from "next";
 
-export const dynamic = "force-dynamic";
+export const metadata: Metadata = {
+  title: {
+    template: "%s - Maharaja Mart administration panel",
+    default: "Maharaja Mart administration panel",
+  },
+  description: "Administration panel for the Maharaja Mart Shop",
+};
 
-export default async function AdminLayout({
+export default function AdminLayoutGlobal({
   children,
 }: {
   children: React.ReactNode;
@@ -19,11 +26,7 @@ export default async function AdminLayout({
           fontSerif.variable,
         )}
       >
-        <header className="w-full p-4 border-b-neutral-200 border">
-          <h1>Maharajamart administration panel</h1>
-        </header>
-        <main className="p-6 lg:p-12 min-h-[90vh]">{children}</main>
-        <Toaster richColors />
+        {children}
       </body>
     </html>
   );

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { Suspense, useState } from "react";
 import {
   Sheet,
   SheetContent,
@@ -16,19 +16,21 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "./ui/accordion";
-import { products } from "../data/products";
 import { useLocale, useTranslations } from "next-intl";
 import { Link } from "../i18n/navigation";
 import { Menu } from "lucide-react";
+import { Category } from "@prisma/client";
+import { getLocalisedCategory } from "../data/products";
+import { localeType } from "../i18n/routing";
 
-function MobileNav() {
-  const locale = useLocale();
+function MobileNav({ categories }: { categories: Category[] }) {
+  const locale = useLocale() as localeType;
   const t = useTranslations("Layout");
   const [sheetOpen, setSheetOpen] = useState(false);
 
   return (
     <Sheet open={sheetOpen} onOpenChange={setSheetOpen}>
-      <SheetTrigger>
+      <SheetTrigger aria-label="Navigation">
         <Menu />
       </SheetTrigger>
       <SheetContent className="w-5/6 bg-background2 text-primary">
@@ -37,7 +39,9 @@ function MobileNav() {
         </SheetHeader>
         <nav className="font-bold text-lg">
           <div className="flex justify-between mt-6 mb-8">
-            <LanguagePicker />
+            <Suspense>
+              <LanguagePicker />
+            </Suspense>
             <CartButton
               onClick={() => {
                 setSheetOpen(false);
@@ -88,23 +92,21 @@ function MobileNav() {
                       setSheetOpen(false);
                     }}
                     className="text-sm font-medium"
-                    href="/products"
+                    href="/products/all/1"
                   >
                     {t("nav.allProducts")}
                   </Link>
-                  {Object.keys(products).map((key) => {
-                    const category = products[key];
-
+                  {categories.map((category) => {
                     return (
                       <Link
                         onClick={() => {
                           setSheetOpen(false);
                         }}
                         className="text-sm font-medium"
-                        href={`/products/${key}`}
-                        key={key}
+                        href={`/products/${category.slug}`}
+                        key={category.id}
                       >
-                        {category.displayName[locale as "en" | "pl"]}
+                        {getLocalisedCategory(locale, category)}
                       </Link>
                     );
                   })}

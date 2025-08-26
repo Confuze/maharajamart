@@ -1,21 +1,21 @@
 "use client";
 
 import { useRef, useState } from "react";
-import { products } from "../data/products";
 import { ICartItem, useAppStore } from "../lib/storage";
 import { Minus, Plus, X } from "lucide-react";
 import Image from "next/image";
 import placeholder from "@/public/picturePlaceholder.png";
 import { Link } from "../i18n/navigation";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { Input } from "./ui/input";
 import { cn } from "../lib/utils";
 import { z } from "zod";
+import { getLocalisedName } from "../data/products";
+import { localeType } from "../i18n/routing";
 
-function CartItem({ cartItem }: { cartItem: ICartItem }) {
-  const product =
-    products[cartItem.categorySlug].products[cartItem.productSlug];
+function CartItem({ item }: { item: ICartItem }) {
   const { updateCartItem, removeCartItem } = useAppStore();
+  const locale = useLocale() as localeType;
   const schema = z.number().min(1).max(99);
   const inputRef = useRef(null);
   const [valid, setValid] = useState(true);
@@ -23,11 +23,11 @@ function CartItem({ cartItem }: { cartItem: ICartItem }) {
 
   const onQuantityUpdate = (newQuantity: number) => {
     updateCartItem({
-      // WARN: This is maybe not very efficient
-      ...cartItem,
+      ...item,
       quantity: newQuantity,
     });
   };
+
   return (
     <div className="bg-background2 border lg:border-2 border-secondary border-opacity-25 p-3 lg:p-5 rounded-lg lg:rounded-xl flex gap-4 h-full justify-between">
       <div className="flex gap-4 lg:gap-8 items-start basis-10/12">
@@ -38,22 +38,24 @@ function CartItem({ cartItem }: { cartItem: ICartItem }) {
             placeholder={`data:image/${placeholder}`}
             quality={75}
             fill
-            src={product.picture || ""}
-            alt={product.displayName}
+            src={
+              item.imageStoredInFs
+                ? `/api/publicAssets/uploads/${item.id}.webp`
+                : item.imageUrl || placeholder
+            }
+            alt={getLocalisedName(locale, item)}
           />
         </div>
         <div>
-          <Link
-            href={`/products/${cartItem.categorySlug}/${cartItem.productSlug}/`}
-          >
+          <Link href={`/products/${item.category.slug}/${item.slug}/`}>
             <h3 className="font-serif text-lg lg:text-2xl text-secondary text-pretty hover:underline">
-              {product.displayName}
+              {getLocalisedName(locale, item)}
             </h3>
           </Link>
           <div className="text-xs lg:text-base">
             <p>
               {t("singlePrice")}
-              {product.price!} zł
+              {item.price!} zł
             </p>
           </div>
           <div className="mt-3">
@@ -87,7 +89,7 @@ function CartItem({ cartItem }: { cartItem: ICartItem }) {
                     !valid && "border-red-600",
                     "max-w-8 no-increment px-1 text-center",
                   )}
-                  defaultValue={cartItem.quantity}
+                  defaultValue={item.quantity}
                   min={1}
                   max={99}
                   ref={inputRef}
@@ -132,7 +134,7 @@ function CartItem({ cartItem }: { cartItem: ICartItem }) {
                     className="w-4 h-4"
                     strokeWidth={2}
                     onClick={() => {
-                      removeCartItem(cartItem);
+                      removeCartItem(item.id);
                     }}
                   />
                 </button>
@@ -142,7 +144,7 @@ function CartItem({ cartItem }: { cartItem: ICartItem }) {
         </div>
       </div>
       <h2 className="font-bold text-xl lg:text-2xl w-full basis-2/12 text-right text-nowrap">
-        {product.price! * cartItem.quantity} zł
+        {item.price! * item.quantity} zł
       </h2>
     </div>
   );

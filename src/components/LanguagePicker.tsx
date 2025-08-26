@@ -21,7 +21,6 @@ import { useLocale } from "next-intl";
 import { localeType } from "../i18n/routing";
 
 export default function LanguagePicker() {
-  // INFO: I don't care it's any, I'm not gonna spend an hour setting the right type for this with the state and everything for a variable that I'm gonna use 3 times
   const locale = useLocale() as localeType;
   const languages = { en: "English", pl: "Polski" }; // INFO: Same as same as line 13
   const [selectedLocale, setSelectedLocale] = useState<"en" | "pl">(locale);
@@ -30,9 +29,7 @@ export default function LanguagePicker() {
   const params = useParams();
   const query = Object.fromEntries(useSearchParams().entries());
 
-  // TODO: Change into event handler, effect us not necessary here and may cause bugs`
   const changeLocale = (newLocale: localeType) => {
-    console.log(newLocale);
     setSelectedLocale(newLocale);
     // @ts-expect-error -- TypeScript will validate that only known `params`
     // are used in combination with a given `pathname`. Since the two will

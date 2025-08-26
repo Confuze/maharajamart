@@ -1,8 +1,6 @@
-import { use } from "react";
 import { localeType } from "@/src/i18n/routing";
 import Branch from "@/src/components/Branch";
 import { Metadata } from "next";
-import { useTranslations } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import maharajaWro from "@/public/maharajaWro.jpg";
 import maharajaPoz from "@/public/maharajaPoz.jpg";
@@ -20,14 +18,14 @@ export async function generateMetadata({
   };
 }
 
-export default function Branches({
+export default async function Branches({
   params,
 }: {
   params: Promise<{ locale: localeType }>;
 }) {
-  const { locale } = use(params);
+  const { locale } = await params;
   setRequestLocale(locale);
-  const t = useTranslations("Branches");
+  const t = await getTranslations("Branches");
 
   return (
     <div className="px-8 lg:px-[30%]">

@@ -25,7 +25,12 @@ function CartButton({ mobile = false, ...props }: CartButtonProps) {
   }, [state]);
 
   return (
-    <Link className="flex items-center relative" {...props} href="/cart">
+    <Link
+      aria-label={t("cart")}
+      className="flex items-center relative"
+      {...props}
+      href="/cart"
+    >
       <ShoppingBasket className="mr-1" size={20} />{" "}
       <p className={mobile ? "hidden" : ""}>{t("cart")}</p>
       <div

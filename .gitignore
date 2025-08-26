@@ -2,6 +2,7 @@
 
 # dependencies
 /node_modules
+/transactional/node_modules
 /.pnp
 .pnp.js
 .yarn/install-state.gz
@@ -43,3 +44,6 @@ replica.key
 # certificates
 *.crt
 *.key
+
+# uploaded images
+/public/uploads/*

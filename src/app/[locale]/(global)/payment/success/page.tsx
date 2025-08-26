@@ -1,8 +1,6 @@
 import { localeType } from "@/src/i18n/routing";
 import { Metadata } from "next";
-import { useTranslations } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { use } from "react";
 
 export async function generateMetadata({
   params,
@@ -16,14 +14,14 @@ export async function generateMetadata({
   };
 }
 
-export default function Contact({
+export default async function Contact({
   params,
 }: {
   params: Promise<{ locale: localeType }>;
 }) {
-  const { locale } = use(params);
+  const { locale } = await params;
   setRequestLocale(locale);
-  const t = useTranslations("Checkout");
+  const t = await getTranslations("Checkout");
 
   return (
     <div className="px-8 lg:px-[25%]">

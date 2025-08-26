@@ -13,6 +13,8 @@ import { getImageProps } from "next/image";
 import { localeType, routing } from "@/src/i18n/routing";
 import { notFound } from "next/navigation";
 
+export const dynamic = "error";
+
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
@@ -41,9 +43,8 @@ export default async function LocaleLayout({
   params,
 }: {
   children: React.ReactNode;
-  params: Promise<{ locale: localeType }>;
+  params: Promise<{ locale: string }>;
 }) {
-  const messages = await getMessages();
   const {
     props: { srcSet },
   } = getImageProps({
@@ -58,6 +59,8 @@ export default async function LocaleLayout({
   }
 
   setRequestLocale(locale);
+
+  const messages = await getMessages();
 
   return (
     <html className="min-h-full relative scroll-smooth" lang={locale}>

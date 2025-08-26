@@ -7,6 +7,7 @@ const withNextIntl = createNextIntlPlugin();
 const nextConfig = {
   output: "standalone",
   images: {
+    minimumCacheTTL: 0,
     remotePatterns: [
       {
         protocol: "https",
@@ -17,6 +18,34 @@ const nextConfig = {
         hostname: "**",
       },
     ],
+  },
+  async redirects() {
+    return [
+      // Basic redirect
+      {
+        source: "/:locale/products/",
+        destination: "/:locale/products/all/1",
+        permanent: true,
+      },
+      {
+        source: "/:locale/products/all",
+        destination: "/:locale/products/all/1",
+        permanent: true,
+      },
+    ];
+  },
+  async headers() {
+    return [
+      {
+        source: "/:path*{/}?",
+        headers: [
+          {
+            key: "X-Accel-Buffering",
+            value: "no",
+          },
+        ],
+      },
+    ];
   },
 };
 

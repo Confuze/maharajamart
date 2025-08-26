@@ -1,5 +1,5 @@
+// TODO: extensively test this shit
 "use client";
-import ClearCart from "@/src/components/ClearCart";
 import { checkForPaidOrder } from "@/src/lib/checkForOrder";
 import { useAppStore } from "@/src/lib/storage";
 import { useCartId } from "@/src/lib/useStore";
@@ -17,24 +17,27 @@ import { toast } from "sonner";
 const RedirectPage = () => {
   const t = useTranslations("Layout.redirect");
   const { generateNewId } = useAppStore();
-  const [isOrderPaidFor, setIsOrderPaidFor] = useState(false);
   const [hasChecked, setHasChecked] = useState(false);
   const id = useCartId();
   const router = useRouter();
+  const { updateCart } = useAppStore();
 
   const eventEffect = useEvent(async () => {
-    console.log(id, hasChecked);
     if (!id) return;
     const checkedOrder = await checkForPaidOrder(id);
     if (hasChecked && !checkedOrder) return setHasChecked(false);
     if (checkedOrder) {
-      generateNewId();
-      setIsOrderPaidFor(true);
       setHasChecked(true);
-      router.push("/payment/success");
+      updateCart({
+        id: id,
+        lastRevalidated: Date.now(),
+        contents: {},
+      });
+      generateNewId();
       toast.success(t("success"), {
         description: t("successDesc"),
       });
+      router.push("/payment/success");
     } else {
       // NOTE: New cartId is not being generated here, becauss if the order was not paid for, the api deletes the previous entry when an order with the same cartId is created.
       toast.error(t("error"), { description: t("errorDesc") });
@@ -47,12 +50,12 @@ const RedirectPage = () => {
   // Taken from: https://stackoverflow.com/a/76514983/14922581
   // and modified to support typescript.
 
-  function useEvent(fn: (...args: unknown[]) => unknown) {
-    const ref = useRef<((...args: unknown[]) => unknown) | null>(null);
+  function useEvent<Type>(fn: (...args: Type[]) => unknown) {
+    const ref = useRef<((...args: Type[]) => unknown) | null>(null);
     useInsertionEffect(() => {
       ref.current = fn;
     }, [fn]);
-    return useCallback((...args: unknown[]) => {
+    return useCallback((...args: Type[]) => {
       const f = ref.current;
       return f!(...args);
     }, []);
@@ -89,11 +92,6 @@ const RedirectPage = () => {
         <path d="M21 12a9 9 0 1 1-6.219-8.56" />
       </svg>
       <h1 className="text-center">{t("checking")}</h1>
-      {
-        isOrderPaidFor && (
-          <ClearCart />
-        ) /* WARN: I do not know why this is done with a component and not a useEffect but it should work the same so I'm not changing it */
-      }
     </div>
   );
 };

@@ -110,6 +110,7 @@ services:
     restart: always
     environment:
       - NODE_ENV=test
+      - POPULATE_DB=false
     env_file: .env.test.local
   nginx:
     image: nginx:latest
